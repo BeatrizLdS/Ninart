@@ -24,7 +24,6 @@ class MenuViewController: UIViewController {
     private func addGradientConstraints() {
         gradientView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(gradientView)
-        
         NSLayoutConstraint.activate([
             gradientView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             gradientView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -35,7 +34,6 @@ class MenuViewController: UIViewController {
     // MARK: - CollectionConstraints
     private func addCollectionConstraints() {
         menuCollection.view.translatesAutoresizingMaskIntoConstraints = false
-        
         view.addSubview(menuCollection.view)
         menuCollection.collectionView.backgroundColor = .clear
         NSLayoutConstraint.activate([
