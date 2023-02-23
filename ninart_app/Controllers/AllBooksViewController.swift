@@ -38,7 +38,6 @@ class AllBooksViewController: UIViewController {
         let width = leftButton.customView?.widthAnchor.constraint(equalToConstant: 100)
         width?.isActive = true
         navigationItem.leftBarButtonItem = leftButton
-        navigationController?.navigationBar.tintColor = .white
     }
 }
 

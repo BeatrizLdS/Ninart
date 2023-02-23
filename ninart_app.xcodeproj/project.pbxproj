@@ -31,6 +31,7 @@
 		FF5A4E0029A3DD7B00774298 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A4DFF29A3DD7A00774298 /* TableViewCell.swift */; };
 		FF5A4E0829A7915D00774298 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A4E0729A7915D00774298 /* StringExtension.swift */; };
 		FF5A4E1729A7962000774298 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF5A4E1929A7962000774298 /* Localizable.strings */; };
+		FF5A4E1E29A79B0500774298 /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A4E1D29A79B0500774298 /* BookCollectionViewCell.swift */; };
 		FF769D02286480AF005D00B4 /* RandomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF769D01286480AF005D00B4 /* RandomViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		FF5A4E0E29A7941800774298 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		FF5A4E1829A7962000774298 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FF5A4E1A29A7962200774298 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		FF5A4E1D29A79B0500774298 /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		FF769D01286480AF005D00B4 /* RandomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -239,6 +241,7 @@
 			children = (
 				FF5A4DFB299FB00300774298 /* AllBooksView.swift */,
 				FF5A4DFF29A3DD7A00774298 /* TableViewCell.swift */,
+				FF5A4E1D29A79B0500774298 /* BookCollectionViewCell.swift */,
 			);
 			path = AllBooksScreen;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				FF530A9428634CB500868564 /* CollectionViewController.swift in Sources */,
 				D4D9CD832852104100B8B75C /* servicefile.swift in Sources */,
 				FF5A4E0029A3DD7B00774298 /* TableViewCell.swift in Sources */,
+				FF5A4E1E29A79B0500774298 /* BookCollectionViewCell.swift in Sources */,
 				D42D042A2850E0C7003DA055 /* MenuViewController.swift in Sources */,
 				7E432684285D5242008B572D /* jsonMap.swift in Sources */,
 				FF5A4DFE299FB0B700774298 /* AllBooksViewController.swift in Sources */,

@@ -17,8 +17,8 @@ class CollectionTableViewCell: UITableViewCell {
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero,
                                               collectionViewLayout: layout)
-        collectionView.register(UICollectionViewCell.self,
-                                forCellWithReuseIdentifier: "cell")
+        collectionView.register(BookCollectionViewCell.self,
+                                forCellWithReuseIdentifier: BookCollectionViewCell.identifier)
         collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
@@ -49,8 +49,6 @@ class CollectionTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 }
 
@@ -65,12 +63,12 @@ extension CollectionTableViewCell: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell",
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.identifier,
                                                       for: indexPath)
         cell.isAccessibilityElement = true
         cell.accessibilityLabel = "\(indexPath.row)"
         cell.accessibilityTraits = .button
-        cell.backgroundColor = .blue
+//        cell.backgroundColor = .blue
         return cell
     }
 }
