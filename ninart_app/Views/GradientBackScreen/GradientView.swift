@@ -9,17 +9,17 @@ import UIKit
 
 class GradientView: UIView {
     let gradient = CAGradientLayer()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         gradient.colors = [UIColor.Primary.cgColor, UIColor.Tertiary.cgColor]
         layer.addSublayer(gradient)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError()
     }
-    
+
     override func layoutSubviews() {
         gradient.frame = bounds
     }

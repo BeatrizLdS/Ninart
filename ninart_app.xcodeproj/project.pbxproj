@@ -26,6 +26,9 @@
 		FF530A9428634CB500868564 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF530A9128634CB500868564 /* CollectionViewController.swift */; };
 		FF530A9628634F0C00868564 /* ZoomAndSnapFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF530A9528634F0C00868564 /* ZoomAndSnapFlowLayout.swift */; };
 		FF530A9828634F1600868564 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF530A9728634F1600868564 /* CollectionViewCell.swift */; };
+		FF5A4DFC299FB00300774298 /* AllBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A4DFB299FB00300774298 /* AllBooksView.swift */; };
+		FF5A4DFE299FB0B700774298 /* AllBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A4DFD299FB0B700774298 /* AllBooksViewController.swift */; };
+		FF5A4E0029A3DD7B00774298 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A4DFF29A3DD7A00774298 /* TableViewCell.swift */; };
 		FF769D02286480AF005D00B4 /* RandomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF769D01286480AF005D00B4 /* RandomViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +74,10 @@
 		FF530A9128634CB500868564 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		FF530A9528634F0C00868564 /* ZoomAndSnapFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomAndSnapFlowLayout.swift; sourceTree = "<group>"; };
 		FF530A9728634F1600868564 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		FF5A4DFB299FB00300774298 /* AllBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBooksView.swift; sourceTree = "<group>"; };
+		FF5A4DFD299FB0B700774298 /* AllBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBooksViewController.swift; sourceTree = "<group>"; };
+		FF5A4DFF29A3DD7A00774298 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		FF5A4E0129A78D6000774298 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		FF769D01286480AF005D00B4 /* RandomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,6 +179,7 @@
 		D42D04592850EC14003DA055 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FF5A4DFD299FB0B700774298 /* AllBooksViewController.swift */,
 				D42D04292850E0C7003DA055 /* MenuViewController.swift */,
 				FF530A8F28634CB500868564 /* CollectionDataSource.swift */,
 				FF530A9128634CB500868564 /* CollectionViewController.swift */,
@@ -185,6 +193,7 @@
 		D42D045A2850EC1C003DA055 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FF5A4DFA299FAFC600774298 /* AllBooksScreen */,
 				FF530A9928634F3700868564 /* CarouselScreen */,
 				7E43267A285B7724008B572D /* GradientBackScreen */,
 				7E432675285B6EB1008B572D /* StoryScreen */,
@@ -216,6 +225,15 @@
 				FF530A9728634F1600868564 /* CollectionViewCell.swift */,
 			);
 			path = CarouselScreen;
+			sourceTree = "<group>";
+		};
+		FF5A4DFA299FAFC600774298 /* AllBooksScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FF5A4DFB299FB00300774298 /* AllBooksView.swift */,
+				FF5A4DFF29A3DD7A00774298 /* TableViewCell.swift */,
+			);
+			path = AllBooksScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +323,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = D42D04192850E0C7003DA055;
 			productRefGroup = D42D04232850E0C7003DA055 /* Products */;
@@ -373,8 +392,10 @@
 				FF769D02286480AF005D00B4 /* RandomViewController.swift in Sources */,
 				FF530A9428634CB500868564 /* CollectionViewController.swift in Sources */,
 				D4D9CD832852104100B8B75C /* servicefile.swift in Sources */,
+				FF5A4E0029A3DD7B00774298 /* TableViewCell.swift in Sources */,
 				D42D042A2850E0C7003DA055 /* MenuViewController.swift in Sources */,
 				7E432684285D5242008B572D /* jsonMap.swift in Sources */,
+				FF5A4DFE299FB0B700774298 /* AllBooksViewController.swift in Sources */,
 				D42D04262850E0C7003DA055 /* AppDelegate.swift in Sources */,
 				FF530A9228634CB500868564 /* CollectionDataSource.swift in Sources */,
 				D42D04282850E0C7003DA055 /* SceneDelegate.swift in Sources */,
@@ -385,6 +406,7 @@
 				FF530A9328634CB500868564 /* StoryViewController.swift in Sources */,
 				D42D04302850E0C7003DA055 /* ninart_app.xcdatamodeld in Sources */,
 				7E43267C285B77A5008B572D /* GradientView.swift in Sources */,
+				FF5A4DFC299FB00300774298 /* AllBooksView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +447,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				D42D04342850E0C8003DA055 /* Base */,
+				FF5A4E0129A78D6000774298 /* pt-BR */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -436,6 +459,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -497,6 +521,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -555,7 +580,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 44U668YQTW;
+				DEVELOPMENT_TEAM = NTS86MKTBV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ninart_app/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -582,7 +607,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 44U668YQTW;
+				DEVELOPMENT_TEAM = NTS86MKTBV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ninart_app/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

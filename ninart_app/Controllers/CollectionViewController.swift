@@ -10,7 +10,7 @@ import UIKit
 class CollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     let collectionDataSource = CollectionDataSource()
-    let flowLayout = ZoomAndSnapFlowLayout() 
+    let flowLayout = ZoomAndSnapFlowLayout()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,14 +18,14 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         self.navigationItem.title = "Test"
 
         guard let collectionView = collectionView else { fatalError() }
-        //collectionView.decelerationRate = .fast // uncomment if necessary
+        // collectionView.decelerationRate = .fast // uncomment if necessary
         collectionView.dataSource = collectionDataSource
         collectionView.collectionViewLayout = flowLayout
         collectionView.contentInsetAdjustmentBehavior = .always
         collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
-        
+
     }
-    
+
     init() {
           super.init(collectionViewLayout: UICollectionViewFlowLayout())
       }

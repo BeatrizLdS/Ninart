@@ -7,12 +7,11 @@
 
 import UIKit
 
-
 class MenuViewController: UIViewController {
-    
+
     let gradientView = GradientView()
     let menuCollection = CollectionViewController()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Menu ✧"

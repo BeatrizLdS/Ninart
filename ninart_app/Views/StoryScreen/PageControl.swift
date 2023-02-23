@@ -12,12 +12,12 @@ class PageControl: UIPageControl {
     let pageControl: UIPageControl = {
         let pageControl = UIPageControl()
         pageControl.translatesAutoresizingMaskIntoConstraints = false
-        
+
         pageControl.numberOfPages = 4
         pageControl.backgroundStyle = .minimal
         pageControl.backgroundColor = .red
-        
+
         return pageControl
     }()
-    
+
 }
