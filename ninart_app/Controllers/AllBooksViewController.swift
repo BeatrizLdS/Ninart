@@ -60,6 +60,7 @@ extension AllBooksViewController: UITableViewDelegate {
             roundedFont = systemFont
         }
         header.textLabel?.font = roundedFont
+        header.textLabel?.text = header.textLabel?.text?.capitalizeFirstLetter()
         header.textLabel?.textColor = .white
         header.textLabel?.frame = header.frame
     }

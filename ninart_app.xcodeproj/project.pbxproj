@@ -29,6 +29,8 @@
 		FF5A4DFC299FB00300774298 /* AllBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A4DFB299FB00300774298 /* AllBooksView.swift */; };
 		FF5A4DFE299FB0B700774298 /* AllBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A4DFD299FB0B700774298 /* AllBooksViewController.swift */; };
 		FF5A4E0029A3DD7B00774298 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A4DFF29A3DD7A00774298 /* TableViewCell.swift */; };
+		FF5A4E0829A7915D00774298 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A4E0729A7915D00774298 /* StringExtension.swift */; };
+		FF5A4E1729A7962000774298 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF5A4E1929A7962000774298 /* Localizable.strings */; };
 		FF769D02286480AF005D00B4 /* RandomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF769D01286480AF005D00B4 /* RandomViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,7 +79,10 @@
 		FF5A4DFB299FB00300774298 /* AllBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBooksView.swift; sourceTree = "<group>"; };
 		FF5A4DFD299FB0B700774298 /* AllBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBooksViewController.swift; sourceTree = "<group>"; };
 		FF5A4DFF29A3DD7A00774298 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		FF5A4E0129A78D6000774298 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		FF5A4E0729A7915D00774298 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		FF5A4E0E29A7941800774298 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		FF5A4E1829A7962000774298 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FF5A4E1A29A7962200774298 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		FF769D01286480AF005D00B4 /* RandomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +150,7 @@
 		D42D04242850E0C7003DA055 /* ninart_app */ = {
 			isa = PBXGroup;
 			children = (
+				FF5A4E0629A7913D00774298 /* Extensions */,
 				D4D9CD812852102500B8B75C /* Services */,
 				D42D045B2850EC22003DA055 /* Models */,
 				D42D045A2850EC1C003DA055 /* Views */,
@@ -155,6 +161,7 @@
 				D42D04332850E0C8003DA055 /* LaunchScreen.storyboard */,
 				D42D04362850E0C8003DA055 /* Info.plist */,
 				D42D042E2850E0C7003DA055 /* ninart_app.xcdatamodeld */,
+				FF5A4E1929A7962000774298 /* Localizable.strings */,
 			);
 			path = ninart_app;
 			sourceTree = "<group>";
@@ -234,6 +241,14 @@
 				FF5A4DFF29A3DD7A00774298 /* TableViewCell.swift */,
 			);
 			path = AllBooksScreen;
+			sourceTree = "<group>";
+		};
+		FF5A4E0629A7913D00774298 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FF5A4E0729A7915D00774298 /* StringExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D42D04322850E0C8003DA055 /* Assets.xcassets in Resources */,
+				FF5A4E1729A7962000774298 /* Localizable.strings in Resources */,
 				7E432682285D4FFF008B572D /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +421,7 @@
 				FF530A9828634F1600868564 /* CollectionViewCell.swift in Sources */,
 				FF530A9328634CB500868564 /* StoryViewController.swift in Sources */,
 				D42D04302850E0C7003DA055 /* ninart_app.xcdatamodeld in Sources */,
+				FF5A4E0829A7915D00774298 /* StringExtension.swift in Sources */,
 				7E43267C285B77A5008B572D /* GradientView.swift in Sources */,
 				FF5A4DFC299FB00300774298 /* AllBooksView.swift in Sources */,
 			);
@@ -447,9 +464,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				D42D04342850E0C8003DA055 /* Base */,
-				FF5A4E0129A78D6000774298 /* pt-BR */,
+				FF5A4E0E29A7941800774298 /* pt-BR */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FF5A4E1929A7962000774298 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF5A4E1829A7962000774298 /* en */,
+				FF5A4E1A29A7962200774298 /* pt-BR */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -634,7 +660,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 37U5X9NN8C;
+				DEVELOPMENT_TEAM = NTS86MKTBV;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
@@ -654,7 +680,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 37U5X9NN8C;
+				DEVELOPMENT_TEAM = NTS86MKTBV;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
@@ -673,7 +699,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 37U5X9NN8C;
+				DEVELOPMENT_TEAM = NTS86MKTBV;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ayslana.ninart-appUITests";
@@ -691,7 +717,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 37U5X9NN8C;
+				DEVELOPMENT_TEAM = NTS86MKTBV;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ayslana.ninart-appUITests";

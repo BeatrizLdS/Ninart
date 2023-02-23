@@ -8,7 +8,11 @@
 import UIKit
 
 class AllBooksView: UIView {
-    
+
+    let sectionsTitles : [String] = [String(localized: "continueReading"),
+                                     String(localized: "readToMe"),
+                                     String(localized: "reading")]
+
     var navigationController: UINavigationController?
 
     let booksTableView: UITableView = {
@@ -50,7 +54,7 @@ extension AllBooksView: UITableViewDelegate {
 extension AllBooksView: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 10
+        return sectionsTitles.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,7 +62,7 @@ extension AllBooksView: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Título: \(section)"
+        return sectionsTitles[section]
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
