@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1429C24229A78D0B0007B658 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429C24129A78D0B0007B658 /* FavoritesViewController.swift */; };
 		7E432677285B6F83008B572D /* StoryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E432676285B6F83008B572D /* StoryPage.swift */; };
 		7E43267C285B77A5008B572D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E43267B285B77A5008B572D /* GradientView.swift */; };
 		7E43267E285B8164008B572D /* StoryPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E43267D285B8164008B572D /* StoryPageViewController.swift */; };
@@ -23,11 +22,11 @@
 		D42D044C2850E0C8003DA055 /* ninart_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42D044B2850E0C8003DA055 /* ninart_appUITestsLaunchTests.swift */; };
 		D4D9CD832852104100B8B75C /* servicefile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9CD822852104100B8B75C /* servicefile.swift */; };
 		FF530A9228634CB500868564 /* CollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF530A8F28634CB500868564 /* CollectionDataSource.swift */; };
-		FF530A9328634CB500868564 /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF530A9028634CB500868564 /* BooksViewController.swift */; };
+		FF530A9328634CB500868564 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF530A9028634CB500868564 /* StoryViewController.swift */; };
 		FF530A9428634CB500868564 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF530A9128634CB500868564 /* CollectionViewController.swift */; };
 		FF530A9628634F0C00868564 /* ZoomAndSnapFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF530A9528634F0C00868564 /* ZoomAndSnapFlowLayout.swift */; };
 		FF530A9828634F1600868564 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF530A9728634F1600868564 /* CollectionViewCell.swift */; };
-		FF769D02286480AF005D00B4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF769D01286480AF005D00B4 /* SearchViewController.swift */; };
+		FF769D02286480AF005D00B4 /* RandomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF769D01286480AF005D00B4 /* RandomViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +47,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1429C24129A78D0B0007B658 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		7E432676285B6F83008B572D /* StoryPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPage.swift; sourceTree = "<group>"; };
 		7E43267B285B77A5008B572D /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		7E43267D285B8164008B572D /* StoryPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPageViewController.swift; sourceTree = "<group>"; };
@@ -69,11 +67,11 @@
 		D42D044B2850E0C8003DA055 /* ninart_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ninart_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D4D9CD822852104100B8B75C /* servicefile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = servicefile.swift; sourceTree = "<group>"; };
 		FF530A8F28634CB500868564 /* CollectionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionDataSource.swift; sourceTree = "<group>"; };
-		FF530A9028634CB500868564 /* BooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
+		FF530A9028634CB500868564 /* StoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
 		FF530A9128634CB500868564 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		FF530A9528634F0C00868564 /* ZoomAndSnapFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomAndSnapFlowLayout.swift; sourceTree = "<group>"; };
 		FF530A9728634F1600868564 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		FF769D01286480AF005D00B4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		FF769D01286480AF005D00B4 /* RandomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,10 +175,9 @@
 				D42D04292850E0C7003DA055 /* MenuViewController.swift */,
 				FF530A8F28634CB500868564 /* CollectionDataSource.swift */,
 				FF530A9128634CB500868564 /* CollectionViewController.swift */,
-				FF530A9028634CB500868564 /* BooksViewController.swift */,
+				FF530A9028634CB500868564 /* StoryViewController.swift */,
 				7E43267D285B8164008B572D /* StoryPageViewController.swift */,
-				FF769D01286480AF005D00B4 /* SearchViewController.swift */,
-				1429C24129A78D0B0007B658 /* FavoritesViewController.swift */,
+				FF769D01286480AF005D00B4 /* RandomViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -373,7 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF769D02286480AF005D00B4 /* SearchViewController.swift in Sources */,
+				FF769D02286480AF005D00B4 /* RandomViewController.swift in Sources */,
 				FF530A9428634CB500868564 /* CollectionViewController.swift in Sources */,
 				D4D9CD832852104100B8B75C /* servicefile.swift in Sources */,
 				D42D042A2850E0C7003DA055 /* MenuViewController.swift in Sources */,
@@ -383,10 +380,9 @@
 				D42D04282850E0C7003DA055 /* SceneDelegate.swift in Sources */,
 				FF530A9628634F0C00868564 /* ZoomAndSnapFlowLayout.swift in Sources */,
 				7E432677285B6F83008B572D /* StoryPage.swift in Sources */,
-				1429C24229A78D0B0007B658 /* FavoritesViewController.swift in Sources */,
 				7E43267E285B8164008B572D /* StoryPageViewController.swift in Sources */,
 				FF530A9828634F1600868564 /* CollectionViewCell.swift in Sources */,
-				FF530A9328634CB500868564 /* BooksViewController.swift in Sources */,
+				FF530A9328634CB500868564 /* StoryViewController.swift in Sources */,
 				D42D04302850E0C7003DA055 /* ninart_app.xcdatamodeld in Sources */,
 				7E43267C285B77A5008B572D /* GradientView.swift in Sources */,
 			);

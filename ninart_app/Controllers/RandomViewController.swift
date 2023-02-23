@@ -7,13 +7,12 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+class RandomViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .white
-         
+        view.backgroundColor = .systemMint
     }
 
 }
