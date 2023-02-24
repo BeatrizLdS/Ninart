@@ -7,49 +7,54 @@
 
 import UIKit
 
-
-class MenuViewController: UIViewController {
-    
-    let gradientView = GradientView()
-    let menuCollection = CollectionViewController()
-    
+class MenuViewController: UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
+
         super.viewDidLoad()
-        self.navigationItem.title = "Menu ✧"
-        addGradientConstraints()
-        addCollectionConstraints()
-        menuCollection.collectionView.delegate = self
+        self.delegate = self
+        setUpTabs()
     }
-    // MARK: - BackScreenConstraints
-    private func addGradientConstraints() {
-        gradientView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(gradientView)
-        NSLayoutConstraint.activate([
-            gradientView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            gradientView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            gradientView.topAnchor.constraint(equalTo: view.topAnchor),
-            gradientView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
+
+    internal func setUpTabs() {
+        let booksVC = BooksViewController()
+        let searchVC = SearchViewController()
+        let favoritesVC = FavoritesViewController()
+
+        booksVC.navigationItem.largeTitleDisplayMode = .automatic
+        searchVC.navigationItem.largeTitleDisplayMode = .automatic
+        favoritesVC.navigationItem.largeTitleDisplayMode = .automatic
+
+        let nav1 = UINavigationController(rootViewController: booksVC)
+        let nav2 = UINavigationController(rootViewController: searchVC)
+        let nav3 = UINavigationController(rootViewController: favoritesVC)
+
+        nav1.tabBarItem = UITabBarItem(title: "Livros", image: UIImage(systemName: "books.vertical.fill"), tag: 1)
+        nav2.tabBarItem = UITabBarItem(title: "Busca", image: UIImage(systemName: "magnifyingglass"), tag: 2)
+        nav3.tabBarItem = UITabBarItem(title: "Favoritos", image: UIImage(systemName: "bookmark.fill"), tag: 3)
+
+        tabBar.tintColor = UIColor(red: 43/255.0, green: 45/255.0, blue: 66/255.0, alpha: 1.0)
+
+        for navs in [nav1, nav2, nav3] {
+            navs.navigationBar.prefersLargeTitles = true
+        }
+
+        setViewControllers([nav1, nav2, nav3], animated: true)
     }
-    // MARK: - CollectionConstraints
-    private func addCollectionConstraints() {
-        menuCollection.view.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(menuCollection.view)
-        menuCollection.collectionView.backgroundColor = .clear
-        NSLayoutConstraint.activate([
-            menuCollection.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            menuCollection.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            menuCollection.view.topAnchor.constraint(equalTo: view.topAnchor),
-            menuCollection.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
+
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
+
+//        let generator = UISelectionFeedbackGenerator()
+//        generator.selectionChanged()
     }
 }
 
-extension MenuViewController : UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath ) {
-        print("selecionou \(indexPath.item)")
-        let storyViewControler = StoryViewController()
-        storyViewControler.storyIndex = indexPath.item
-        navigationController!.pushViewController(storyViewControler, animated: true)
-    }
-}
+//extension MenuViewController : UICollectionViewDelegate {
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath ) {
+//        print("selecionou \(indexPath.item)")
+//        let storyViewControler = StoryViewController()
+//        storyViewControler.storyIndex = indexPath.item
+//        navigationController!.pushViewController(storyViewControler, animated: true)
+//    }
+//}

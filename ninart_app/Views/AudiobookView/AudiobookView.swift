@@ -24,8 +24,6 @@ class AudiobookView: UIView {
         imageView.tintColor = .textColor
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.layer.borderWidth = 3
-        imageView.layer.borderColor = UIColor.black.cgColor
         imageView.layer.cornerRadius = 25
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -50,21 +48,20 @@ class AudiobookView: UIView {
         return stack
     }()
 
-    let playButton: UIButton = {
+    let pausePlayButton: UIButton = {
         let button = UIButton()
         var configuration = UIButton.Configuration.plain()
         configuration.baseForegroundColor = UIColor.textColor
-
         let sizeConfig = UIImage.SymbolConfiguration(pointSize: 80)
-        configuration.image = UIImage(systemName: "pause.circle.fill", withConfiguration: sizeConfig)
+        configuration.image = UIImage(systemName: "play.circle.fill",
+                                      withConfiguration: sizeConfig)
         configuration.contentInsets = .zero
         button.configuration = configuration
-
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
-    let playBackButton: UIButton = {
+    let playBackwardButton: UIButton = {
         let button = UIButton()
         var configuration = UIButton.Configuration.plain()
         button.contentMode = .scaleAspectFill
@@ -93,13 +90,13 @@ class AudiobookView: UIView {
     // TODO: Adicionar uma terceira stack para o slider e as labels
     let sliderControl: UISlider = {
         let slider = UISlider()
-        slider.minimumValue = 0
-        slider.maximumValue = 100
+        slider.minimumValue = 0.0
 
         // Chama a função somente quando o slider parar em uma posição
         slider.isContinuous = false
         slider.backgroundColor = .backgroundColor
         slider.tintColor = UIColor.textColor
+        slider.thumbTintColor = UIColor(red: 106/255, green: 90/255, blue: 101/255, alpha: 1)
         slider.translatesAutoresizingMaskIntoConstraints = false
         return slider
     }()
@@ -140,8 +137,8 @@ extension AudiobookView: SettingViews {
         audioControls.addSubview(currentTime)
         audioControls.addSubview(totalTime)
 
-        horizontalStack.addArrangedSubview(playBackButton)
-        horizontalStack.addArrangedSubview(playButton)
+        horizontalStack.addArrangedSubview(playBackwardButton)
+        horizontalStack.addArrangedSubview(pausePlayButton)
         horizontalStack.addArrangedSubview(playForwardButton)
     }
 
@@ -163,8 +160,8 @@ extension AudiobookView: SettingViews {
             horizontalStack.widthAnchor.constraint(lessThanOrEqualTo: self.audioControls.widthAnchor, multiplier: 0.8),
             horizontalStack.centerXAnchor.constraint(equalTo: self.audioControls.centerXAnchor),
 
-            playButton.heightAnchor.constraint(equalTo: self.horizontalStack.heightAnchor),
-            playButton.widthAnchor.constraint(equalTo: self.playButton.heightAnchor),
+            pausePlayButton.heightAnchor.constraint(equalTo: self.horizontalStack.heightAnchor),
+            pausePlayButton.widthAnchor.constraint(equalTo: self.pausePlayButton.heightAnchor),
 
             sliderControl.heightAnchor.constraint(equalTo: self.audioControls.heightAnchor, multiplier: 0.4),
             sliderControl.bottomAnchor.constraint(equalTo: self.audioControls.safeAreaLayoutGuide.bottomAnchor),
