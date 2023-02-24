@@ -23,9 +23,9 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         collectionView.collectionViewLayout = flowLayout
         collectionView.contentInsetAdjustmentBehavior = .always
         collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
-        
+
     }
-    
+
     init() {
           super.init(collectionViewLayout: UICollectionViewFlowLayout())
       }

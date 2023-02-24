@@ -12,7 +12,7 @@ let story = Bundle.main.decode([Story].self, from: "data.json")!
 class CollectionDataSource: NSObject, UICollectionViewDataSource {
     let images : [String] = {
         var images : [String] = []
-        for pages in story{
+        for pages in story {
             images.append(pages.image)
         }
         return images
