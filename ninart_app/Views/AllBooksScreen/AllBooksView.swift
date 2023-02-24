@@ -9,10 +9,6 @@ import UIKit
 
 class AllBooksView: UIView {
 
-    let sectionsTitles : [String] = [String(localized: "continueReading"),
-                                     String(localized: "readToMe"),
-                                     String(localized: "reading")]
-
     var navigationController: UINavigationController?
 
     let booksTableView: UITableView = {
@@ -28,9 +24,6 @@ class AllBooksView: UIView {
         super.init(frame: frame)
         addSubview(booksTableView)
         backgroundColor = .systemPink
-
-        booksTableView.delegate = self
-        booksTableView.dataSource = self
     }
 
     func configureNavigation(navigationController: UINavigationController) {
@@ -44,30 +37,5 @@ class AllBooksView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         booksTableView.frame = self.bounds
-    }
-}
-
-extension AllBooksView: UITableViewDelegate {
-
-}
-
-extension AllBooksView: UITableViewDataSource {
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return sectionsTitles.count
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sectionsTitles[section]
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = booksTableView.dequeueReusableCell(withIdentifier: CollectionTableViewCell.identifier,
-                                                      for: indexPath)
-        return cell
     }
 }

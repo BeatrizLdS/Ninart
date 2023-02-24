@@ -10,15 +10,18 @@ import UIKit
 class CollectionTableViewCell: UITableViewCell {
 
     static let identifier = "CollectionTableViewCell"
+    static var continueCells: Bool = true
 
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 140, height: 200)
+        layout.itemSize = CGSize(width: 200, height: 120)
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero,
                                               collectionViewLayout: layout)
         collectionView.register(BookCollectionViewCell.self,
                                 forCellWithReuseIdentifier: BookCollectionViewCell.identifier)
+        collectionView.register(ContinueBookCollectionViewCell.self,
+                                forCellWithReuseIdentifier: ContinueBookCollectionViewCell.identifier)
         collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
@@ -63,12 +66,21 @@ extension CollectionTableViewCell: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.identifier,
-                                                      for: indexPath)
-        cell.isAccessibilityElement = true
-        cell.accessibilityLabel = "\(indexPath.row)"
-        cell.accessibilityTraits = .button
-//        cell.backgroundColor = .blue
+        //        if CollectionTableViewCell.continueCells {
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: ContinueBookCollectionViewCell.identifier,
+            for: indexPath) as! ContinueBookCollectionViewCell
+        cell.configure(bookTitle: "Águas razas",
+                       totalPages: 6,
+                       currentPage: 2)
         return cell
+
+        //        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.identifier,
+        //                                                          for: indexPath)
+        //        cell.isAccessibilityElement = true
+        //        cell.accessibilityLabel = "\(indexPath.row)"
+        //        cell.accessibilityTraits = .button
+        //        return cell
     }
+
 }

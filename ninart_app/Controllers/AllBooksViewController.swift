@@ -10,12 +10,23 @@ import UIKit
 class AllBooksViewController: UIViewController {
 
     let allBooksView = AllBooksView()
+    var viewModel: BooksViewModel?
+
+    let sectionsTitles : [String] = [String(localized: "continueReading"),
+                                     String(localized: "readToMe"),
+                                     String(localized: "reading")]
+
+    override func loadView() {
+        super.loadView()
+        viewModel = BooksViewModel()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.largeTitleDisplayMode = .never
         view = allBooksView
         allBooksView.booksTableView.delegate = self
+        allBooksView.booksTableView.dataSource = self
         configureNavBar()
     }
 
@@ -42,13 +53,6 @@ class AllBooksViewController: UIViewController {
 }
 
 extension AllBooksViewController: UITableViewDelegate {
-    // MARK: usuário scrolla tela a tab bar some
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let defaultOffset = view.safeAreaInsets.top
-        let offset = scrollView.contentOffset.y + defaultOffset
-        navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offset))
-    }
-
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let header = view as? UITableViewHeaderFooterView else {return}
         let systemFont = UIFont.systemFont(ofSize: 20, weight: .semibold)
@@ -65,6 +69,29 @@ extension AllBooksViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 120
+    }
+}
+
+extension AllBooksViewController: UITableViewDataSource {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sectionsTitles.count
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionsTitles[section]
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = allBooksView.booksTableView.dequeueReusableCell(
+            withIdentifier: CollectionTableViewCell.identifier,
+            for: indexPath
+        )
+        return cell
     }
 }

@@ -9,7 +9,7 @@ import UIKit
 
 class BookCollectionViewCell: UICollectionViewCell {
 
-    static let identifier = "CollectionViewCell"
+    static let identifier = "BookCollectionViewCell"
 
     private let posterImageView: UIImageView = {
         let imageView = UIImageView()
