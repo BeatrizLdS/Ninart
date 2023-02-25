@@ -10,7 +10,7 @@ import UIKit
 class CollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     let collectionDataSource = CollectionDataSource()
-    let flowLayout = ZoomAndSnapFlowLayout() 
+    let flowLayout = ZoomAndSnapFlowLayout()
 
     override func viewDidLoad() {
         super.viewDidLoad()

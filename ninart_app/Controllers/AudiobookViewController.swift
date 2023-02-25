@@ -11,66 +11,53 @@ import AVFoundation
 class AudiobookViewController: UIViewController {
     let audiobookView = AudiobookView()
     let viewModel: AudioBookViewModel = AudioBookViewModel()
-    lazy var slider = audiobookView.sliderControl
-    var player =  AVAudioPlayer()
-
-//    var player =  AVAudioPlayer(contentsOf: Bundle.main.url(forResource: "", withExtension: ""))
-    var audioName = "bensound-slider"
-    var audioType = "mp3"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view = audiobookView
         navigationItem.title = "Exceptional Doom"
         navigationItem.largeTitleDisplayMode = .never
-        soundEnabling()
 
-        slider.addTarget(self, action: #selector(sliderDrag), for: .allTouchEvents)
+        setupUI()
+
+        viewModel.soundEnabling()
+        viewModel.playAudio()
+        viewModel.updateButtonIcon(audiobookView.pausePlayButton)
+        setupDuration()
+        startUpdatingSlider()
+    }
+
+    func setupUI() {
         audiobookView.pausePlayButton.addTarget(self, action: #selector(pausePlayAudio), for: .touchUpInside)
+        audiobookView.sliderControl.addTarget(self, action: #selector(sliderValueChanged), for: .valueChanged)
+        audiobookView.sliderControl.addTarget(self, action: #selector(sliderDrag), for: .touchDragInside)
+    }
+
+    func setupDuration() {
+        audiobookView.sliderControl.maximumValue = Float(viewModel.player.duration)
+        viewModel.durationInMinutes(audiobookView.durationLabel)
+    }
+
+    func startUpdatingSlider() {
+        viewModel.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
+            guard let self = self else { return }
+            let currentTime = Float(self.viewModel.player.currentTime)
+            self.audiobookView.sliderControl.value = currentTime
+            self.viewModel.updateTimeLabel(with: currentTime, duration: Float(self.viewModel.player.duration), in: self.audiobookView.currentTimeLabel)
+        }
+    }
+
+    @objc func pausePlayAudio(_ sender: UIButton) {
+        viewModel.pausePlayAudio()
+        viewModel.updateButtonIcon(audiobookView.pausePlayButton)
+    }
+
+    @objc func sliderValueChanged(_ sender: UISlider) {
+        viewModel.updateSliderValue(sender.value)
     }
 
     @objc func sliderDrag(_ sender: UISlider) {
-        player.currentTime = TimeInterval(sender.value)
-        player.play()
-
+        viewModel.seekToTime(Double(sender.value))
     }
 
-    @objc func pausePlayAudio() {
-        if (player.isPlaying) == true {
-            player.pause()
-            viewModel.updateButton(button: audiobookView.pausePlayButton, playing: player.isPlaying)
-
-        } else if (player.currentTime != 0) {
-            player.play()
-            viewModel.updateButton(button: audiobookView.pausePlayButton, playing: player.isPlaying)
-        } else {
-            playAudio(sender: audiobookView.pausePlayButton)
-            viewModel.updateButton(button: audiobookView.pausePlayButton, playing: player.isPlaying)
-        }
-    }
-
-    func playAudio(sender: AnyObject) {
-        guard let audioURL = Bundle.main.url(forResource: audioName, withExtension: audioType) else { return }
-        do {
-            try player = AVAudioPlayer(contentsOf: audioURL)
-            slider.maximumValue = Float(TimeInterval(player.duration))
-        } catch {
-            print(error.localizedDescription)
-        }
-        player.play()
-    }
-
-    func stopAudio(sender: AnyObject) {
-        player.stop()
-
-    }
-
-    func soundEnabling() {
-        do {
-            try AVAudioSession.sharedInstance().setCategory(.playback)
-        } catch {
-            // Mostrar erro pro usuário que o celular pode estar no silencioso
-            print("Checar se o celular está no silencioso")
-        }
-    }
 }

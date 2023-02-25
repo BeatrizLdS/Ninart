@@ -101,16 +101,20 @@ class AudiobookView: UIView {
         return slider
     }()
 
-    let currentTime: UILabel = {
+    let currentTimeLabel: UILabel = {
         let label = UILabel()
-        label.text = "0:00/"
+        label.text = "00:00"
+        label.textAlignment = .center
+        label.textColor = .textColor
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
-    let totalTime: UILabel = {
+    let durationLabel: UILabel = {
         let label = UILabel()
-        label.text = "2:01"
+        label.text = "00:00"
+        label.textAlignment = .center
+        label.textColor = .textColor
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -134,8 +138,8 @@ extension AudiobookView: SettingViews {
 
         audioControls.addSubview(horizontalStack)
         audioControls.addSubview(sliderControl)
-        audioControls.addSubview(currentTime)
-        audioControls.addSubview(totalTime)
+        audioControls.addSubview(currentTimeLabel)
+        audioControls.addSubview(durationLabel)
 
         horizontalStack.addArrangedSubview(playBackwardButton)
         horizontalStack.addArrangedSubview(pausePlayButton)
@@ -168,11 +172,11 @@ extension AudiobookView: SettingViews {
             sliderControl.widthAnchor.constraint(equalTo: self.audioControls.widthAnchor, multiplier: 0.67),
             sliderControl.leadingAnchor.constraint(equalTo: self.audioControls.leadingAnchor, constant: 18),
 
-            currentTime.leadingAnchor.constraint(equalTo: sliderControl.trailingAnchor, constant: 12),
-            currentTime.centerYAnchor.constraint(equalTo: sliderControl.centerYAnchor),
+            currentTimeLabel.leadingAnchor.constraint(equalTo: sliderControl.trailingAnchor, constant: 12),
+            currentTimeLabel.centerYAnchor.constraint(equalTo: sliderControl.centerYAnchor),
 
-            totalTime.leadingAnchor.constraint(equalTo: currentTime.trailingAnchor, constant: 4),
-            totalTime.centerYAnchor.constraint(equalTo: currentTime.centerYAnchor)
+            durationLabel.leadingAnchor.constraint(equalTo: currentTimeLabel.trailingAnchor, constant: 4),
+            durationLabel.centerYAnchor.constraint(equalTo: currentTimeLabel.centerYAnchor)
 
         ])
     }
