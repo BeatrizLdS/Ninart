@@ -32,7 +32,7 @@ class MenuViewController: UITabBarController, UITabBarControllerDelegate {
         nav2.tabBarItem = UITabBarItem(title: "Busca", image: UIImage(systemName: "magnifyingglass"), tag: 2)
         nav3.tabBarItem = UITabBarItem(title: "Favoritos", image: UIImage(systemName: "bookmark.fill"), tag: 3)
 
-        tabBar.tintColor = UIColor(red: 43/255.0, green: 45/255.0, blue: 66/255.0, alpha: 1.0)
+        tabBar.tintColor = .text
 
         for navs in [nav1, nav2, nav3] {
             navs.navigationBar.prefersLargeTitles = true

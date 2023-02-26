@@ -34,6 +34,7 @@ class AllBooksViewController: UIViewController {
         let normalButton = UIButton(type: .custom)
         normalButton.frame = CGRect(x: 0, y: 0, width: 100, height: 200)
         normalButton.setTitle("Ninart", for: .normal)
+        normalButton.setTitleColor(.text, for: .normal)
         let systemFont = UIFont.systemFont(ofSize: 32, weight: .semibold)
         let roundedFont: UIFont
         if let descriptor = systemFont.fontDescriptor.withDesign(.rounded) {
@@ -64,7 +65,7 @@ extension AllBooksViewController: UITableViewDelegate {
         }
         header.textLabel?.font = roundedFont
         header.textLabel?.text = header.textLabel?.text?.capitalizeFirstLetter()
-        header.textLabel?.textColor = .white
+        header.textLabel?.textColor = .text
         header.textLabel?.frame = header.frame
     }
 

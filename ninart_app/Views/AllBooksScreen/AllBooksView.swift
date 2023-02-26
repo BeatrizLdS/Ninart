@@ -28,7 +28,7 @@ class AllBooksView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(booksTableView)
-        backgroundColor = .systemPink
+        backgroundColor = .background
     }
 
     func configureNavigation(navigationController: UINavigationController) {

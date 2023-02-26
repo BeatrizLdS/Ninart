@@ -18,4 +18,14 @@ extension UIColor {
         let color = UIColor(named: "progressTrack")
         return color
     }()
+
+    static let background: UIColor? = {
+        let color = UIColor(named: "BackgroundColor")
+        return color
+    }()
+
+    static let text: UIColor? = {
+        let color = UIColor(named: "TextColor")
+        return color
+    }()
 }
