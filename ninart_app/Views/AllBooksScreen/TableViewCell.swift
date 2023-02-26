@@ -11,10 +11,11 @@ class CollectionTableViewCell: UITableViewCell {
 
     static let identifier = "CollectionTableViewCell"
     static var continueCells: Bool = true
+    var listOfBooks: [Story] = []
+    var cellType: CellType = .started
 
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 200, height: 120)
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero,
                                               collectionViewLayout: layout)
@@ -47,40 +48,57 @@ class CollectionTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+
+    func configure(list: [Story], type: CellType) {
+        listOfBooks = list
+        cellType = type
+    }
 }
 
-extension CollectionTableViewCell: UICollectionViewDelegate {
-
+extension CollectionTableViewCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+            switch cellType {
+            case .started:
+                return CGSize(width: 240, height: 160)
+            case .normal:
+                return CGSize(width: 130, height: 180)
+            }
+    }
 }
 
 extension CollectionTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return listOfBooks.count
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        //        if CollectionTableViewCell.continueCells {
-        let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: ContinueBookCollectionViewCell.identifier,
-            for: indexPath) as! ContinueBookCollectionViewCell
-        cell.configure(bookTitle: "Águas razas",
-                       totalPages: 6,
-                       currentPage: 2)
-        return cell
+        switch cellType {
+        case .started:
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: ContinueBookCollectionViewCell.identifier,
+                for: indexPath) as! ContinueBookCollectionViewCell
+            cell.configure(
+                image: listOfBooks[indexPath.row].image,
+                bookTitle: listOfBooks[indexPath.row].title,
+                totalPages: 6,
+                currentPage: 2)
+            return cell
+        case .normal:
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: BookCollectionViewCell.identifier,
+                for: indexPath) as! BookCollectionViewCell
+            cell.configure(story: listOfBooks[indexPath.row])
+            return cell
+        }
 
-        //        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.identifier,
-        //                                                          for: indexPath)
-        //        cell.isAccessibilityElement = true
-        //        cell.accessibilityLabel = "\(indexPath.row)"
-        //        cell.accessibilityTraits = .button
-        //        return cell
     }
 
 }

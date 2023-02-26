@@ -14,8 +14,6 @@ class BookCollectionViewCell: UICollectionViewCell {
     private let posterImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
-        imageView.image = UIImage(named: "aSundayAfternoonOnTheIslandOfLaGrandeJatte")
-//        imageView.image?.isAccessibilityElement = true
         return imageView
     }()
 
@@ -33,5 +31,12 @@ class BookCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         posterImageView.frame = contentView.bounds
+    }
+
+    func configure(story: Story) {
+        posterImageView.image = UIImage(named: story.image)
+        isAccessibilityElement = true
+        accessibilityLabel = story.title
+        accessibilityTraits = .button
     }
 }

@@ -69,14 +69,19 @@ extension AllBooksViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        let numberOfSections = viewModel?.getNumberOfBooksSections()
+        if (indexPath.section == 0 && numberOfSections == 3) {
+            return 160
+        } else {
+            return 180
+        }
     }
 }
 
 extension AllBooksViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return sectionsTitles.count
+        return (viewModel?.getNumberOfBooksSections())!
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -84,14 +89,22 @@ extension AllBooksViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sectionsTitles[section]
+        let numberOfSections = viewModel?.getNumberOfBooksSections()
+        return sectionsTitles[(3 - numberOfSections!) + section]
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = allBooksView.booksTableView.dequeueReusableCell(
             withIdentifier: CollectionTableViewCell.identifier,
             for: indexPath
-        )
+        ) as! CollectionTableViewCell
+        let numberOfSections = viewModel?.getNumberOfBooksSections()
+        var sectionType: CellType = .normal
+        if numberOfSections == 3 && indexPath.section == 0 {
+            sectionType = .started
+        }
+        cell.configure(list: (viewModel?.getCurrentList(section: (3 - numberOfSections!) + indexPath.row))!,
+                       type: sectionType)
         return cell
     }
 }

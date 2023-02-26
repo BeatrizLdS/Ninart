@@ -14,7 +14,6 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
     let posterImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
-        //        imageView.image?.isAccessibilityElement = true
         return imageView
     }()
 
@@ -51,7 +50,7 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
         label.textColor = .white
         label.layer.shadowColor = UIColor.black.cgColor
         label.layer.shadowOpacity = 0.2
-        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         label.isAccessibilityElement = false
@@ -103,9 +102,9 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate(statusLabelConstraints)
     }
 
-    func configure(bookTitle: String, totalPages: Int, currentPage: Int) {
+    func configure(image: String, bookTitle: String, totalPages: Int, currentPage: Int) {
         // General configuration
-        posterImageView.image = UIImage(named: "aSundayAfternoonOnTheIslandOfLaGrandeJatte")
+        posterImageView.image = UIImage(named: image)
         progressBar.setProgress(2/6, animated: false)
         //        bookButton.addTarget(, action: , for: ) // local de inserir ação do botão
 

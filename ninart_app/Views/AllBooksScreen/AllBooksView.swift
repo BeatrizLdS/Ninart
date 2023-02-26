@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum CellType: Int {
+    case started = 0
+    case normal = 1
+}
+
 class AllBooksView: UIView {
 
     var navigationController: UINavigationController?

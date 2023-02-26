@@ -8,17 +8,24 @@
 import Foundation
 
 class BooksViewModel {
-    var continueBooksList: [Story] = []
+    var continueBooksList: [[Story]] = []
 
     init() {
-        continueBooksList = Bundle.main.decode([Story].self, from: "data.json")!
+        for _ in 1...3 {
+            let auxList = Bundle.main.decode([Story].self, from: "data.json")!
+            continueBooksList.append(auxList)
+        }
     }
 
-    func getNumberOfContinueBooks() -> Int? {
+    func getNumberOfBooksSections() -> Int? {
         return continueBooksList.count
     }
 
-    func getCurrentBook(indexPath: IndexPath) -> Story {
-        return self.continueBooksList[indexPath.row]
+    func getCurrentList(section: Int) -> [Story] {
+        return self.continueBooksList[section]
+    }
+
+    func getCurrentBook(section: Int, indexPath: IndexPath) -> Story {
+        return self.continueBooksList[section][indexPath.row]
     }
 }
