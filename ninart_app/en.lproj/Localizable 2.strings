@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  ninart_app
+
+  Created by Beatriz Leonel da Silva on 23/02/23.
+  
+*/
+
+// MARK: Home Page
+"continueReading" = "Continue reading";
+"readToMe" = "Read to me";
+"reading" = "Reading";
+
+//  Keep reading description
+"keep reading %@! page %d" = "keep reading %@! page %d";
+"you read %d pages of %d" = "you read %d pages of %d";
+"you read %d page of %d" = "you read %d page of %d";
+"page %d" = "Page %d";

@@ -15,15 +15,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
 
-        let navigationController = UINavigationController(rootViewController: AllBooksViewController())
-        // AllBooksViewController() MenuViewController()
-        navigationController.navigationBar.prefersLargeTitles = true
-        navigationController.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = navigationController
+        window?.rootViewController = MenuViewController()
         window?.makeKeyAndVisible()
     }
 
