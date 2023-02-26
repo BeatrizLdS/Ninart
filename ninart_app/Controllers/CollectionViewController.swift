@@ -18,7 +18,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         self.navigationItem.title = "Test"
 
         guard let collectionView = collectionView else { fatalError() }
-        //collectionView.decelerationRate = .fast // uncomment if necessary
+        // collectionView.decelerationRate = .fast // uncomment if necessary
         collectionView.dataSource = collectionDataSource
         collectionView.collectionViewLayout = flowLayout
         collectionView.contentInsetAdjustmentBehavior = .always

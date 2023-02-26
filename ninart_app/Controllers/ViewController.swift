@@ -31,7 +31,10 @@ class ViewController: UIViewController {
 
             button.backgroundColor = .link
             let xVal = CGFloat(element)
-            button.frame = CGRect(x: view.frame.midX/2, y: 100+(xVal * view.frame.midY/3), width: 200, height: 100)
+            button.frame = CGRect(x: view.frame.midX/2,
+                                  y: 100+(xVal * view.frame.midY/3),
+                                  width: 200,
+                                  height: 100)
             button.addTarget(self, action: #selector(openGreenView(_:)), for: .touchUpInside)
             button.setTitle("\(story[element].title)", for: .normal)
             button.setTitleColor(UIColor.Primary, for: .normal)
