@@ -45,7 +45,7 @@ class AudiobookView: UIView {
         stack.axis = .horizontal
         stack.alignment = .center
         stack.distribution = .fill
-        stack.spacing = 12
+        stack.spacing = 6
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -60,6 +60,7 @@ class AudiobookView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+
     let pausePlayButton: UIButton = {
         let button = UIButton()
         var configuration = UIButton.Configuration.plain()
@@ -102,13 +103,12 @@ class AudiobookView: UIView {
     let sliderControl: UISlider = {
         let slider = UISlider()
         slider.minimumValue = 0.0
-
-        // Chama a função somente quando o slider parar em uma posição
-//        slider.isContinuous = false
+        slider.isContinuous = false
         slider.backgroundColor = .backgroundColor
         slider.tintColor = UIColor.textColor
         slider.thumbTintColor = UIColor(red: 106/255, green: 90/255, blue: 101/255, alpha: 1)
         slider.translatesAutoresizingMaskIntoConstraints = false
+        slider.accessibilityTraits = .adjustable
         return slider
     }()
     let currentTimeLabel: UILabel = {
@@ -134,10 +134,12 @@ class AudiobookView: UIView {
         super.init(frame: frame)
         backgroundColor = UIColor.backgroundColor
         buildLayoutView()
+
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
 }
 
 extension AudiobookView: SettingViews {
@@ -175,16 +177,15 @@ extension AudiobookView: SettingViews {
             buttonsHStack.topAnchor.constraint(equalTo: self.audioControls.topAnchor,  constant: 12),
             buttonsHStack.heightAnchor.constraint(equalTo: self.audioControls.heightAnchor, multiplier: 0.4),
             buttonsHStack.centerXAnchor.constraint(equalTo: self.audioControls.centerXAnchor),
-            buttonsHStack.widthAnchor.constraint(lessThanOrEqualTo:
-                                                    self.audioControls.widthAnchor, multiplier: 0.8),
+//            buttonsHStack.widthAnchor.constraint(equalTo: self.audioControls.widthAnchor),
+//            buttonsHStack.widthAnchor.constraint(lessThanOrEqualTo:
+//                                                    self.audioControls.widthAnchor, multiplier: 0.8),
 
             pausePlayButton.heightAnchor.constraint(equalTo: self.buttonsHStack.heightAnchor),
             pausePlayButton.widthAnchor.constraint(equalTo: self.pausePlayButton.heightAnchor),
 
-            playBackwardButton.heightAnchor.constraint(equalTo: self.buttonsHStack.heightAnchor,
-                                                       multiplier: 0.7),
-            playForwardButton.heightAnchor.constraint(equalTo: self.buttonsHStack.heightAnchor,
-                                                      multiplier: 0.7),
+            playBackwardButton.heightAnchor.constraint(equalTo: self.buttonsHStack.heightAnchor),
+            playForwardButton.heightAnchor.constraint(equalTo: self.buttonsHStack.heightAnchor),
 
             playbackStack.topAnchor.constraint(equalTo: buttonsHStack.bottomAnchor, constant: 36),
             playbackStack.widthAnchor.constraint(lessThanOrEqualTo: self.audioControls.widthAnchor),

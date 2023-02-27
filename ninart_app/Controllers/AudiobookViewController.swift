@@ -19,12 +19,18 @@ class AudiobookViewController: UIViewController {
         super.viewDidLoad()
         view = audiobookView
         navigationItem.title = "Exceptional Doom"
-//        navigationItem.largeTitleDisplayMode = .never
+        navigationItem.largeTitleDisplayMode = .never
+
+        setupAudio()
         self.viewModel.player.delegate = self
     }
     override func viewDidLayoutSubviews() {
         setupUI()
-        setupAudio()
+        setupAccessibility()
+    }
+    override func accessibilityIncrement() {
+        audiobookView.sliderControl.accessibilityValue
+        print("increment")
     }
 
     func setupUI() {
@@ -33,7 +39,6 @@ class AudiobookViewController: UIViewController {
         audiobookView.sliderControl.addTarget(self, action: #selector(sliderDrag), for: .touchDragInside)
         audiobookView.playBackwardButton.addTarget(self, action: #selector(audioRewind), for: .touchUpInside)
         audiobookView.playForwardButton.addTarget(self, action: #selector(audioForward), for: .touchUpInside)
-//        NotificationCenter.default.addObserver(self,selector: #selector(audioEnded), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: viewModel.player)
     }
     func setupDuration() {
         audiobookView.sliderControl.maximumValue = Float(viewModel.player.duration)
@@ -46,6 +51,9 @@ class AudiobookViewController: UIViewController {
         setupDuration()
         viewModel.updateSlider(slider: audiobookView.sliderControl, label: audiobookView.currentTimeLabel)
     }
+    func setupAccessibility() {
+        viewModel.accessibilityTime(slider: audiobookView.sliderControl)
+    }
     @objc func pausePlayAudio(_ sender: UIButton) {
         viewModel.playbackStatus()
         viewModel.updateButtonIcon(audiobookView.pausePlayButton)
@@ -53,6 +61,7 @@ class AudiobookViewController: UIViewController {
     }
     @objc func sliderValueChanged(_ sender: UISlider) {
         viewModel.updateSliderValue(sender.value)
+        viewModel.accessibilityTime(slider: audiobookView.sliderControl)
     }
     @objc func sliderDrag(_ sender: UISlider) {
         viewModel.seekToTime(Double(sender.value))
@@ -66,13 +75,14 @@ class AudiobookViewController: UIViewController {
     @objc func audioEnded(_ notification: Notification) {
         print("Right there")
     }
+
+
+
 }
 
 extension AudiobookViewController: AVAudioPlayerDelegate {
-    // TODO: WHY NO WORKING ?
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        print(flag)
-        NotificationCenter.default.post(name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
-
+        viewModel.isPlaying = !flag
+        viewModel.updateButtonIcon(audiobookView.pausePlayButton)
     }
 }

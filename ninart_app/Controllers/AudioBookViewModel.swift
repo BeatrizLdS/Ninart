@@ -104,27 +104,13 @@ class AudioBookViewModel {
             self.updateTimeLabel(with: currentTime, duration: Float(self.player.duration), in: label)
         }
     }
-    func accessibilityCurrentTime() -> String {
+    func accessibilityTime(slider: UISlider) {
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = [.minute, .second]
-        formatter.unitsStyle = .positional
-        formatter.zeroFormattingBehavior = .pad
-
-        if let formattedString = formatter.string(from: TimeInterval(player.currentTime)) {
-            return formattedString
+        formatter.unitsStyle = .spellOut
+        if let formattedTimeString = formatter.string(from: TimeInterval(player.currentTime)),
+            let formattedFullString = formatter.string(from: TimeInterval(player.duration)) {
+            slider.accessibilityValue = "track position \(formattedTimeString) of \(formattedFullString)"
         }
-        return ""
-    }
-
-    func accessibilityDurationTime() -> String{
-        let formatter = DateComponentsFormatter()
-        formatter.allowedUnits = [.minute, .second]
-        formatter.unitsStyle = .positional
-        formatter.zeroFormattingBehavior = .pad
-
-        if let formattedString = formatter.string(from: TimeInterval(player.duration)) {
-            return formattedString
-        }
-        return ""
     }
 }
