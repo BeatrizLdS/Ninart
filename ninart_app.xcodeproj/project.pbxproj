@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14219BCC29AC21FE0057FD9A /* ButtonPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14219BCB29AC21FE0057FD9A /* ButtonPage.swift */; };
+		14219BCE29ACC9950057FD9A /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14219BCD29ACC9950057FD9A /* Extension.swift */; };
+		1429C24729A8F6300007B658 /* TextBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429C24629A8F6300007B658 /* TextBook.swift */; };
+		1429C24929A902430007B658 /* ImageStoryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429C24829A902430007B658 /* ImageStoryPage.swift */; };
+		1429C24B29AC06A20007B658 /* TitlePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429C24A29AC06A20007B658 /* TitlePage.swift */; };
 		7E432677285B6F83008B572D /* StoryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E432676285B6F83008B572D /* StoryPage.swift */; };
 		7E43267C285B77A5008B572D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E43267B285B77A5008B572D /* GradientView.swift */; };
 		7E43267E285B8164008B572D /* StoryPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E43267D285B8164008B572D /* StoryPageViewController.swift */; };
@@ -47,6 +52,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14219BCB29AC21FE0057FD9A /* ButtonPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPage.swift; sourceTree = "<group>"; };
+		14219BCD29ACC9950057FD9A /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		1429C24629A8F6300007B658 /* TextBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBook.swift; sourceTree = "<group>"; };
+		1429C24829A902430007B658 /* ImageStoryPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStoryPage.swift; sourceTree = "<group>"; };
+		1429C24A29AC06A20007B658 /* TitlePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePage.swift; sourceTree = "<group>"; };
 		7E432676285B6F83008B572D /* StoryPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPage.swift; sourceTree = "<group>"; };
 		7E43267B285B77A5008B572D /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		7E43267D285B8164008B572D /* StoryPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPageViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +109,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1429C24529A8F5E10007B658 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1429C24629A8F6300007B658 /* TextBook.swift */,
+				1429C24829A902430007B658 /* ImageStoryPage.swift */,
+				1429C24A29AC06A20007B658 /* TitlePage.swift */,
+				14219BCB29AC21FE0057FD9A /* ButtonPage.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		7E432675285B6EB1008B572D /* StoryScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +206,7 @@
 		D42D045A2850EC1C003DA055 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1429C24529A8F5E10007B658 /* Components */,
 				FF530A9928634F3700868564 /* CarouselScreen */,
 				7E43267A285B7724008B572D /* GradientBackScreen */,
 				7E432675285B6EB1008B572D /* StoryScreen */,
@@ -204,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				D4D9CD822852104100B8B75C /* servicefile.swift */,
+				14219BCD29ACC9950057FD9A /* Extension.swift */,
 				7E432681285D4FFF008B572D /* data.json */,
 			);
 			path = Services;
@@ -373,18 +396,23 @@
 				FF769D02286480AF005D00B4 /* RandomViewController.swift in Sources */,
 				FF530A9428634CB500868564 /* CollectionViewController.swift in Sources */,
 				D4D9CD832852104100B8B75C /* servicefile.swift in Sources */,
+				1429C24B29AC06A20007B658 /* TitlePage.swift in Sources */,
 				D42D042A2850E0C7003DA055 /* MenuViewController.swift in Sources */,
 				7E432684285D5242008B572D /* jsonMap.swift in Sources */,
+				14219BCC29AC21FE0057FD9A /* ButtonPage.swift in Sources */,
 				D42D04262850E0C7003DA055 /* AppDelegate.swift in Sources */,
 				FF530A9228634CB500868564 /* CollectionDataSource.swift in Sources */,
 				D42D04282850E0C7003DA055 /* SceneDelegate.swift in Sources */,
 				FF530A9628634F0C00868564 /* ZoomAndSnapFlowLayout.swift in Sources */,
+				1429C24729A8F6300007B658 /* TextBook.swift in Sources */,
 				7E432677285B6F83008B572D /* StoryPage.swift in Sources */,
 				7E43267E285B8164008B572D /* StoryPageViewController.swift in Sources */,
 				FF530A9828634F1600868564 /* CollectionViewCell.swift in Sources */,
+				14219BCE29ACC9950057FD9A /* Extension.swift in Sources */,
 				FF530A9328634CB500868564 /* StoryViewController.swift in Sources */,
 				D42D04302850E0C7003DA055 /* ninart_app.xcdatamodeld in Sources */,
 				7E43267C285B77A5008B572D /* GradientView.swift in Sources */,
+				1429C24929A902430007B658 /* ImageStoryPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
