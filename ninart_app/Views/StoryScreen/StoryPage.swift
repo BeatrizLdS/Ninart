@@ -46,6 +46,7 @@ class StoryPage: UIScrollView {
         pageText.font.withSize(10)
         pageText.text = "✨ textinho ✨"
         pageText.textColor = UIColor.AccentText
+
         return pageText
     }()
     let titleLabel: UILabel = {

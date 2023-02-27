@@ -119,11 +119,16 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
             pageControl.topAnchor.constraint(equalTo: scrollView.bottomAnchor),
             pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+
         pageControl.numberOfPages = hPagesQuantity
+
     }
+
     // MARK: Selector(PageControl)
     @objc private func pageControlDidChange(_ sender: UIPageControl) {
         let current = sender.currentPage
+
         scrollView.setContentOffset(CGPoint(x: CGFloat(current)*view.frame.size.width , y: 0), animated: true)
     }
+
 }
