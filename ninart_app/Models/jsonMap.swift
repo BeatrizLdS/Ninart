@@ -19,7 +19,7 @@ struct Page: Codable {
     let image, text: String
 }
 
-//MARK: decode JSON
+// MARK: decode JSON
 // TESTAR DECODER
 extension Bundle {
     func decode<T: Decodable>(_ type: T.Type, from file: String) -> T? {

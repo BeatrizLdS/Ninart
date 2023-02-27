@@ -12,14 +12,12 @@ class ScrollView: UIScrollView {
         let pageControl = UIPageControl()
         pageControl.backgroundStyle = .minimal
         pageControl.numberOfPages = 5
-        
+
         return pageControl
     }()
 
-    
     override func layoutSubviews() {
         super.layoutSubviews()
     }
-    
 
 }

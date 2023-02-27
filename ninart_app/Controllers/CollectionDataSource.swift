@@ -12,7 +12,7 @@ let story = Bundle.main.decode([Story].self, from: "data.json")!
 class CollectionDataSource: NSObject, UICollectionViewDataSource {
     let images : [String] = {
         var images : [String] = []
-        for pages in story{
+        for pages in story {
             images.append(pages.image)
         }
         return images
@@ -22,8 +22,9 @@ class CollectionDataSource: NSObject, UICollectionViewDataSource {
         return images.count
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
         let imageView: UIImageView = {
            let imageView = UIImageView()
             imageView.image = UIImage(named: images[indexPath.item])

@@ -28,7 +28,8 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         pageControl.addTarget(self, action: #selector(pageControlDidChange), for: .valueChanged)
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        pageControl.currentPage = Int(floorf(Float(scrollView.contentOffset.x)/Float(scrollView.frame.size.width)))
+        let value = Int(floorf(Float(scrollView.contentOffset.x)/Float(scrollView.frame.size.width)))
+        pageControl.currentPage = value
     }
     // MARK: - SettingHScroll
     private func configureScrollView() {
@@ -105,7 +106,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
             gradientView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             gradientView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             gradientView.topAnchor.constraint(equalTo: view.topAnchor),
-            gradientView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            gradientView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
     // MARK: - PageControl
@@ -116,19 +117,18 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
             pageControl.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             pageControl.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             pageControl.topAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-        
+
         pageControl.numberOfPages = hPagesQuantity
-        
+
     }
-    
-    //MARK: Selector(PageControl)
+
+    // MARK: Selector(PageControl)
     @objc private func pageControlDidChange(_ sender: UIPageControl) {
         let current = sender.currentPage
-        
+
         scrollView.setContentOffset(CGPoint(x: CGFloat(current)*view.frame.size.width , y: 0), animated: true)
     }
 
-    
 }
