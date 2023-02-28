@@ -28,15 +28,18 @@ class MenuViewController: UITabBarController, UITabBarControllerDelegate {
         let nav2 = UINavigationController(rootViewController: searchVC)
         let nav3 = UINavigationController(rootViewController: favoritesVC)
 
-        nav1.tabBarItem = UITabBarItem(title: "Livros",
-                                       image: UIImage(systemName: "books.vertical.fill"),
-                                       tag: 1)
-        nav2.tabBarItem = UITabBarItem(title: "Busca",
-                                       image: UIImage(systemName: "magnifyingglass"),
-                                       tag: 2)
-        nav3.tabBarItem = UITabBarItem(title: "Favoritos",
-                                       image: UIImage(systemName: "bookmark.fill"),
-                                       tag: 3)
+        nav1.tabBarItem = UITabBarItem(
+            title: "Livros",
+            image: UIImage(systemName: "books.vertical.fill"),
+            tag: 1)
+        nav2.tabBarItem = UITabBarItem(
+            title: "Busca",
+            image: UIImage(systemName: "magnifyingglass"),
+            tag: 2)
+        nav3.tabBarItem = UITabBarItem(
+            title: "Favoritos",
+            image: UIImage(systemName: "bookmark.fill"),
+            tag: 3)
 
         tabBar.tintColor = .text
 

@@ -10,6 +10,7 @@ import UIKit
 class ContinueBookCollectionViewCell: UICollectionViewCell {
 
     static let identifier = "ContinueCollectionViewCell"
+    var selectedProtocol: SelectBook?
 
     let posterImageView: UIImageView = {
         let imageView = UIImageView()
@@ -19,13 +20,15 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
 
     let bookButton: UIButton = {
         let button = UIButton(type: .custom)
-        button.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        button.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
         button.layer.cornerRadius = 0.5 * button.bounds.size.width
         button.backgroundColor = UIColor(cgColor: CGColor(red: 0, green: 0, blue: 0, alpha: 0.70))
         button.layer.borderWidth = 2
         button.layer.borderColor = UIColor.white.cgColor
         button.setImage(UIImage(systemName: "book.fill"), for: .normal)
-        button.imageView?.layer.transform = CATransform3DMakeScale(1.25, 1.25, 1.25)
+        button.imageView?.layer.transform = CATransform3DMakeScale(1.5, 1.5, 1.5)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.imageView?.adjustsImageSizeForAccessibilityContentSizeCategory = true
         button.tintColor = .white
         button.isAccessibilityElement = true
         button.accessibilityTraits = .button
@@ -50,9 +53,14 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
         label.textColor = .white
         label.layer.shadowColor = UIColor.black.cgColor
         label.layer.shadowOpacity = 0.2
-        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        label.font = UIFontMetrics(
+            forTextStyle: .body).scaledFont(
+                for: .preferredFont(
+                    forTextStyle: .subheadline)
+            )
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.adjustsFontForContentSizeCategory = true
         label.isAccessibilityElement = false
         return label
     }()
@@ -62,6 +70,9 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
         addSubviews()
         layer.masksToBounds = true
         layer.cornerRadius = 10
+        bookButton.addTarget(self,
+                             action: #selector(buttonAction),
+                             for: .primaryActionTriggered)
         setConstraints()
     }
 
@@ -85,8 +96,8 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
         let bookButtonConstraints = [
             bookButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             bookButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -5),
-            bookButton.widthAnchor.constraint(equalToConstant: 50),
-            bookButton.heightAnchor.constraint(equalToConstant: 50)
+            bookButton.widthAnchor.constraint(equalToConstant: 60),
+            bookButton.heightAnchor.constraint(equalToConstant: 60)
         ]
         let progressBarConstrainsts = [
             progressBar.heightAnchor.constraint(equalToConstant: 10),
@@ -94,7 +105,7 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
             progressBar.widthAnchor.constraint(equalToConstant: contentView.bounds.width)
         ]
         let statusLabelConstraints = [
-            statusLabel.bottomAnchor.constraint(equalTo: progressBar.topAnchor),
+            statusLabel.bottomAnchor.constraint(equalTo: progressBar.topAnchor, constant: -5),
             statusLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         ]
         NSLayoutConstraint.activate(bookButtonConstraints)
@@ -106,7 +117,6 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
         // General configuration
         posterImageView.image = UIImage(named: image)
         progressBar.setProgress(2/6, animated: false)
-        //        bookButton.addTarget(, action: , for: ) // local de inserir ação do botão
 
         // Accessibility
         bookButton.accessibilityLabel = String.localizedStringWithFormat(
@@ -130,5 +140,9 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
             totalPages
         )
         progressBar.accessibilityValue = ""
+    }
+
+    @objc func buttonAction() {
+        selectedProtocol?.didSelect()
     }
 }
