@@ -16,7 +16,9 @@ class CollectionTableViewCell: UITableViewCell {
 
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         layout.scrollDirection = .horizontal
+        layout.collectionView?.contentInsetAdjustmentBehavior = .always
         let collectionView = UICollectionView(frame: .zero,
                                               collectionViewLayout: layout)
         collectionView.register(BookCollectionViewCell.self,
@@ -70,6 +72,7 @@ extension CollectionTableViewCell: UICollectionViewDelegate, UICollectionViewDel
             case .normal:
                 return CGSize(width: 130, height: 180)
             }
+//        return UICollectionView.
     }
 }
 

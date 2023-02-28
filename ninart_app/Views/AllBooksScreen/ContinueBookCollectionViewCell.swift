@@ -26,6 +26,8 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
         button.layer.borderColor = UIColor.white.cgColor
         button.setImage(UIImage(systemName: "book.fill"), for: .normal)
         button.imageView?.layer.transform = CATransform3DMakeScale(1.25, 1.25, 1.25)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.imageView?.adjustsImageSizeForAccessibilityContentSizeCategory = true
         button.tintColor = .white
         button.isAccessibilityElement = true
         button.accessibilityTraits = .button
@@ -50,9 +52,16 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
         label.textColor = .white
         label.layer.shadowColor = UIColor.black.cgColor
         label.layer.shadowOpacity = 0.2
-        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        label.font = UIFontMetrics(
+            forTextStyle: .body).scaledFont(
+                for: .systemFont(
+                    ofSize: 14,
+                    weight: .medium
+                )
+            )
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.adjustsFontForContentSizeCategory = true
         label.isAccessibilityElement = false
         return label
     }()
@@ -94,7 +103,7 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
             progressBar.widthAnchor.constraint(equalToConstant: contentView.bounds.width)
         ]
         let statusLabelConstraints = [
-            statusLabel.bottomAnchor.constraint(equalTo: progressBar.topAnchor),
+            statusLabel.bottomAnchor.constraint(equalTo: progressBar.topAnchor, constant: -5),
             statusLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         ]
         NSLayoutConstraint.activate(bookButtonConstraints)
