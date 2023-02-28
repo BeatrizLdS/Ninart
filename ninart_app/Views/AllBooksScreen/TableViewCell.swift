@@ -25,10 +25,6 @@ class CollectionTableViewCell: UITableViewCell {
         collectionView.register(ContinueBookCollectionViewCell.self,
                                 forCellWithReuseIdentifier: ContinueBookCollectionViewCell.identifier)
         collectionView.showsHorizontalScrollIndicator = false
-        // MARK: Group collectionView
-//        collectionView.isAccessibilityElement = true
-//        collectionView.accessibilityLabel = "Teste"
-//        collectionView.shouldGroupAccessibilityChildren = true
         return collectionView
     }()
 
@@ -37,7 +33,7 @@ class CollectionTableViewCell: UITableViewCell {
         contentView.addSubview(collectionView)
         backgroundColor = .clear
         collectionView.backgroundColor = .clear
-        accessibilityElements = [self, self.collectionView]
+        accessibilityElements = [self.collectionView]
         collectionView.dataSource = self
         collectionView.delegate = self
     }
