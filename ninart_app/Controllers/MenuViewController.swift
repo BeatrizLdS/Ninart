@@ -50,20 +50,21 @@ class MenuViewController: UITabBarController, UITabBarControllerDelegate {
         setViewControllers([nav1, nav2, nav3], animated: true)
     }
 
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+    func tabBarController(_ tabBarController: UITabBarController,
+                          didSelect viewController: UIViewController) {
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
 
-//        let generator = UISelectionFeedbackGenerator()
-//        generator.selectionChanged()
+        //        let generator = UISelectionFeedbackGenerator()
+        //        generator.selectionChanged()
     }
 }
 
-//extension MenuViewController : UICollectionViewDelegate {
+// extension MenuViewController : UICollectionViewDelegate {
 //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath ) {
 //        print("selecionou \(indexPath.item)")
 //        let storyViewControler = StoryViewController()
 //        storyViewControler.storyIndex = indexPath.item
 //        navigationController!.pushViewController(storyViewControler, animated: true)
 //    }
-//}
+// }

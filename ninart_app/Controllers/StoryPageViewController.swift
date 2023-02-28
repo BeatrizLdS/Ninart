@@ -28,8 +28,8 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         pageControl.addTarget(self, action: #selector(pageControlDidChange), for: .valueChanged)
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let value = Int(floorf(Float(scrollView.contentOffset.x)/Float(scrollView.frame.size.width)))
-        pageControl.currentPage = value
+        let value = Float(scrollView.contentOffset.x)/Float(scrollView.frame.size.width)
+        pageControl.currentPage = Int(floorf(value))
     }
     // MARK: - SettingHScroll
     private func configureScrollView() {
