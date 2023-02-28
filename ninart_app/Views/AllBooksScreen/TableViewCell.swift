@@ -18,7 +18,6 @@ class CollectionTableViewCell: UITableViewCell {
         let layout = UICollectionViewFlowLayout()
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         layout.scrollDirection = .horizontal
-        layout.collectionView?.contentInsetAdjustmentBehavior = .always
         let collectionView = UICollectionView(frame: .zero,
                                               collectionViewLayout: layout)
         collectionView.register(BookCollectionViewCell.self,
@@ -26,6 +25,10 @@ class CollectionTableViewCell: UITableViewCell {
         collectionView.register(ContinueBookCollectionViewCell.self,
                                 forCellWithReuseIdentifier: ContinueBookCollectionViewCell.identifier)
         collectionView.showsHorizontalScrollIndicator = false
+        // MARK: Group collectionView
+//        collectionView.isAccessibilityElement = true
+//        collectionView.accessibilityLabel = "Teste"
+//        collectionView.shouldGroupAccessibilityChildren = true
         return collectionView
     }()
 
@@ -72,11 +75,11 @@ extension CollectionTableViewCell: UICollectionViewDelegate, UICollectionViewDel
             case .normal:
                 return CGSize(width: 130, height: 180)
             }
-//        return UICollectionView.
     }
 }
 
 extension CollectionTableViewCell: UICollectionViewDataSource {
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return listOfBooks.count
     }

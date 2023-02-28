@@ -10,12 +10,11 @@ import UIKit
 class BookCollectionViewCell: UICollectionViewCell {
 
     static let identifier = "BookCollectionViewCell"
+    var selectedProtocol: SelectBook?
 
     private let posterImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        
-//        imageView.intrinsicContentSize = CGSize(width: 130, height: 180)
         return imageView
     }()
 
@@ -41,13 +40,4 @@ class BookCollectionViewCell: UICollectionViewCell {
         accessibilityLabel = story.title
         accessibilityTraits = .button
     }
-
-//    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
-//        let targetSize = CGSize(width: 130, height: 180)
-//        layoutAttributes.frame.size = contentView.systemLayoutSizeFitting(
-//            targetSize,
-//            withHorizontalFittingPriority: .required,
-//            verticalFittingPriority: .fittingSizeLevel)
-//        return layoutAttributes
-//    }
 }

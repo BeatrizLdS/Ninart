@@ -27,8 +27,6 @@ class AllBooksViewController: UIViewController {
         view = allBooksView
         allBooksView.booksTableView.delegate = self
         allBooksView.booksTableView.dataSource = self
-        allBooksView.booksTableView.sectionHeaderHeight = UITableView.automaticDimension
-        allBooksView.booksTableView.sectionFooterHeight = UITableView.automaticDimension
         configureNavBar()
     }
 
@@ -64,6 +62,11 @@ extension AllBooksViewController: UITableViewDelegate {
         header.textLabel?.font = .preferredFont(forTextStyle: .headline)
         header.textLabel?.textColor = .text
         header.textLabel?.frame = header.frame
+        // MARK: acessar todos os headers
+        header.isAccessibilityElement = true
+        header.accessibilityTraits = [.header]
+        header.textLabel?.isAccessibilityElement = true
+        header.textLabel?.accessibilityLabel = header.textLabel?.text
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -92,7 +95,7 @@ extension AllBooksViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = allBooksView.booksTableView.dequeueReusableCell(
+        var cell = allBooksView.booksTableView.dequeueReusableCell(
             withIdentifier: CollectionTableViewCell.identifier,
             for: indexPath
         ) as! CollectionTableViewCell
