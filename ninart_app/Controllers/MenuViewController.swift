@@ -28,13 +28,13 @@ class MenuViewController: UITabBarController, UITabBarControllerDelegate {
         let nav2 = UINavigationController(rootViewController: searchVC)
         let nav3 = UINavigationController(rootViewController: favoritesVC)
 
-        nav1.tabBarItem = UITabBarItem(title: "Livros",
+        nav1.tabBarItem = UITabBarItem(title: String(localized: "books"),
                                        image: UIImage(systemName: "books.vertical.fill"),
                                        tag: 1)
-        nav2.tabBarItem = UITabBarItem(title: "Busca",
+        nav2.tabBarItem = UITabBarItem(title: String(localized: "search"),
                                        image: UIImage(systemName: "magnifyingglass"),
                                        tag: 2)
-        nav3.tabBarItem = UITabBarItem(title: "Favoritos",
+        nav3.tabBarItem = UITabBarItem(title: String(localized: "favorites"),
                                        image: UIImage(systemName: "bookmark.fill"),
                                        tag: 3)
 
