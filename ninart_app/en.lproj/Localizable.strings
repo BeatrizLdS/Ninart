@@ -21,3 +21,15 @@
 "you read %d pages of %d" = "you read %d pages of %d";
 "you read %d page of %d" = "you read %d page of %d";
 "page %d" = "Page %d";
+
+// audio book descriptions
+"audio position" = "audio position";
+"%@! of %@!" = "%@! of %@!";
+
+
+//String.localizedStringWithFormat(
+//    NSLocalizedString("%@! of %@!",
+//                      comment: ""),
+//    formattedTimeString,
+//    formattedFullString
+//)

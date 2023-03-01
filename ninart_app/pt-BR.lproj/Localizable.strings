@@ -21,3 +21,7 @@
 "you read %d pages of %d" = "você leu %d páginas de %d";
 "you read %d page of %d" = "você leu %d página de %d";
 "page %d" = "Página %d";
+
+// audio book descriptions
+"audio position" = "posição do audio";
+"%@! of %@!" = "%@! de %@!";
