@@ -25,3 +25,6 @@
 // audio book descriptions
 "audio position" = "posição do audio";
 "%@! of %@!" = "%@! de %@!";
+"keep listening %@! from %@!" = "continuar escutando %@! a partir de %@!";
+"did you hear %@! of %@!" = "você ouviu %@! de %@!";
+"%@!:%@!" = "%@! minutos e %@! segundos";
