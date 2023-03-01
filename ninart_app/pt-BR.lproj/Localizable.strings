@@ -11,7 +11,12 @@
 "readToMe" = "Leia para mim";
 "reading" = "Leitura";
 
-//  Keep reading description
+// Tab bar
+"books" = "Livros";
+"search" = "Busca";
+"favorites" = "Favoritos";
+
+//  book description
 "keep reading %@! page %d" = "continuar lendo %@! página %d";
 "you read %d pages of %d" = "você leu %d páginas de %d";
 "you read %d page of %d" = "você leu %d página de %d";

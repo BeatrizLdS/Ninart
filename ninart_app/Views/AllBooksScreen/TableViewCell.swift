@@ -11,7 +11,7 @@ class CollectionTableViewCell: UITableViewCell {
 
     static let identifier = "CollectionTableViewCell"
     static var continueCells: Bool = true
-    var listOfBooks: [Story] = []
+    var listOfStorys = Array <Any, Any>()
     var cellType: CellType = .started
 
     let collectionView: UICollectionView = {
@@ -55,8 +55,8 @@ class CollectionTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
-    func configure(list: [Story], type: CellType) {
-        listOfBooks = list
+    func configure(list: Array<Any, Any>, type: CellType) {
+        listOfStorys = list
         cellType = type
     }
 }
@@ -77,7 +77,7 @@ extension CollectionTableViewCell: UICollectionViewDelegate, UICollectionViewDel
 extension CollectionTableViewCell: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listOfBooks.count
+        return listOfStorys.elements.count + listOfStorys.optionalElements.count
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -87,17 +87,19 @@ extension CollectionTableViewCell: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: ContinueBookCollectionViewCell.identifier,
                 for: indexPath) as! ContinueBookCollectionViewCell
-            cell.configure(
-                image: listOfBooks[indexPath.row].image,
-                bookTitle: listOfBooks[indexPath.row].title,
-                totalPages: 6,
-                currentPage: 2)
+            let story = listOfStorys.get(index: indexPath.row)
+            if story is AudioBook {
+                cell.configureAudioBook(audioBook: listOfStorys.get(index: indexPath.row) as! AudioBook)
+            } else {
+                cell.configureBook(
+                    book: listOfStorys.get(index: indexPath.row) as! Book)
+            }
             return cell
         case .normal:
             let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: BookCollectionViewCell.identifier,
                 for: indexPath) as! BookCollectionViewCell
-            cell.configure(story: listOfBooks[indexPath.row])
+            cell.configure(story: listOfStorys.get(index: indexPath.row))
             return cell
         }
 

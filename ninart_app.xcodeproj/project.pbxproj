@@ -45,6 +45,8 @@
 		FF5A4E2829A8E68B00774298 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A4E2729A8E68B00774298 /* ColorExtension.swift */; };
 		FF769D02286480AF005D00B4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF769D01286480AF005D00B4 /* SearchViewController.swift */; };
 		FFCDE07729AE1FCE00B29BB5 /* SelectBookProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCDE07629AE1FCE00B29BB5 /* SelectBookProtocol.swift */; };
+		FFCDE07D29AFC9DD00B29BB5 /* audioBooks.json in Resources */ = {isa = PBXBuildFile; fileRef = FFCDE07C29AFC9DD00B29BB5 /* audioBooks.json */; };
+		FFCDE08129AFF14800B29BB5 /* ArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCDE08029AFF14800B29BB5 /* ArrayModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,8 @@
 		FF5A4E2729A8E68B00774298 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		FF769D01286480AF005D00B4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		FFCDE07629AE1FCE00B29BB5 /* SelectBookProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBookProtocol.swift; sourceTree = "<group>"; };
+		FFCDE07C29AFC9DD00B29BB5 /* audioBooks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = audioBooks.json; sourceTree = "<group>"; };
+		FFCDE08029AFF14800B29BB5 /* ArrayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				7E432683285D5242008B572D /* jsonMap.swift */,
+				FFCDE08029AFF14800B29BB5 /* ArrayModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 				D4D9CD822852104100B8B75C /* servicefile.swift */,
 				7E0DFFCB29A7A28300587392 /* Extensions.swift */,
 				7E432681285D4FFF008B572D /* data.json */,
+				FFCDE07C29AFC9DD00B29BB5 /* audioBooks.json */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -431,6 +437,7 @@
 				D42D04322850E0C8003DA055 /* Assets.xcassets in Resources */,
 				FF5A4E1729A7962000774298 /* Localizable.strings in Resources */,
 				7E432682285D4FFF008B572D /* data.json in Resources */,
+				FFCDE07D29AFC9DD00B29BB5 /* audioBooks.json in Resources */,
 				7E12F95E29A90FDE00D86DFE /* bensound-lofinerdbassbuzzer.mp3 in Resources */,
 				7E12F95A29A90DBC00D86DFE /* bensound-slider.mp3 in Resources */,
 			);
@@ -487,6 +494,7 @@
 				FF5A4E1E29A79B0500774298 /* BookCollectionViewCell.swift in Sources */,
 				D42D042A2850E0C7003DA055 /* MenuViewController.swift in Sources */,
 				7E0DFFC329A7893E00587392 /* AudiobookViewController.swift in Sources */,
+				FFCDE08129AFF14800B29BB5 /* ArrayModel.swift in Sources */,
 				7E0DFFC529A78AAA00587392 /* AudiobookView.swift in Sources */,
 				FFCDE07729AE1FCE00B29BB5 /* SelectBookProtocol.swift in Sources */,
 				7E432684285D5242008B572D /* jsonMap.swift in Sources */,

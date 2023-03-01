@@ -20,13 +20,12 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
 
     let bookButton: UIButton = {
         let button = UIButton(type: .custom)
+        button.imageView?.layer.transform = CATransform3DMakeScale(1.6, 1.6, 1.6)
         button.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
         button.layer.cornerRadius = 0.5 * button.bounds.size.width
         button.backgroundColor = UIColor(cgColor: CGColor(red: 0, green: 0, blue: 0, alpha: 0.70))
         button.layer.borderWidth = 2
         button.layer.borderColor = UIColor.white.cgColor
-        button.setImage(UIImage(systemName: "book.fill"), for: .normal)
-        button.imageView?.layer.transform = CATransform3DMakeScale(1.5, 1.5, 1.5)
         button.imageView?.contentMode = .scaleAspectFit
         button.imageView?.adjustsImageSizeForAccessibilityContentSizeCategory = true
         button.tintColor = .white
@@ -50,14 +49,10 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
 
     let statusLabel: UILabel = {
         let label = UILabel()
+        label.layer.cornerRadius = 10
         label.textColor = .white
-        label.layer.shadowColor = UIColor.black.cgColor
-        label.layer.shadowOpacity = 0.2
-        label.font = UIFontMetrics(
-            forTextStyle: .body).scaledFont(
-                for: .preferredFont(
-                    forTextStyle: .subheadline)
-            )
+        label.backgroundColor = UIColor(cgColor: CGColor(red: 0, green: 0, blue: 0, alpha: 0.50))
+        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         label.adjustsFontForContentSizeCategory = true
@@ -113,31 +108,51 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate(statusLabelConstraints)
     }
 
-    func configure(image: String, bookTitle: String, totalPages: Int, currentPage: Int) {
-        // General configuration
-        posterImageView.image = UIImage(named: image)
-        progressBar.setProgress(2/6, animated: false)
-
-        // Accessibility
+    func configureBook(book: Book) {
+        bookButton.setImage(UIImage(systemName: "book.fill"), for: .normal)
+        posterImageView.image = UIImage(named: book.image)
+        progressBar.setProgress(2/6, animated: false) // mock
+        statusLabel.text = String.localizedStringWithFormat(
+            NSLocalizedString("page %d",
+                              comment: ""),
+            2
+        )
         bookButton.accessibilityLabel = String.localizedStringWithFormat(
             NSLocalizedString(
                 "keep reading %@! page %d",
                 comment: ""),
-            bookTitle,
-            currentPage
-        )
-        statusLabel.text = String.localizedStringWithFormat(
-            NSLocalizedString(
-                "page %d",
-                comment: ""),
-            currentPage
+            book.title,
+            2 // page mock
         )
         progressBar.accessibilityLabel = String.localizedStringWithFormat(
             NSLocalizedString(
                 "you read %d pages of %d",
                 comment: ""),
-            currentPage,
-            totalPages
+            2,
+            book.pages.count
+        )
+        progressBar.accessibilityValue = ""
+    }
+
+    func configureAudioBook(audioBook: AudioBook) {
+        bookButton.setImage(UIImage(systemName: "speaker.wave.2.fill"),for: .normal)
+        posterImageView.image = UIImage(named: audioBook.image)
+        progressBar.setProgress(2/6, animated: false)
+        statusLabel.text = String.shortenTimeFormatter(timeInterval: 144.14947845804988)
+        let timeHeard = String.minuteAndSecondFormatter(timeInterval: 144.14947845804988)
+        bookButton.accessibilityLabel = String.localizedStringWithFormat(
+            NSLocalizedString(
+                "keep listening %@! from %@!",
+                comment: ""),
+            audioBook.title,
+            timeHeard // page mock
+        )
+        progressBar.accessibilityLabel = String.localizedStringWithFormat(
+            NSLocalizedString(
+                "did you hear %@! of %@!",
+                comment: ""),
+            timeHeard,
+            timeHeard
         )
         progressBar.accessibilityValue = ""
     }
