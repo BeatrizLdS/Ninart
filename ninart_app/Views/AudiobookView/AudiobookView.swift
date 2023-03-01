@@ -60,7 +60,6 @@ class AudiobookView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-
     let pausePlayButton: UIButton = {
         let button = UIButton()
         var configuration = UIButton.Configuration.plain()

@@ -72,12 +72,6 @@ class AudiobookViewController: UIViewController {
     @objc func audioForward(_ sender: UIButton) {
         viewModel.forwardTime()
     }
-    @objc func audioEnded(_ notification: Notification) {
-        print("Right there")
-    }
-
-
-
 }
 
 extension AudiobookViewController: AVAudioPlayerDelegate {
