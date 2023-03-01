@@ -11,8 +11,28 @@
 "readToMe" = "Read to me";
 "reading" = "Reading";
 
-//  Keep reading description
+// Tab bar
+"books" = "Books";
+"search" = "Search";
+"favorites" = "Favorites";
+
+//  Book descriptions
 "keep reading %@! page %d" = "keep reading %@! page %d";
 "you read %d pages of %d" = "you read %d pages of %d";
 "you read %d page of %d" = "you read %d page of %d";
 "page %d" = "Page %d";
+
+// audio book descriptions
+"audio position" = "audio position";
+"%@! of %@!" = "%@! of %@!";
+"keep listening %@! from %@!" = "keep listening %@! from %@!";
+"did you hear %@! of %@!" = "did you hear %@! of %@!";
+"%@!:%@!" = "%@! minuts and %@! seconds";
+
+
+//String.localizedStringWithFormat(
+//    NSLocalizedString("%@! of %@!",
+//                      comment: ""),
+//    formattedTimeString,
+//    formattedFullString
+//)
