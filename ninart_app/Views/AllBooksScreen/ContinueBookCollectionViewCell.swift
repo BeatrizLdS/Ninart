@@ -47,17 +47,12 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
         return progressView
     }()
 
-    let statusLabel: UILabel = {
-        let label = UILabel()
-        label.layer.cornerRadius = 10
-        label.textColor = .white
-        label.backgroundColor = UIColor(cgColor: CGColor(red: 0, green: 0, blue: 0, alpha: 0.50))
-        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.adjustsFontForContentSizeCategory = true
-        label.isAccessibilityElement = false
-        return label
+    let statusLabel: StatusView = {
+        let view = StatusView()
+        view.backgroundColor = UIColor(cgColor: CGColor(red: 0, green: 0, blue: 0, alpha: 0.50))
+        view.layer.cornerRadius = 10
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
 
     override init(frame: CGRect) {
@@ -112,11 +107,10 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
         bookButton.setImage(UIImage(systemName: "book.fill"), for: .normal)
         posterImageView.image = UIImage(named: book.image)
         progressBar.setProgress(2/6, animated: false) // mock
-        statusLabel.text = String.localizedStringWithFormat(
+        statusLabel.setText( String.localizedStringWithFormat(
             NSLocalizedString("page %d",
                               comment: ""),
-            2
-        )
+            2))
         bookButton.accessibilityLabel = String.localizedStringWithFormat(
             NSLocalizedString(
                 "keep reading %@! page %d",
@@ -138,7 +132,7 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
         bookButton.setImage(UIImage(systemName: "speaker.wave.2.fill"),for: .normal)
         posterImageView.image = UIImage(named: audioBook.image)
         progressBar.setProgress(2/6, animated: false)
-        statusLabel.text = String.shortenTimeFormatter(timeInterval: 144.14947845804988)
+        statusLabel.setText( String.shortenTimeFormatter(timeInterval: 144.14947845804988)!)
         let timeHeard = String.minuteAndSecondFormatter(timeInterval: 144.14947845804988)
         bookButton.accessibilityLabel = String.localizedStringWithFormat(
             NSLocalizedString(

@@ -14,7 +14,7 @@ struct Array<Element1, Element2> {
         if index < elements.count {
             return elements[index]
         } else {
-            return elements[index - elements.count]
+            return optionalElements[index - elements.count]
         }
     }
 }

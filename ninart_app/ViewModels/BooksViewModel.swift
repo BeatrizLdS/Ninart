@@ -81,8 +81,4 @@ class BooksViewModel {
         }
         return array
     }
-
-//    func getCurrentBook(section: Int, indexPath: IndexPath) -> Story {
-//        return self.continueBooksList[section][indexPath.row]
-//    }
 }

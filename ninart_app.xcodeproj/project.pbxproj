@@ -47,6 +47,8 @@
 		FFCDE07729AE1FCE00B29BB5 /* SelectBookProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCDE07629AE1FCE00B29BB5 /* SelectBookProtocol.swift */; };
 		FFCDE07D29AFC9DD00B29BB5 /* audioBooks.json in Resources */ = {isa = PBXBuildFile; fileRef = FFCDE07C29AFC9DD00B29BB5 /* audioBooks.json */; };
 		FFCDE08129AFF14800B29BB5 /* ArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCDE08029AFF14800B29BB5 /* ArrayModel.swift */; };
+		FFCDE08329B0B5D300B29BB5 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCDE08229B0B5D300B29BB5 /* UIImageExtension.swift */; };
+		FFCDE08529B0B85C00B29BB5 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCDE08429B0B85C00B29BB5 /* StatusView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +116,8 @@
 		FFCDE07629AE1FCE00B29BB5 /* SelectBookProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBookProtocol.swift; sourceTree = "<group>"; };
 		FFCDE07C29AFC9DD00B29BB5 /* audioBooks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = audioBooks.json; sourceTree = "<group>"; };
 		FFCDE08029AFF14800B29BB5 /* ArrayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayModel.swift; sourceTree = "<group>"; };
+		FFCDE08229B0B5D300B29BB5 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		FFCDE08429B0B85C00B29BB5 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,13 +210,13 @@
 		D42D04242850E0C7003DA055 /* ninart_app */ = {
 			isa = PBXGroup;
 			children = (
-				FF5A4E0629A7913D00774298 /* Extensions */,
-				7E0DFFC829A7908A00587392 /* Protocol */,
-				D4D9CD812852102500B8B75C /* Supporting Files */,
 				D42D045B2850EC22003DA055 /* Models */,
 				D42D045A2850EC1C003DA055 /* Views */,
 				FF5A4E2129A7AE1900774298 /* ViewModels */,
 				D42D04592850EC14003DA055 /* Controllers */,
+				FF5A4E0629A7913D00774298 /* Extensions */,
+				7E0DFFC829A7908A00587392 /* Protocol */,
+				D4D9CD812852102500B8B75C /* Supporting Files */,
 				D42D04312850E0C8003DA055 /* Assets.xcassets */,
 				D42D04252850E0C7003DA055 /* AppDelegate.swift */,
 				D42D04272850E0C7003DA055 /* SceneDelegate.swift */,
@@ -306,6 +310,7 @@
 				FF5A4DFF29A3DD7A00774298 /* TableViewCell.swift */,
 				FF5A4E1D29A79B0500774298 /* BookCollectionViewCell.swift */,
 				FF5A4E1F29A7A6FC00774298 /* ContinueBookCollectionViewCell.swift */,
+				FFCDE08429B0B85C00B29BB5 /* StatusView.swift */,
 			);
 			path = AllBooksScreen;
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 			children = (
 				FF5A4E0729A7915D00774298 /* StringExtension.swift */,
 				FF5A4E2729A8E68B00774298 /* ColorExtension.swift */,
+				FFCDE08229B0B5D300B29BB5 /* UIImageExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -497,6 +503,7 @@
 				FFCDE08129AFF14800B29BB5 /* ArrayModel.swift in Sources */,
 				7E0DFFC529A78AAA00587392 /* AudiobookView.swift in Sources */,
 				FFCDE07729AE1FCE00B29BB5 /* SelectBookProtocol.swift in Sources */,
+				FFCDE08529B0B85C00B29BB5 /* StatusView.swift in Sources */,
 				7E432684285D5242008B572D /* jsonMap.swift in Sources */,
 				FF5A4DFE299FB0B700774298 /* AllBooksViewController.swift in Sources */,
 				7E0DFFCC29A7A28300587392 /* Extensions.swift in Sources */,
@@ -511,6 +518,7 @@
 				FF530A9828634F1600868564 /* CollectionViewCell.swift in Sources */,
 				FF530A9328634CB500868564 /* BooksViewController.swift in Sources */,
 				7E0DFFC729A78DDB00587392 /* SetViewProtocol.swift in Sources */,
+				FFCDE08329B0B5D300B29BB5 /* UIImageExtension.swift in Sources */,
 				FF530A9328634CB500868564 /* BooksViewController.swift in Sources */,
 				D42D04302850E0C7003DA055 /* ninart_app.xcdatamodeld in Sources */,
 				FF5A4E0829A7915D00774298 /* StringExtension.swift in Sources */,
