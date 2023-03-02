@@ -8,19 +8,19 @@
 import Foundation
 
 class BooksViewModel {
-    private var continueBooksList: [Book] = []
+    private var continueBooksList: [Story] = []
     private var continueAudioBooksList: [AudioBook] = []
-    private var booksList: [Book] = []
+    private var booksList: [Story] = []
     private var audioBooksList: [AudioBook] = []
 
     init() {
-        let listOfBook = Bundle.main.decode([Book].self, from: "data.json")!
+        let listOfBook = Bundle.main.decode([Story].self, from: "data.json")!
         booksList = listOfBook
 
         let listOfAudioBooks = Bundle.main.decode([AudioBook].self, from: "audioBooks.json")!
         audioBooksList = listOfAudioBooks
 
-        let startedBooks = Bundle.main.decode([Book].self, from: "data.json")!
+        let startedBooks = Bundle.main.decode([Story].self, from: "data.json")!
         continueBooksList = startedBooks
 
         let startedAudioBooks = Bundle.main.decode([AudioBook].self, from: "audioBooks.json")!

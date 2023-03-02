@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Book: Codable {
+struct Story: Codable {
     let title: String
     let image: String
     let pages: [Page]

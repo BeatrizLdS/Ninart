@@ -34,11 +34,11 @@ class BookCollectionViewCell: UICollectionViewCell {
         posterImageView.frame = contentView.bounds
     }
 
-    func configure<Story>(story: Story) {
+    func configure<RandomStory>(story: RandomStory) {
         isAccessibilityElement = true
         accessibilityTraits = .button
-        if story is Book {
-            let book = story as! Book
+        if story is Story {
+            let book = story as! Story
             posterImageView.image = UIImage(named: book.image)
             accessibilityLabel = book.title
         } else {

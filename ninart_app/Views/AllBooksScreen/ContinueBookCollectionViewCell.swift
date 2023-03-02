@@ -74,7 +74,7 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
         posterImageView.frame = contentView.bounds
     }
 
-    func configureBook(book: Book) {
+    func configureBook(book: Story) {
         bookButton.setImage(UIImage(systemName: "book.fill"), for: .normal)
         posterImageView.image = UIImage(named: book.image)
         progressBar.setProgress(2/6, animated: false) // mock

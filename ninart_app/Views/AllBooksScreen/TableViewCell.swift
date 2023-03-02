@@ -99,7 +99,7 @@ extension CollectionTableViewCell: UICollectionViewDataSource {
                 cell.configureAudioBook(audioBook: listOfStorys.get(index: indexPath.row) as! AudioBook)
             } else {
                 cell.configureBook(
-                    book: listOfStorys.get(index: indexPath.row) as! Book)
+                    book: listOfStorys.get(index: indexPath.row) as! Story)
             }
             return cell
         case .normal:
