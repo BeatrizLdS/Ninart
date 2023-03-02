@@ -16,6 +16,7 @@ class CollectionTableViewCell: UITableViewCell {
 
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero,
                                               collectionViewLayout: layout)
@@ -32,7 +33,7 @@ class CollectionTableViewCell: UITableViewCell {
         contentView.addSubview(collectionView)
         backgroundColor = .clear
         collectionView.backgroundColor = .clear
-        accessibilityElements = [self, self.collectionView]
+        accessibilityElements = [self.collectionView]
         collectionView.dataSource = self
         collectionView.delegate = self
     }
@@ -74,6 +75,7 @@ extension CollectionTableViewCell: UICollectionViewDelegate, UICollectionViewDel
 }
 
 extension CollectionTableViewCell: UICollectionViewDataSource {
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return listOfBooks.count
     }

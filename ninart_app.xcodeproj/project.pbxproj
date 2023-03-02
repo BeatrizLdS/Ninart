@@ -44,6 +44,7 @@
 		FF5A4E2329A7AE3C00774298 /* BooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A4E2229A7AE3C00774298 /* BooksViewModel.swift */; };
 		FF5A4E2829A8E68B00774298 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A4E2729A8E68B00774298 /* ColorExtension.swift */; };
 		FF769D02286480AF005D00B4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF769D01286480AF005D00B4 /* SearchViewController.swift */; };
+		FFCDE07729AE1FCE00B29BB5 /* SelectBookProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCDE07629AE1FCE00B29BB5 /* SelectBookProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		FF5A4E2229A7AE3C00774298 /* BooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewModel.swift; sourceTree = "<group>"; };
 		FF5A4E2729A8E68B00774298 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		FF769D01286480AF005D00B4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		FFCDE07629AE1FCE00B29BB5 /* SelectBookProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBookProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				7E0DFFC629A78DDB00587392 /* SetViewProtocol.swift */,
+				FFCDE07629AE1FCE00B29BB5 /* SelectBookProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				D42D042A2850E0C7003DA055 /* MenuViewController.swift in Sources */,
 				7E0DFFC329A7893E00587392 /* AudiobookViewController.swift in Sources */,
 				7E0DFFC529A78AAA00587392 /* AudiobookView.swift in Sources */,
+				FFCDE07729AE1FCE00B29BB5 /* SelectBookProtocol.swift in Sources */,
 				7E432684285D5242008B572D /* jsonMap.swift in Sources */,
 				FF5A4DFE299FB0B700774298 /* AllBooksViewController.swift in Sources */,
 				7E0DFFCC29A7A28300587392 /* Extensions.swift in Sources */,
