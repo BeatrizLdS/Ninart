@@ -25,8 +25,27 @@ class BookDescriptionView: UIView {
         let stack = UIStackView()
         stack.axis = .horizontal
         stack.alignment = .top
+        stack.backgroundColor = .clear
         stack.distribution = .equalCentering
         stack.spacing = 6
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
+    let readStack: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.alignment = .center
+        stack.distribution = .equalCentering
+        stack.backgroundColor = .clear
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
+
+    let playStack: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.alignment = .center
+        stack.distribution = .equalCentering
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -35,19 +54,16 @@ class BookDescriptionView: UIView {
         let button = UIButton()
         var configuration = UIButton.Configuration.plain()
         button.contentMode = .scaleAspectFit
-        configuration.baseForegroundColor = UIColor.backgroundColor
-        configuration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 12, trailing: 0)
-        configuration.image = UIImage(systemName: "book.fill", withConfiguration: UIImage.playButtonSize)
-        button.layer.cornerRadius = 50
+        configuration.baseForegroundColor = UIColor.textColor
+        configuration.image = UIImage(systemName: "book.circle.fill", withConfiguration: UIImage.playButtonSize)
         button.configuration = configuration
-        button.backgroundColor  = .textColor
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     let readLabel: UILabel = {
         let label = UILabel()
         label.text = "Read"
-        label.textColor = .backgroundColor
+        label.textColor = .textColor
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -56,19 +72,16 @@ class BookDescriptionView: UIView {
         let button = UIButton()
         var configuration = UIButton.Configuration.plain()
         button.contentMode = .scaleAspectFit
-        configuration.baseForegroundColor = UIColor.backgroundColor
-        configuration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 12, trailing: 0)
-        configuration.image = UIImage(systemName: "speaker.wave.2.fill", withConfiguration: UIImage.playButtonSize)
-        button.layer.cornerRadius = 50
+        configuration.baseForegroundColor = UIColor.textColor
+        configuration.image = UIImage(systemName: "speaker.wave.2.circle.fill", withConfiguration: UIImage.playButtonSize)
         button.configuration = configuration
-        button.backgroundColor  = .textColor
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     let playLabel: UILabel = {
         let label = UILabel()
         label.text = "Play"
-        label.textColor = .backgroundColor
+        label.textColor = .textColor
 
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -90,10 +103,14 @@ extension BookDescriptionView: SettingViews {
     func setupSubviews() {
         addSubview(bookCover)
         addSubview(buttonsHStack)
-        buttonsHStack.addArrangedSubview(readButton)
-        buttonsHStack.addArrangedSubview(playButton)
-        addSubview(readLabel)
-        addSubview(playLabel)
+        buttonsHStack.addArrangedSubview(readStack)
+        buttonsHStack.addArrangedSubview(playStack)
+
+        readStack.addArrangedSubview(readButton)
+        readStack.addArrangedSubview(readLabel)
+
+        playStack.addArrangedSubview(playButton)
+        playStack.addArrangedSubview(playLabel)
 
     }
 
@@ -107,16 +124,7 @@ extension BookDescriptionView: SettingViews {
             buttonsHStack.topAnchor.constraint(lessThanOrEqualTo: bookCover.bottomAnchor, constant: 24),
             buttonsHStack.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             buttonsHStack.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.6, constant: 48),
-            buttonsHStack.bottomAnchor.constraint(lessThanOrEqualTo: self.safeAreaLayoutGuide.bottomAnchor),
-
-            readButton.widthAnchor.constraint(equalTo: readButton.heightAnchor),
-            playButton.widthAnchor.constraint(equalTo: playButton.heightAnchor),
-
-            readLabel.topAnchor.constraint(equalTo: readButton.bottomAnchor, constant: -24),
-            readLabel.centerXAnchor.constraint(equalTo: readButton.centerXAnchor),
-            playLabel.topAnchor.constraint(equalTo: playButton.bottomAnchor, constant: -24),
-            playLabel.centerXAnchor.constraint(equalTo: playButton.centerXAnchor)
-
+            buttonsHStack.bottomAnchor.constraint(lessThanOrEqualTo: self.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
 }
