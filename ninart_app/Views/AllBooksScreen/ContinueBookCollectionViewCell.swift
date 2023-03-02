@@ -47,7 +47,7 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
         return progressView
     }()
 
-    let statusLabel: StatusView = {
+    let statusView: StatusView = {
         let view = StatusView()
         view.backgroundColor = UIColor(cgColor: CGColor(red: 0, green: 0, blue: 0, alpha: 0.50))
         view.layer.cornerRadius = 10
@@ -57,13 +57,12 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubviews()
         layer.masksToBounds = true
         layer.cornerRadius = 10
         bookButton.addTarget(self,
                              action: #selector(buttonAction),
                              for: .primaryActionTriggered)
-        setConstraints()
+        buildLayoutView()
     }
 
     required init?(coder: NSCoder) {
@@ -75,39 +74,11 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
         posterImageView.frame = contentView.bounds
     }
 
-    private func addSubviews() {
-        contentView.addSubview(posterImageView)
-        contentView.addSubview(bookButton)
-        contentView.addSubview(statusLabel)
-        contentView.addSubview(progressBar)
-    }
-
-    private func setConstraints() {
-        let bookButtonConstraints = [
-            bookButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            bookButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -5),
-            bookButton.widthAnchor.constraint(equalToConstant: 60),
-            bookButton.heightAnchor.constraint(equalToConstant: 60)
-        ]
-        let progressBarConstrainsts = [
-            progressBar.heightAnchor.constraint(equalToConstant: 10),
-            progressBar.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            progressBar.widthAnchor.constraint(equalToConstant: contentView.bounds.width)
-        ]
-        let statusLabelConstraints = [
-            statusLabel.bottomAnchor.constraint(equalTo: progressBar.topAnchor, constant: -5),
-            statusLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
-        ]
-        NSLayoutConstraint.activate(bookButtonConstraints)
-        NSLayoutConstraint.activate(progressBarConstrainsts)
-        NSLayoutConstraint.activate(statusLabelConstraints)
-    }
-
     func configureBook(book: Book) {
         bookButton.setImage(UIImage(systemName: "book.fill"), for: .normal)
         posterImageView.image = UIImage(named: book.image)
         progressBar.setProgress(2/6, animated: false) // mock
-        statusLabel.setText( String.localizedStringWithFormat(
+        statusView.setText( String.localizedStringWithFormat(
             NSLocalizedString("page %d",
                               comment: ""),
             2))
@@ -132,7 +103,7 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
         bookButton.setImage(UIImage(systemName: "speaker.wave.2.fill"),for: .normal)
         posterImageView.image = UIImage(named: audioBook.image)
         progressBar.setProgress(2/6, animated: false)
-        statusLabel.setText( String.shortenTimeFormatter(timeInterval: 144.14947845804988)!)
+        statusView.setText( String.shortenTimeFormatter(timeInterval: 144.14947845804988)!)
         let timeHeard = String.minuteAndSecondFormatter(timeInterval: 144.14947845804988)
         bookButton.accessibilityLabel = String.localizedStringWithFormat(
             NSLocalizedString(
@@ -153,5 +124,34 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
 
     @objc func buttonAction() {
         selectedProtocol?.didSelect()
+    }
+}
+
+extension ContinueBookCollectionViewCell: SettingViews {
+    func setupSubviews() {
+        contentView.addSubview(posterImageView)
+        contentView.addSubview(bookButton)
+        contentView.addSubview(statusView)
+        contentView.addSubview(progressBar)
+    }
+    func setupConstraints() {
+        let bookButtonConstraints = [
+            bookButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            bookButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -5),
+            bookButton.widthAnchor.constraint(equalToConstant: 60),
+            bookButton.heightAnchor.constraint(equalToConstant: 60)
+        ]
+        let progressBarConstrainsts = [
+            progressBar.heightAnchor.constraint(equalToConstant: 10),
+            progressBar.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            progressBar.widthAnchor.constraint(equalToConstant: contentView.bounds.width)
+        ]
+        let statusViewConstraints = [
+            statusView.bottomAnchor.constraint(equalTo: progressBar.topAnchor, constant: -5),
+            statusView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
+        ]
+        NSLayoutConstraint.activate(bookButtonConstraints)
+        NSLayoutConstraint.activate(progressBarConstrainsts)
+        NSLayoutConstraint.activate(statusViewConstraints)
     }
 }

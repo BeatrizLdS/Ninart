@@ -30,12 +30,8 @@ class CollectionTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.addSubview(collectionView)
         backgroundColor = .clear
-        collectionView.backgroundColor = .clear
-        accessibilityElements = [self.collectionView]
-        collectionView.dataSource = self
-        collectionView.delegate = self
+        setupSubviews()
     }
 
     required init?(coder: NSCoder) {
@@ -59,6 +55,17 @@ class CollectionTableViewCell: UITableViewCell {
         listOfStorys = list
         cellType = type
     }
+}
+
+extension CollectionTableViewCell: SettingViews {
+    func setupSubviews() {
+        contentView.addSubview(collectionView)
+        collectionView.backgroundColor = .clear
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        accessibilityElements = [self.collectionView]
+    }
+    func setupConstraints() {}
 }
 
 extension CollectionTableViewCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
