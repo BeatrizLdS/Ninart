@@ -29,10 +29,3 @@
 "did you hear %@! of %@!" = "did you hear %@! of %@!";
 "%@!:%@!" = "%@! minuts and %@! seconds";
 
-
-//String.localizedStringWithFormat(
-//    NSLocalizedString("%@! of %@!",
-//                      comment: ""),
-//    formattedTimeString,
-//    formattedFullString
-//)

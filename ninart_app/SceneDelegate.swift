@@ -20,7 +20,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
 //        MenuViewController()
         window?.rootViewController = MenuViewController()
-//        UINavigationController(rootViewController: AudiobookViewController())
         window?.makeKeyAndVisible()
     }
 
