@@ -147,7 +147,7 @@ extension ContinueBookCollectionViewCell: SettingViews {
             progressBar.widthAnchor.constraint(equalToConstant: contentView.bounds.width)
         ]
         let statusViewConstraints = [
-            statusView.bottomAnchor.constraint(equalTo: progressBar.topAnchor, constant: -5),
+            statusView.bottomAnchor.constraint(equalTo: progressBar.topAnchor, constant: -2),
             statusView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         ]
         NSLayoutConstraint.activate(bookButtonConstraints)
