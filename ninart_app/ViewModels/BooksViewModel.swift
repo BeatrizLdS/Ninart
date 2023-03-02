@@ -62,22 +62,22 @@ class BooksViewModel {
         switch section {
         case 0:
             if numberOfCateries == 3 {
-                array.elements = continueAudioBooksList
-                array.optionalElements = continueBooksList
+                array.addList(continueAudioBooksList)
+                array.addList(continueBooksList)
             } else {
-                array.elements = audioBooksList
+                array.addList(audioBooksList)
             }
         case 1:
             if numberOfCateries == 3 {
-                array.elements = audioBooksList
+                array.addList(audioBooksList)
             } else {
-                array.elements = booksList
+                array.addList(booksList)
             }
         case 2:
-            array.elements = booksList
+            array.addList(booksList)
         default:
-            array.elements = audioBooksList
-            array.optionalElements = booksList
+            array.addList(audioBooksList)
+            array.addList(booksList)
         }
         return array
     }

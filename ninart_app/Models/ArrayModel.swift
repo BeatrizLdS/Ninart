@@ -7,14 +7,32 @@
 
 import Foundation
 
-struct Array<Element1, Element2> {
-    var elements: [Element1] = []
-    var optionalElements: [Element2] = []
+struct Array<FirstElement, SecondElement> {
+    private var firtsElementList: [FirstElement] = []
+    private var secondElementList: [SecondElement] = []
     func get(index: Int) -> Any {
-        if index < elements.count {
-            return elements[index]
+        if index < firtsElementList.count {
+            return firtsElementList[index]
         } else {
-            return optionalElements[index - elements.count]
+            return secondElementList[index - firtsElementList.count]
+        }
+    }
+    func getNumberOfElements() -> Int {
+        let countFirtsList = firtsElementList.count
+        let countSecondList = secondElementList.count
+        return countFirtsList + countSecondList
+    }
+    mutating func addList<Element>(_ list: [Element]) {
+        if firtsElementList.isEmpty {
+            let officialList = list as! [FirstElement]
+            print(officialList)
+            firtsElementList = officialList
+            print(firtsElementList)
+        } else {
+            let officialList = list as! [SecondElement]
+            print(officialList)
+            secondElementList = officialList
+            print(secondElementList)
         }
     }
 }

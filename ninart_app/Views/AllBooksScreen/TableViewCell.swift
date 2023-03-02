@@ -84,7 +84,7 @@ extension CollectionTableViewCell: UICollectionViewDelegate, UICollectionViewDel
 extension CollectionTableViewCell: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listOfStorys.elements.count + listOfStorys.optionalElements.count
+        return listOfStorys.getNumberOfElements()
     }
 
     func collectionView(_ collectionView: UICollectionView,
