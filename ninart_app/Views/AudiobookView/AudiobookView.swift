@@ -108,6 +108,7 @@ class AudiobookView: UIView {
         slider.thumbTintColor = UIColor(red: 106/255, green: 90/255, blue: 101/255, alpha: 1)
         slider.translatesAutoresizingMaskIntoConstraints = false
         slider.accessibilityTraits = .adjustable
+        slider.accessibilityLabel = String(localized: "audio position")
         return slider
     }()
     let currentTimeLabel: UILabel = {
