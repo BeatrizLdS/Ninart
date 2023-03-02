@@ -16,6 +16,7 @@ class BookDescriptionViewController: UIViewController {
 
         navigationItem.title = "Exceptional Doom"
         navigationItem.largeTitleDisplayMode = .never
+        navigationItem.backButtonTitle = ""
     }
 
     override func viewDidLayoutSubviews() {
