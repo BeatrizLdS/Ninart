@@ -10,29 +10,27 @@ import UIKit
 
 class StoryPageViewModel {
 
-    
     var dataModel: Story?
 
     func loadData() {
         if let data = Bundle.main.url(forResource: "data", withExtension: "json") {
-            do {
-                let jsonData = try! Data(contentsOf: data)
-                dataModel = try JSONDecoder().decode(Story.self, from: jsonData)
-            } catch {
-                print("Error decoding JSON data: \(error)")
-            }
+                let auxList = Bundle.main.decode([Story].self, from: "data.json")!
+                dataModel = auxList[1]
         }
     }
 
     var title: String? {
+        print(dataModel?.title)
         return dataModel?.title
     }
 
     var pageImages: [String]? {
+//        print(dataModel?.image)
         return dataModel?.pages.map({ $0.image })
     }
 
     var pageTexts: [String]? {
+//        return dataModel?.pages
         return dataModel?.pages.map({ $0.text }) ?? nil
     }
 }
