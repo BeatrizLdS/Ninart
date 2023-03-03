@@ -7,9 +7,9 @@
 
 import UIKit
 
-let story = Bundle.main.decode([Story].self, from: "data.json")!
+ let story = Bundle.main.decode([Story].self, from: "data.json")!
 
-class CollectionDataSource: NSObject, UICollectionViewDataSource {
+ class CollectionDataSource: NSObject, UICollectionViewDataSource {
     let images : [String] = {
         var images : [String] = []
         for pages in story {
@@ -38,4 +38,4 @@ class CollectionDataSource: NSObject, UICollectionViewDataSource {
         return cell
     }
 
-}
+ }

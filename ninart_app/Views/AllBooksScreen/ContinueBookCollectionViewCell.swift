@@ -20,13 +20,12 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
 
     let bookButton: UIButton = {
         let button = UIButton(type: .custom)
+        button.imageView?.layer.transform = CATransform3DMakeScale(1.6, 1.6, 1.6)
         button.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
         button.layer.cornerRadius = 0.5 * button.bounds.size.width
         button.backgroundColor = UIColor(cgColor: CGColor(red: 0, green: 0, blue: 0, alpha: 0.70))
         button.layer.borderWidth = 2
         button.layer.borderColor = UIColor.white.cgColor
-        button.setImage(UIImage(systemName: "book.fill"), for: .normal)
-        button.imageView?.layer.transform = CATransform3DMakeScale(1.5, 1.5, 1.5)
         button.imageView?.contentMode = .scaleAspectFit
         button.imageView?.adjustsImageSizeForAccessibilityContentSizeCategory = true
         button.tintColor = .white
@@ -48,32 +47,22 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
         return progressView
     }()
 
-    let statusLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .white
-        label.layer.shadowColor = UIColor.black.cgColor
-        label.layer.shadowOpacity = 0.2
-        label.font = UIFontMetrics(
-            forTextStyle: .body).scaledFont(
-                for: .preferredFont(
-                    forTextStyle: .subheadline)
-            )
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.adjustsFontForContentSizeCategory = true
-        label.isAccessibilityElement = false
-        return label
+    let statusView: StatusView = {
+        let view = StatusView()
+        view.backgroundColor = UIColor(cgColor: CGColor(red: 0, green: 0, blue: 0, alpha: 0.50))
+        view.layer.cornerRadius = 10
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubviews()
         layer.masksToBounds = true
         layer.cornerRadius = 10
         bookButton.addTarget(self,
                              action: #selector(buttonAction),
                              for: .primaryActionTriggered)
-        setConstraints()
+        buildLayoutView()
     }
 
     required init?(coder: NSCoder) {
@@ -85,14 +74,67 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
         posterImageView.frame = contentView.bounds
     }
 
-    private func addSubviews() {
-        contentView.addSubview(posterImageView)
-        contentView.addSubview(bookButton)
-        contentView.addSubview(statusLabel)
-        contentView.addSubview(progressBar)
+    func configureBook(book: Story) {
+        bookButton.setImage(UIImage(systemName: "book.fill"), for: .normal)
+        posterImageView.image = UIImage(named: book.image)
+        progressBar.setProgress(2/6, animated: false) // mock
+        statusView.setText( String.localizedStringWithFormat(
+            NSLocalizedString("page %d",
+                              comment: ""),
+            2))
+        bookButton.accessibilityLabel = String.localizedStringWithFormat(
+            NSLocalizedString(
+                "keep reading %@! page %d",
+                comment: ""),
+            book.title,
+            2 // page mock
+        )
+        progressBar.accessibilityLabel = String.localizedStringWithFormat(
+            NSLocalizedString(
+                "you read %d pages of %d",
+                comment: ""),
+            2,
+            book.pages.count
+        )
+        progressBar.accessibilityValue = ""
     }
 
-    private func setConstraints() {
+    func configureAudioBook(audioBook: AudioBook) {
+        bookButton.setImage(UIImage(systemName: "speaker.wave.2.fill"),for: .normal)
+        posterImageView.image = UIImage(named: audioBook.image)
+        progressBar.setProgress(2/6, animated: false)
+        statusView.setText( String.shortenTimeFormatter(timeInterval: 144.14947845804988)!)
+        let timeHeard = String.minuteAndSecondFormatter(timeInterval: 144.14947845804988)
+        bookButton.accessibilityLabel = String.localizedStringWithFormat(
+            NSLocalizedString(
+                "keep listening %@! from %@!",
+                comment: ""),
+            audioBook.title,
+            timeHeard // page mock
+        )
+        progressBar.accessibilityLabel = String.localizedStringWithFormat(
+            NSLocalizedString(
+                "did you hear %@! of %@!",
+                comment: ""),
+            timeHeard,
+            timeHeard
+        )
+        progressBar.accessibilityValue = ""
+    }
+
+    @objc func buttonAction() {
+        selectedProtocol?.didSelect()
+    }
+}
+
+extension ContinueBookCollectionViewCell: SettingViews {
+    func setupSubviews() {
+        contentView.addSubview(posterImageView)
+        contentView.addSubview(bookButton)
+        contentView.addSubview(statusView)
+        contentView.addSubview(progressBar)
+    }
+    func setupConstraints() {
         let bookButtonConstraints = [
             bookButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             bookButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -5),
@@ -104,45 +146,12 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
             progressBar.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             progressBar.widthAnchor.constraint(equalToConstant: contentView.bounds.width)
         ]
-        let statusLabelConstraints = [
-            statusLabel.bottomAnchor.constraint(equalTo: progressBar.topAnchor, constant: -5),
-            statusLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
+        let statusViewConstraints = [
+            statusView.bottomAnchor.constraint(equalTo: progressBar.topAnchor, constant: -2),
+            statusView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         ]
         NSLayoutConstraint.activate(bookButtonConstraints)
         NSLayoutConstraint.activate(progressBarConstrainsts)
-        NSLayoutConstraint.activate(statusLabelConstraints)
-    }
-
-    func configure(image: String, bookTitle: String, totalPages: Int, currentPage: Int) {
-        // General configuration
-        posterImageView.image = UIImage(named: image)
-        progressBar.setProgress(2/6, animated: false)
-
-        // Accessibility
-        bookButton.accessibilityLabel = String.localizedStringWithFormat(
-            NSLocalizedString(
-                "keep reading %@! page %d",
-                comment: ""),
-            bookTitle,
-            currentPage
-        )
-        statusLabel.text = String.localizedStringWithFormat(
-            NSLocalizedString(
-                "page %d",
-                comment: ""),
-            currentPage
-        )
-        progressBar.accessibilityLabel = String.localizedStringWithFormat(
-            NSLocalizedString(
-                "you read %d pages of %d",
-                comment: ""),
-            currentPage,
-            totalPages
-        )
-        progressBar.accessibilityValue = ""
-    }
-
-    @objc func buttonAction() {
-        selectedProtocol?.didSelect()
+        NSLayoutConstraint.activate(statusViewConstraints)
     }
 }
