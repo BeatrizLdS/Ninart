@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 class StoryPageViewModel {
 
@@ -28,11 +27,26 @@ class StoryPageViewModel {
         return dataModel?.title
     }
 
+    var imageStory: String? {
+        return dataModel?.image ?? nil
+    }
+
+    var numberOfPages: Int8 {
+        return Int8(dataModel?.pages.count ?? 0)
+    }
+
     var pageImages: [String]? {
-        return dataModel?.pages.map({ $0.image })
+        guard let pageImage = dataModel?.pages else { return nil }
+        return pageImage.map({ $0.image })
     }
 
     var pageTexts: [String]? {
-        return dataModel?.pages.map({ $0.text }) ?? nil
+        guard let pageText = dataModel?.pages else { return nil }
+        return pageText.map({ $0.text }) 
     }
+
+//    var pageData: [(image: String, text: String)]? {
+//        guard let pages = dataModel?.pages else { return nil }
+//        return pages.map({ ($0.image, $0.text) })
+//    }
 }
