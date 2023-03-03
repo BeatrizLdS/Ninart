@@ -9,17 +9,12 @@ import Foundation
 
 class StoryPageViewModel {
 
-    
     var dataModel: Story?
 
     func loadData() {
         if let data = Bundle.main.url(forResource: "data", withExtension: "json") {
-            do {
-                let jsonData = try! Data(contentsOf: data)
-                dataModel = try JSONDecoder().decode(Story.self, from: jsonData)
-            } catch {
-                print("Error decoding JSON data: \(error)")
-            }
+            let auxList = Bundle.main.decode([Story].self, from: "data.json")!
+            dataModel = auxList[1]
         }
     }
 
@@ -36,13 +31,12 @@ class StoryPageViewModel {
     }
 
     var pageImages: [String]? {
-        guard let pageImage = dataModel?.pages else { return nil }
-        return pageImage.map({ $0.image })
+        return dataModel?.pages.map({ $0.image })
     }
 
     var pageTexts: [String]? {
-        guard let pageText = dataModel?.pages else { return nil }
-        return pageText.map({ $0.text }) 
+        guard let pageImage = dataModel?.pages else { return nil }
+        return pageImage.map({ $0.image })
     }
 
 //    var pageData: [(image: String, text: String)]? {

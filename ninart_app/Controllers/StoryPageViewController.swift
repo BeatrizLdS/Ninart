@@ -10,7 +10,7 @@ import CoreData
 
 class StoryViewController: UIViewController {
 
-//    let storyPage = StoryPage()
+    //    let storyPage = StoryPage()
     var storyPage: StoryPage?
     let viewModel: StoryPageViewModel = StoryPageViewModel()
     var count: Int8 = 1
@@ -23,9 +23,6 @@ class StoryViewController: UIViewController {
         self.storyPage = StoryPage()
         self.view = self.storyPage
         storyPage?.titleScreen.text = viewModel.title
-//        view = storyPage
-
-
     }
 
     override func viewDidLoad() {
@@ -33,6 +30,7 @@ class StoryViewController: UIViewController {
         super.viewDidLoad()
         viewModel.loadData()
         showTwoText()
+        setImageSeparator()
 
         storyPage?.rightButtonHistory.addTarget(self, action: #selector(incrementLabel), for: .touchUpInside)
         storyPage?.leftButtonHistory.addTarget(self, action: #selector(decrementLabel), for: .touchUpInside)
@@ -43,7 +41,6 @@ class StoryViewController: UIViewController {
 
     func showTwoText() {
 
-//        let uniqueTexts = Set(viewModel.pageTexts ?? []).sorted()
         let uniqueTexts = Set(viewModel.pageTexts ?? [])
         let countText = uniqueTexts.count
 
@@ -55,16 +52,17 @@ class StoryViewController: UIViewController {
             storyPage?.upTextBooks.text = viewModel.pageTexts![topTextIndex]
             storyPage?.upTextBooks.text = viewModel.pageTexts![bottomTextIndex]
 
-//            let averageIndex = countText / 2
-//            storyPage!.upTextBooks.text = uniqueTexts.prefix(upTo: averageIndex).joined(separator: "\n")
-//            storyPage!.downTextBooks.text = uniqueTexts.suffix(from: averageIndex).joined(separator: "\n")
-
         } else if countText == 1 {
             storyPage!.upTextBooks.text = uniqueTexts.first
         } else {
             print("ERROU")
         }
     }
+
+    func setImageSeparator() {
+        storyPage?.imageStory.image = UIImage(named: viewModel.dataModel!.image)
+    }
+
 
     @objc func nextButtonTapped() {
         currentIndexTopText += 2
@@ -84,10 +82,10 @@ class StoryViewController: UIViewController {
     }
 
     @objc func decrementLabel() {
-
         if count > 1 {
             count -= 1
             storyPage!.numberOfBooks.text = "\(count)"
         }
     }
 }
+

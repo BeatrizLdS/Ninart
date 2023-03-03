@@ -244,12 +244,11 @@
 				FF5A4DFD299FB0B700774298 /* AllBooksViewController.swift */,
 				7E0DFFC229A7893E00587392 /* AudiobookViewController.swift */,
 				7E12F95629A9088700D86DFE /* AudioBookViewModel.swift */,
-				14219BD729AE207F0057FD9A /* StoryPageViewModel.swift */,
 				D42D04292850E0C7003DA055 /* MenuViewController.swift */,
 				FF530A8F28634CB500868564 /* CollectionDataSource.swift */,
 				FF530A9128634CB500868564 /* CollectionViewController.swift */,
-				FF530A9028634CB500868564 /* BooksViewController.swift */,
 				7E43267D285B8164008B572D /* StoryPageViewController.swift */,
+				FF530A9028634CB500868564 /* BooksViewController.swift */,
 				FF769D01286480AF005D00B4 /* SearchViewController.swift */,
 				1429C24129A78D0B0007B658 /* FavoritesViewController.swift */,
 			);
@@ -321,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				FF5A4E2229A7AE3C00774298 /* BooksViewModel.swift */,
+				14219BD729AE207F0057FD9A /* StoryPageViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
