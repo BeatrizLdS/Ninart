@@ -15,7 +15,7 @@ class StoryPage: UIView {
         title.translatesAutoresizingMaskIntoConstraints = false
         title.frame = CGRect(x: 0, y: 0, width: 69, height: 27)
         title.backgroundColor = .clear
-        title.text = "Leitura"
+//        title.text = "Leitura"
         title.font = UIFont(name: "SFProDisplay-Medium", size: 50)
         title.textAlignment = .center
         title.textColor = .black
@@ -84,7 +84,7 @@ class StoryPage: UIView {
 
 //        image.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
 //        image.bounds = image.frame
-        image.image = UIImage(named: "TheCircus")
+//        image.image = UIImage(named: "TheCircus")
         image.contentMode = .scaleAspectFit
         image.clipsToBounds = true
         image.backgroundColor = .blue
@@ -141,7 +141,6 @@ class StoryPage: UIView {
         label.frame = CGRect(x: 0, y: 0, width: 46, height: 29)
         label.textColor = .text
         label.font = UIFont(name: "SFProDisplay-Bold", size: 30.0)
-        label.text = "1/24"
 
         return label
 
@@ -195,9 +194,6 @@ extension StoryPage: SettingViews {
         horizontalStack.addArrangedSubview(numberOfBooks)
         horizontalStack.addArrangedSubview(rightButtonHistory)
 
-        imageStory.widthAnchor.constraint(equalTo: verticalStack.widthAnchor, multiplier: 0.8)
-        imageStory.heightAnchor.constraint(equalTo: imageStory.widthAnchor)
-
 //        upTextBooks.text = "Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet"
 //
 //        downTextBooks.text = "Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet"
@@ -211,6 +207,9 @@ extension StoryPage: SettingViews {
             titleScreen.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             titleScreen.centerXAnchor.constraint(equalTo: self.centerXAnchor),
 
+//            imageStory.widthAnchor.constraint(equalTo: verticalStack.widthAnchor, multiplier: 0.8),
+//            imageStory.heightAnchor.constraint(equalTo: imageStory.widthAnchor),
+            
             verticalStack.topAnchor.constraint(equalTo: self.history.topAnchor),
             verticalStack.leadingAnchor.constraint(equalTo: self.history.leadingAnchor),
             verticalStack.trailingAnchor.constraint(equalTo: self.history.trailingAnchor),

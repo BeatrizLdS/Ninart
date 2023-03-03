@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 class StoryPageViewModel {
 
@@ -14,23 +13,34 @@ class StoryPageViewModel {
 
     func loadData() {
         if let data = Bundle.main.url(forResource: "data", withExtension: "json") {
-                let auxList = Bundle.main.decode([Story].self, from: "data.json")!
-                dataModel = auxList[1]
+            let auxList = Bundle.main.decode([Story].self, from: "data.json")!
+            dataModel = auxList[1]
         }
     }
 
     var title: String? {
-        print(dataModel?.title)
         return dataModel?.title
     }
 
+    var imageStory: String? {
+        return dataModel?.image ?? nil
+    }
+
+    var numberOfPages: Int8 {
+        return Int8(dataModel?.pages.count ?? 0)
+    }
+
     var pageImages: [String]? {
-//        print(dataModel?.image)
         return dataModel?.pages.map({ $0.image })
     }
 
     var pageTexts: [String]? {
-//        return dataModel?.pages
-        return dataModel?.pages.map({ $0.text }) ?? nil
+        guard let pageImage = dataModel?.pages else { return nil }
+        return pageImage.map({ $0.image })
     }
+
+//    var pageData: [(image: String, text: String)]? {
+//        guard let pages = dataModel?.pages else { return nil }
+//        return pages.map({ ($0.image, $0.text) })
+//    }
 }
