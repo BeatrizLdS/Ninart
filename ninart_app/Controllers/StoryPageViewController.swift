@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class StoryViewController: UIViewController, UIScrollViewDelegate {
+ class StoryViewController: UIViewController, UIScrollViewDelegate {
     let gradientView = GradientView()
     let scrollView = StoryPage().sideScroll
     let pageControl = StoryPage().pageControl
@@ -131,4 +131,4 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         scrollView.setContentOffset(CGPoint(x: CGFloat(current)*view.frame.size.width , y: 0), animated: true)
     }
 
-}
+ }

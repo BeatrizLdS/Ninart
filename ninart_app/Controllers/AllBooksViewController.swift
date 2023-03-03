@@ -65,7 +65,7 @@ extension AllBooksViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let numberOfSections = viewModel?.getNumberOfBooksSections()
+        let numberOfSections = viewModel?.getNumberOfCategories()
         if (indexPath.section == 0 && numberOfSections == 3) {
             return 160
         } else {
@@ -77,7 +77,7 @@ extension AllBooksViewController: UITableViewDelegate {
 extension AllBooksViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return (viewModel?.getNumberOfBooksSections())!
+        return (viewModel?.getNumberOfCategories())!
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -85,7 +85,7 @@ extension AllBooksViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let numberOfSections = viewModel?.getNumberOfBooksSections()
+        let numberOfSections = viewModel?.getNumberOfCategories()
         return sectionsTitles[(3 - numberOfSections!) + section]
     }
 
@@ -94,12 +94,12 @@ extension AllBooksViewController: UITableViewDataSource {
             withIdentifier: CollectionTableViewCell.identifier,
             for: indexPath
         ) as! CollectionTableViewCell
-        let numberOfSections = viewModel?.getNumberOfBooksSections()
+        let numberOfSections = viewModel?.getNumberOfCategories()
         var sectionType: CellType = .normal
         if numberOfSections == 3 && indexPath.section == 0 {
             sectionType = .started
         }
-        cell.configure(list: (viewModel?.getCurrentList(section: (3 - numberOfSections!) + indexPath.row))!,
+        cell.configure(list: (viewModel?.getCurrentList(section: indexPath.section))!,
                        type: sectionType)
         return cell
     }

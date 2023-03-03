@@ -7,16 +7,20 @@
 
 import Foundation
 
-// MARK: - StoryElement
 struct Story: Codable {
     let title: String
     let image: String
     let pages: [Page]
 }
 
-// MARK: - Page
 struct Page: Codable {
     let image, text: String
+}
+
+struct AudioBook: Codable {
+    let title: String
+    let image: String
+    let audioName: String
 }
 
 // MARK: decode JSON
