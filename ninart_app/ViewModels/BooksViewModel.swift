@@ -12,7 +12,7 @@ class BooksViewModel {
 
     init() {
         for _ in 1...3 {
-            let auxList = Bundle.main.decode([Story].self, from: "data.json")!
+            let auxList = Bundle.main.decode([Story].self, from: "data-pt.json")!
             continueBooksList.append(auxList)
         }
     }

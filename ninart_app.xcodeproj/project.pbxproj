@@ -44,6 +44,7 @@
 		FF5A4E2329A7AE3C00774298 /* BooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A4E2229A7AE3C00774298 /* BooksViewModel.swift */; };
 		FF5A4E2829A8E68B00774298 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A4E2729A8E68B00774298 /* ColorExtension.swift */; };
 		FF769D02286480AF005D00B4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF769D01286480AF005D00B4 /* SearchViewController.swift */; };
+		FF90665329B20E8D0022196E /* data-en.json in Resources */ = {isa = PBXBuildFile; fileRef = FF90665229B20E8D0022196E /* data-en.json */; };
 		FFCDE07729AE1FCE00B29BB5 /* SelectBookProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCDE07629AE1FCE00B29BB5 /* SelectBookProtocol.swift */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +110,7 @@
 		FF5A4E2229A7AE3C00774298 /* BooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewModel.swift; sourceTree = "<group>"; };
 		FF5A4E2729A8E68B00774298 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		FF769D01286480AF005D00B4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		FF90665229B20E8D0022196E /* data-en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "data-en.json"; sourceTree = "<group>"; };
 		FFCDE07629AE1FCE00B29BB5 /* SelectBookProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBookProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -280,6 +282,7 @@
 				D4D9CD822852104100B8B75C /* servicefile.swift */,
 				7E0DFFCB29A7A28300587392 /* Extensions.swift */,
 				7E432681285D4FFF008B572D /* data-pt.json */,
+				FF90665229B20E8D0022196E /* data-en.json */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				FF5A4E1729A7962000774298 /* Localizable.strings in Resources */,
 				7E432682285D4FFF008B572D /* data-pt.json in Resources */,
 				7E12F95E29A90FDE00D86DFE /* bensound-lofinerdbassbuzzer.mp3 in Resources */,
+				FF90665329B20E8D0022196E /* data-en.json in Resources */,
 				7E12F95A29A90DBC00D86DFE /* bensound-slider.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,7 +14,7 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
 
     let posterImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleToFill
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
 

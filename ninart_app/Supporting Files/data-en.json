@@ -1,6 +1,6 @@
 [
     {
-        "title":"Alice no País das Maravilhas",
+        "title":"Alice in the Wonderland",
         "image":"AliceWonderland",
         "pages":[
             {
@@ -26,7 +26,7 @@
         ]
     },
     {
-        "title":"A Bela adormecida",
+        "title":"Sleeping Beauty",
         "image":"SleepingBeauty",
         "pages":[
             {
@@ -48,7 +48,7 @@
         ]
     },
     {
-        "title":"O patinho feio",
+        "title":"The Ugly Duckling",
         "image":"Duckling",
         "pages":[
             {
@@ -70,7 +70,7 @@
         ]
     },
     {
-        "title":"Pínoquio",
+        "title":"Pinocchio",
         "image":"Pinocchio",
         "pages":[
             {
