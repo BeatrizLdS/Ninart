@@ -15,7 +15,6 @@ class StoryPage: UIView {
         title.translatesAutoresizingMaskIntoConstraints = false
         title.frame = CGRect(x: 0, y: 0, width: 69, height: 27)
         title.backgroundColor = .clear
-        title.text = "Leitura"
         title.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         title.textAlignment = .center
         title.textColor = .black

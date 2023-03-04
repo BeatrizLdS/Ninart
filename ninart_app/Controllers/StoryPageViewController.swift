@@ -26,8 +26,6 @@ class StoryViewController: UIViewController {
 
         totalText = viewModel.numberOfPages
         lastPageIndex = totalText - 1
-//        storyPage?.titleScreen.text = viewModel.title
-
     }
 
     override func viewDidLoad() {
@@ -36,7 +34,8 @@ class StoryViewController: UIViewController {
         viewModel.loadData()
         showTwoText()
         setImageHistory()
-
+        storyPage?.titleScreen.text = viewModel.title
+        
         storyPage?.rightButtonHistory.addTarget(self, action: #selector(incrementLabel), for: .touchUpInside)
         storyPage?.leftButtonHistory.addTarget(self, action: #selector(decrementLabel), for: .touchUpInside)
 
