@@ -15,8 +15,8 @@ class StoryPage: UIView {
         title.translatesAutoresizingMaskIntoConstraints = false
         title.frame = CGRect(x: 0, y: 0, width: 69, height: 27)
         title.backgroundColor = .clear
-//        title.text = "Leitura"
-        title.font = UIFont(name: "SFProDisplay-Medium", size: 50)
+        title.text = "Leitura"
+        title.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         title.textAlignment = .center
         title.textColor = .black
         title.isAccessibilityElement = true
@@ -29,8 +29,8 @@ class StoryPage: UIView {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.alignment = .center
-        stack.distribution = .equalSpacing
-        stack.spacing = 20 //50
+        stack.distribution = .fill
+        stack.spacing = 20
         stack.backgroundColor = .backgroundColor
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
@@ -41,7 +41,7 @@ class StoryPage: UIView {
         stack.axis = .horizontal
         stack.alignment = .center
         stack.distribution = .equalSpacing
-        stack.spacing = 20 //140
+        stack.spacing = 20
         stack.backgroundColor = .backgroundColor
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
@@ -49,7 +49,7 @@ class StoryPage: UIView {
 
     let history: UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.backgroundColor = .red
+        scrollView.backgroundColor = .clear
         scrollView.layer.shadowRadius = 5
         scrollView.layer.shadowOpacity = 0.2
         scrollView.autoresizingMask = [.flexibleHeight]
@@ -62,19 +62,16 @@ class StoryPage: UIView {
     let upTextBooks: UITextView = {
         let text = UITextView()
         text.translatesAutoresizingMaskIntoConstraints = false
-        text.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+//        text.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         text.backgroundColor = .clear
 
         text.textAlignment = .natural
-        text.font = UIFont(name: "SFProText-Regular", size: 16)
+        text.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         text.textColor = .text
         text.isEditable = false
         text.isScrollEnabled = false
         text.isAccessibilityElement = true
         text.adjustsFontForContentSizeCategory = true
-        if #available(iOS 16.0, *) {
-            text.isFindInteractionEnabled = true
-        }
 
         return text
     }()
@@ -82,12 +79,11 @@ class StoryPage: UIView {
     let imageStory: UIImageView = {
         let image = UIImageView()
 
-//        image.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-//        image.bounds = image.frame
-//        image.image = UIImage(named: "TheCircus")
-        image.contentMode = .scaleAspectFit
+        image.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        image.bounds = image.frame
+        image.contentMode = .scaleToFill
         image.clipsToBounds = true
-        image.backgroundColor = .blue
+        image.backgroundColor = .clear
         image.accessibilityLabel = "imagem do livro"
         image.accessibilityHint = "Toque na imagem"
         image.accessibilityTraits = .image
@@ -103,17 +99,13 @@ class StoryPage: UIView {
         text.translatesAutoresizingMaskIntoConstraints = false
         text.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         text.backgroundColor = .clear
-
         text.textAlignment = .natural
-        text.font = UIFont(name: "SFProText-Regular", size: 16)
+        text.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         text.textColor = .text
         text.isEditable = false
         text.isScrollEnabled = false
         text.isAccessibilityElement = true
         text.adjustsFontForContentSizeCategory = true
-        if #available(iOS 16.0, *) {
-            text.isFindInteractionEnabled = true
-        }
 
         return text
     }()
@@ -140,7 +132,7 @@ class StoryPage: UIView {
         let label = UILabel()
         label.frame = CGRect(x: 0, y: 0, width: 46, height: 29)
         label.textColor = .text
-        label.font = UIFont(name: "SFProDisplay-Bold", size: 30.0)
+        label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
 
         return label
 
@@ -193,12 +185,7 @@ extension StoryPage: SettingViews {
         horizontalStack.addArrangedSubview(leftButtonHistory)
         horizontalStack.addArrangedSubview(numberOfBooks)
         horizontalStack.addArrangedSubview(rightButtonHistory)
-
-//        upTextBooks.text = "Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet"
-//
-//        downTextBooks.text = "Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet Lorem ipsum sit dolore amet"
     }
-
 
     func setupConstraints() {
 
@@ -207,9 +194,6 @@ extension StoryPage: SettingViews {
             titleScreen.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             titleScreen.centerXAnchor.constraint(equalTo: self.centerXAnchor),
 
-//            imageStory.widthAnchor.constraint(equalTo: verticalStack.widthAnchor, multiplier: 0.8),
-//            imageStory.heightAnchor.constraint(equalTo: imageStory.widthAnchor),
-            
             verticalStack.topAnchor.constraint(equalTo: self.history.topAnchor),
             verticalStack.leadingAnchor.constraint(equalTo: self.history.leadingAnchor),
             verticalStack.trailingAnchor.constraint(equalTo: self.history.trailingAnchor),
