@@ -22,7 +22,7 @@ class AudiobookViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .never
 
         setupAudio()
-        self.viewModel.player.delegate = self
+        AudioManager.shared.player?.delegate = self
     }
     override func viewDidLayoutSubviews() {
         setupUI()
@@ -41,12 +41,13 @@ class AudiobookViewController: UIViewController {
         audiobookView.playForwardButton.addTarget(self, action: #selector(audioForward), for: .touchUpInside)
     }
     func setupDuration() {
-        audiobookView.sliderControl.maximumValue = Float(viewModel.player.duration)
+        guard let player = AudioManager.shared.player else { return }
+        audiobookView.sliderControl.maximumValue = Float(player.duration)
         viewModel.durationInMinutes(audiobookView.durationLabel)
     }
     func setupAudio() {
         viewModel.soundEnabling()
-        viewModel.prepareToPlay(audioName: audioName, audioType: audioType)
+        AudioManager.shared.prepareToPlay(audioName: audioName, audioType: audioType)
         viewModel.updateButtonIcon(audiobookView.pausePlayButton)
         setupDuration()
         viewModel.updateSlider(slider: audiobookView.sliderControl, label: audiobookView.currentTimeLabel)
@@ -55,7 +56,7 @@ class AudiobookViewController: UIViewController {
         viewModel.accessibilityTime(slider: audiobookView.sliderControl)
     }
     @objc func pausePlayAudio(_ sender: UIButton) {
-        viewModel.playbackStatus()
+        viewModel.togglePlayback()
         viewModel.updateButtonIcon(audiobookView.pausePlayButton)
 
     }
@@ -72,12 +73,6 @@ class AudiobookViewController: UIViewController {
     @objc func audioForward(_ sender: UIButton) {
         viewModel.forwardTime()
     }
-    @objc func audioEnded(_ notification: Notification) {
-        print("Right there")
-    }
-
-
-
 }
 
 extension AudiobookViewController: AVAudioPlayerDelegate {
