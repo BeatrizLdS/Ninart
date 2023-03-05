@@ -40,7 +40,8 @@ class BookDescriptionView: UIView {
         button.imageView.image = UIImage(systemName: "book.fill",
                                          withConfiguration: UIImage.bookAndSpeakerButtonSize)
         button.imageView.tintColor = .backgroundColor
-        button.label.text = String(localized: "Read")
+        button.label.text = String(localized: "read")
+        button.accessibilityLabel = String(localized: "read")
         button.label.textColor = .backgroundColor
         button.label.font = .systemFont(ofSize: 18, weight: .medium)
         button.setBackgroundColor(.textColor!)
@@ -54,7 +55,8 @@ class BookDescriptionView: UIView {
         button.imageView.image = UIImage(systemName: "speaker.wave.2.fill",
                                          withConfiguration: UIImage.bookAndSpeakerButtonSize)
         button.imageView.tintColor = .backgroundColor
-        button.label.text = String(localized: "Play")
+        button.label.text = String(localized: "play")
+        button.accessibilityLabel = String(localized: "play")
         button.label.textColor = .backgroundColor
         button.label.font = .systemFont(ofSize: 18, weight: .medium)
         button.setBackgroundColor(.textColor!)

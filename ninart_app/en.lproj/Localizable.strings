@@ -29,3 +29,6 @@
 "did you hear %@! of %@!" = "did you hear %@! of %@!";
 "%@!:%@!" = "%@! minuts and %@! seconds";
 
+// MARK: Book description
+"play" = "Play";
+"read" = "Read";

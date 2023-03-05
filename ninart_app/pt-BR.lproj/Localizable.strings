@@ -28,3 +28,7 @@
 "keep listening %@! from %@!" = "continuar escutando %@! a partir de %@!";
 "did you hear %@! of %@!" = "você ouviu %@! de %@!";
 "%@!:%@!" = "%@! minutos e %@! segundos";
+
+// MARK: Book description
+"play" = "Escutar";
+"read" = "Ler";
