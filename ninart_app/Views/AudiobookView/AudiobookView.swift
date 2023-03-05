@@ -85,7 +85,8 @@ class AudiobookView: UIView {
     let playbackStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.distribution = .fillProportionally
+        stack.distribution = .fillEqually
+//        stack.spacing = 6
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -105,7 +106,7 @@ class AudiobookView: UIView {
         slider.backgroundColor = .clear
         slider.tintColor = UIColor.textColor
         //        slider.thumbTintColor = UIColor(red: 106/255, green: 90/255, blue: 101/255, alpha: 1)
-        slider.thumbTintColor = .progressTint
+        slider.thumbTintColor = .textColor
         slider.translatesAutoresizingMaskIntoConstraints = false
         slider.accessibilityTraits = .adjustable
         slider.accessibilityLabel = String(localized: "audio position")
@@ -165,10 +166,11 @@ extension AudiobookView: SettingViews {
         NSLayoutConstraint.activate([
             bookCover.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             bookCover.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8),
+            bookCover.bottomAnchor.constraint(lessThanOrEqualTo: self.audioControls.topAnchor, constant: -24),
             bookCover.centerXAnchor.constraint(equalTo: centerXAnchor),
-            bookCover.bottomAnchor.constraint(lessThanOrEqualTo: audioControls.topAnchor, constant: -24),
 
-            audioControls.heightAnchor.constraint(greaterThanOrEqualTo: self.heightAnchor, multiplier: 0.3),
+//            audioControls.topAnchor.constraint(greaterThanOrEqualTo: bookCover.bottomAnchor, constant: 24),
+            audioControls.heightAnchor.constraint(greaterThanOrEqualTo: self.heightAnchor, multiplier: 0.25),
             audioControls.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             audioControls.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             audioControls.bottomAnchor.constraint(equalTo: self.bottomAnchor),
@@ -176,7 +178,7 @@ extension AudiobookView: SettingViews {
             buttonsHStack.centerXAnchor.constraint(equalTo: self.audioControls.centerXAnchor),
             buttonsHStack.topAnchor.constraint(equalTo: self.audioControls.topAnchor, constant: 12),
 
-            playbackStack.topAnchor.constraint(greaterThanOrEqualTo: self.buttonsHStack.bottomAnchor, constant: 12),
+            playbackStack.topAnchor.constraint(equalTo: self.buttonsHStack.bottomAnchor, constant: 12),
             playbackStack.centerXAnchor.constraint(equalTo: self.audioControls.centerXAnchor),
             playbackStack.bottomAnchor.constraint(lessThanOrEqualTo: self.audioControls.safeAreaLayoutGuide.bottomAnchor, constant: -12),
 
