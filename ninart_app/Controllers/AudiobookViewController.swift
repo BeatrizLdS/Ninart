@@ -22,6 +22,7 @@ class AudiobookViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .never
 
         setupAudio()
+
         self.viewModel.player.delegate = self
     }
     override func viewDidLayoutSubviews() {
