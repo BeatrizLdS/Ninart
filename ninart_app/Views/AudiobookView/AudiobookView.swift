@@ -14,7 +14,7 @@ class AudiobookView: UIView {
         stack.axis = .vertical
         stack.alignment = .center
         stack.distribution = .fill
-        stack.backgroundColor = .backgroundColor
+        stack.backgroundColor = .background
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -22,7 +22,7 @@ class AudiobookView: UIView {
     let bookCover: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "aSundayAfternoonOnTheIslandOfLaGrandeJatte")
-        imageView.tintColor = .textColor
+        imageView.tintColor = .text
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 25
@@ -34,7 +34,7 @@ class AudiobookView: UIView {
 
     let audioControls: UIView = {
         let view = UIView()
-        view.backgroundColor = .backgroundColor
+        view.backgroundColor = .background
         view.layer.shadowRadius = 10
         view.layer.shadowOpacity = 0.25
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -63,7 +63,7 @@ class AudiobookView: UIView {
     let pausePlayButton: UIButton = {
         let button = UIButton()
         var configuration = UIButton.Configuration.plain()
-        configuration.baseForegroundColor = UIColor.textColor
+        configuration.baseForegroundColor = UIColor.text
         configuration.image = UIImage(systemName: "play.circle.fill",
                                       withConfiguration: UIImage.playButtonSize)
         button.configuration = configuration
@@ -74,7 +74,7 @@ class AudiobookView: UIView {
         let button = UIButton()
         var configuration = UIButton.Configuration.plain()
         button.contentMode = .scaleAspectFill
-        configuration.baseForegroundColor = UIColor.textColor
+        configuration.baseForegroundColor = UIColor.text
         configuration.image = UIImage(systemName: "goforward.10",
                                       withConfiguration: UIImage.sideButtonSize)
         button.configuration = configuration
@@ -104,9 +104,9 @@ class AudiobookView: UIView {
         slider.minimumValue = 0.0
         slider.isContinuous = false
         slider.backgroundColor = .clear
-        slider.tintColor = UIColor.textColor
+        slider.tintColor = UIColor.text
         //        slider.thumbTintColor = UIColor(red: 106/255, green: 90/255, blue: 101/255, alpha: 1)
-        slider.thumbTintColor = .textColor
+        slider.thumbTintColor = .text
         slider.translatesAutoresizingMaskIntoConstraints = false
         slider.accessibilityTraits = .adjustable
         slider.accessibilityLabel = String(localized: "audio position")
@@ -116,7 +116,7 @@ class AudiobookView: UIView {
         let label = UILabel()
         label.text = "00:00"
         label.textAlignment = .center
-        label.textColor = .textColor
+        label.textColor = .text
         label.isAccessibilityElement = false
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -125,7 +125,7 @@ class AudiobookView: UIView {
         let label = UILabel()
         label.text = "00:00"
         label.textAlignment = .center
-        label.textColor = .textColor
+        label.textColor = .text
         label.isAccessibilityElement = false
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -133,7 +133,7 @@ class AudiobookView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = UIColor.backgroundColor
+        backgroundColor = UIColor.background
         buildLayoutView()
 
     }

@@ -9,15 +9,9 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    static let progressTint: UIColor? = {
-        let color = UIColor(named: "progressTint")
-        return color
-    }()
 
-    static let progressTrack: UIColor? = {
-        let color = UIColor(named: "progressTrack")
-        return color
-    }()
+    static let progressTint = UIColor(named: "progressTint")
+    static let progressTrack = UIColor(named: "progressTrack")
 
     static let background: UIColor? = {
         let color = UIColor(named: "BackgroundColor")
@@ -28,15 +22,18 @@ extension UIColor {
         let color = UIColor(named: "TextColor")
         return color
     }()
-}
 
-// MARK: Colors
-extension UIColor {
     static let backgroundColor = UIColor(named: "BackgroundColor")
     static let textColor = UIColor(named: "TextColor")
 }
 
-extension UIImage {
-    static let playButtonSize = UIImage.SymbolConfiguration(pointSize: 60)
-    static let sideButtonSize = UIImage.SymbolConfiguration(pointSize: 32)
-}
+// MARK: Colors
+// extension UIColor {
+//    static let backgroundColor = UIColor(named: "BackgroundColor")
+//    static let textColor = UIColor(named: "TextColor")
+// }
+
+// extension UIImage {
+//    static let playButtonSize = UIImage.SymbolConfiguration(pointSize: 60)
+//    static let sideButtonSize = UIImage.SymbolConfiguration(pointSize: 32)
+// }

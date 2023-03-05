@@ -1,8 +1,17 @@
-//
-//  audioBooks.json
-//  ninart_app
-//
-//  Created by Beatriz Leonel da Silva on 01/03/23.
-//
-
-import Foundation
+[
+    {
+        "title":"Novas luzes",
+        "image":"starryNightTNBC",
+        "audioName":"bensound-lofinerdbassbuzzer"
+    },
+    {
+        "title":"Novo passeio",
+        "image":"aSundayOnLaGrandeJatte",
+        "audioName":"bensound-lofinerdbassbuzzer"
+    },
+    {
+        "title":"Terceiro livro",
+        "image":"youngWomanPowderingHerself",
+        "audioName":"bensound-lofinerdbassbuzzer"
+    },
+]

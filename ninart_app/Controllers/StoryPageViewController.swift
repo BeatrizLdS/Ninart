@@ -131,4 +131,4 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         scrollView.setContentOffset(CGPoint(x: CGFloat(current)*view.frame.size.width , y: 0), animated: true)
     }
 
-}
+ }
