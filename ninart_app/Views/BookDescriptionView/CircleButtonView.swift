@@ -32,8 +32,6 @@ class CircleButtonView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         buildLayoutView()
-        layer.borderWidth = 2
-        layer.borderColor = UIColor.textColor?.cgColor
         isAccessibilityElement = true
         accessibilityTraits = .button
     }
@@ -42,7 +40,7 @@ class CircleButtonView: UIView {
     }
     func setBackgroundColor(_ color: UIColor) {
         backgroundColor = color
-        let biggerSize = getBiggerSize() + 10
+        let biggerSize = getBiggerSize()
         self.layer.cornerRadius = 0.5 * biggerSize
     }
     private func getBiggerSize() -> CGFloat {
@@ -55,6 +53,10 @@ class CircleButtonView: UIView {
             return width
         }
     }
+    override func layoutSubviews() {
+        let biggerSize = getBiggerSize()
+        self.layer.cornerRadius = 0.5 * biggerSize
+    }
 }
 
 extension CircleButtonView: SettingViews {
@@ -65,14 +67,14 @@ extension CircleButtonView: SettingViews {
     }
     func setupConstraints() {
         let buttonConstraints = [
-            button.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -1),
+            button.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -2),
             button.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ]
         let constraints = [
             self.heightAnchor.constraint(equalTo: button.heightAnchor,
-                                                    constant: 10),
+                                                    constant: 12),
             self.widthAnchor.constraint(equalTo: button.heightAnchor,
-                                        constant: 10)
+                                        constant: 12)
         ]
         NSLayoutConstraint.activate(buttonConstraints)
         NSLayoutConstraint.activate(constraints)

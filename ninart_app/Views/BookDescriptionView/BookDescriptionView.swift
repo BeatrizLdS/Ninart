@@ -43,7 +43,8 @@ class BookDescriptionView: UIView {
         button.label.text = String(localized: "read")
         button.accessibilityLabel = String(localized: "read")
         button.label.textColor = .backgroundColor
-        button.label.font = .systemFont(ofSize: 18, weight: .medium)
+        button.label.font = .preferredFont(forTextStyle: .body)
+        button.label.adjustsFontForContentSizeCategory = true
         button.setBackgroundColor(.textColor!)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.isUserInteractionEnabled = true
@@ -58,7 +59,8 @@ class BookDescriptionView: UIView {
         button.label.text = String(localized: "play")
         button.accessibilityLabel = String(localized: "play")
         button.label.textColor = .backgroundColor
-        button.label.font = .systemFont(ofSize: 18, weight: .medium)
+        button.label.font = .preferredFont(forTextStyle: .body)
+        button.label.adjustsFontForContentSizeCategory = true
         button.setBackgroundColor(.textColor!)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.isUserInteractionEnabled = true
