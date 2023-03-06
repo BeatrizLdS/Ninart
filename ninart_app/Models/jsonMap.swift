@@ -26,6 +26,12 @@ struct Page: Codable {
 
 }
 
+struct AudioBook: Codable {
+    let title: String
+    let image: String
+    let audioName: String
+}
+
 // MARK: decode JSON
 
 extension Bundle {

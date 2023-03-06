@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+ class CollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     let collectionDataSource = CollectionDataSource()
     let flowLayout = ZoomAndSnapFlowLayout()
@@ -33,4 +33,4 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
           fatalError("init(coder:) has not been implemented")
       }
 
-}
+ }

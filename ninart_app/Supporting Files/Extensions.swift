@@ -8,10 +8,3 @@
 import Foundation
 import UIKit
 
-// MARK: Colors
-extension UIColor {
-    static let backgroundColor = UIColor(named: "BackgroundColor")
-    static let textColor = UIColor(named: "TextColor")
-}
-
-
