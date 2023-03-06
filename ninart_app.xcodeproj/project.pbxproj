@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14219BD429ACDDD20057FD9A /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14219BD329ACDDD20057FD9A /* ViewExtension.swift */; };
+		14219BD829AE207F0057FD9A /* StoryPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14219BD729AE207F0057FD9A /* StoryPageViewModel.swift */; };
+		1429C24229A78D0B0007B658 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429C24129A78D0B0007B658 /* FavoritesViewController.swift */; };
 		7E0DFFC329A7893E00587392 /* AudiobookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0DFFC229A7893E00587392 /* AudiobookViewController.swift */; };
 		7E0DFFC529A78AAA00587392 /* AudiobookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0DFFC429A78AAA00587392 /* AudiobookView.swift */; };
 		7E0DFFC729A78DDB00587392 /* SetViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0DFFC629A78DDB00587392 /* SetViewProtocol.swift */; };
@@ -60,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14219BD329ACDDD20057FD9A /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		14219BD729AE207F0057FD9A /* StoryPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPageViewModel.swift; sourceTree = "<group>"; };
 		7E0DFFC229A7893E00587392 /* AudiobookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiobookViewController.swift; sourceTree = "<group>"; };
 		7E0DFFC429A78AAA00587392 /* AudiobookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiobookView.swift; sourceTree = "<group>"; };
 		7E0DFFC629A78DDB00587392 /* SetViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetViewProtocol.swift; sourceTree = "<group>"; };
@@ -233,6 +238,10 @@
 			isa = PBXGroup;
 			children = (
 				D42D04292850E0C7003DA055 /* MenuViewController.swift */,
+				7E43267D285B8164008B572D /* StoryPageViewController.swift */,
+				FF530A9028634CB500868564 /* BooksViewController.swift */,
+				FF769D01286480AF005D00B4 /* SearchViewController.swift */,
+				1429C24129A78D0B0007B658 /* FavoritesViewController.swift */,
 				FF5A4DFD299FB0B700774298 /* AllBooksViewController.swift */,
 				7E35252329AF460D00395FDA /* BookDescriptionViewController.swift */,
 				7E43267D285B8164008B572D /* StoryPageViewController.swift */,
@@ -286,6 +295,8 @@
 			children = (
 				FF5A4E0729A7915D00774298 /* StringExtension.swift */,
 				FF5A4E2729A8E68B00774298 /* ColorExtension.swift */,
+				14219BD329ACDDD20057FD9A /* ViewExtension.swift */,
+				FFCDE08229B0B5D300B29BB5 /* UIImageExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -294,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				FF5A4E2229A7AE3C00774298 /* BooksViewModel.swift */,
+				14219BD729AE207F0057FD9A /* StoryPageViewModel.swift */,
 				7E12F95629A9088700D86DFE /* AudioBookViewModel.swift */,
 			);
 			path = ViewModels;
@@ -472,12 +484,16 @@
 				7E432677285B6F83008B572D /* StoryPage.swift in Sources */,
 				7E43267E285B8164008B572D /* StoryPageViewController.swift in Sources */,
 				7E0DFFC729A78DDB00587392 /* SetViewProtocol.swift in Sources */,
+				FFCDE08329B0B5D300B29BB5 /* UIImageExtension.swift in Sources */,
+				FF530A9328634CB500868564 /* BooksViewController.swift in Sources */,
+				14219BD429ACDDD20057FD9A /* ViewExtension.swift in Sources */,
 				D42D04302850E0C7003DA055 /* ninart_app.xcdatamodeld in Sources */,
 				FF90665529B277CC0022196E /* CircleButtonView.swift in Sources */,
 				FF0BE07B29B52E1B00E7FD5C /* CircleButtonProtocol.swift in Sources */,
 				7E35252429AF460D00395FDA /* BookDescriptionViewController.swift in Sources */,
 				FF5A4E0829A7915D00774298 /* StringExtension.swift in Sources */,
 				FF5A4E2029A7A6FC00774298 /* ContinueBookCollectionViewCell.swift in Sources */,
+				14219BD829AE207F0057FD9A /* StoryPageViewModel.swift in Sources */,
 				FF5A4DFC299FB00300774298 /* AllBooksView.swift in Sources */,
 				7E35252129AF45CA00395FDA /* BookDescriptionView.swift in Sources */,
 			);
