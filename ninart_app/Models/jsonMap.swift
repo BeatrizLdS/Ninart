@@ -17,6 +17,12 @@ struct Story: Codable {
 
 }
 
+struct AudioBook: Codable {
+     let title: String
+     let image: String
+     let audioName: String
+ }
+
 // MARK: - Page
 
 struct Page: Codable {
