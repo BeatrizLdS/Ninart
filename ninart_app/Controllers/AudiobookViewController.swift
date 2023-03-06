@@ -22,6 +22,7 @@ class AudiobookViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .never
 
         setupAudio()
+
         self.viewModel.player.delegate = self
     }
     override func viewDidLayoutSubviews() {
@@ -72,6 +73,10 @@ class AudiobookViewController: UIViewController {
     @objc func audioForward(_ sender: UIButton) {
         viewModel.forwardTime()
     }
+    @objc func audioEnded(_ notification: Notification) {
+        print("Right there")
+    }
+
 }
 
 extension AudiobookViewController: AVAudioPlayerDelegate {
