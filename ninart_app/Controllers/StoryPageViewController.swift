@@ -2,7 +2,7 @@
 //  StoryPageViewController.swift
 //  ninart_app
 //
-//  Created by Luciana Adrião on 16/06/22.
+//  Created by Marcelo De Araújo on 28/02/23.
 //
 
 import UIKit
@@ -15,7 +15,6 @@ class StoryViewController: UIViewController {
     let viewModel: StoryPageViewModel = StoryPageViewModel()
     var count: Int8 = 1
     var currentIndexTopText = 0
-    var currentIndexBottomText = 1
     var totalText: Int8 = 0
     var lastPageIndex: Int8 = 0
     let selectionFeedbackGenerator = UISelectionFeedbackGenerator()
@@ -38,51 +37,82 @@ class StoryViewController: UIViewController {
         viewModel.loadData()
         showTwoText()
         setImageHistory()
-        setImageSeparator()
 
         storyPage?.titleScreen.text = viewModel.title
         storyPage?.numberOfBooks.text = "\(count)"
-        
+        storyPage?.leftButtonHistory.isEnabled = false
+
         storyPage?.rightButtonHistory.addTarget(self, action: #selector(incrementLabel), for: .touchUpInside)
         storyPage?.leftButtonHistory.addTarget(self, action: #selector(decrementLabel), for: .touchUpInside)
 
-        storyPage?.rightButtonHistory.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
-        storyPage?.leftButtonHistory.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        storyPage?.rightButtonHistory.addTarget(self, action: #selector(updateTextAndImage), for: .touchUpInside)
+        storyPage?.leftButtonHistory.addTarget(self, action: #selector(downTextAndImage), for: .touchUpInside)
 
         selectionFeedbackGenerator.prepare()
         impactFeedbackGenerator.prepare()
     }
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let value = Float(scrollView.contentOffset.x)/Float(scrollView.frame.size.width)
-//        pageControl.currentPage = Int(floorf(value))
-//    }
-//    // MARK: - SettingHScroll
-//    private func configureScrollView() {
-//        view.addSubview(scrollView)
-//        NSLayoutConstraint.activate([
-//            scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            scrollView.widthAnchor.constraint(equalTo: view.widthAnchor),
-//            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
-//            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100)
-//        ])
-//    }
-    func showTwoText() {
 
-        let uniqueTexts = Set(viewModel.pageTexts ?? [])
+    func showTwoText() {
+        let uniqueTexts = viewModel.pageTexts ?? []
         let countText = uniqueTexts.count
 
-        if countText >= 2 {
-
+        if countText > 0 {
             let topTextIndex = Int8(currentIndexTopText % countText)
-            let bottomTextIndex = Int8(currentIndexBottomText % countText)
+            let text = viewModel.pageTexts![Int(topTextIndex)]
 
-            storyPage?.upTextBooks.text = viewModel.pageTexts![Int(topTextIndex)]
-            storyPage?.downTextBooks.text = viewModel.pageTexts![Int(bottomTextIndex)]
+            // Mapear todos os indices onde tem .
+            // pegar o indice do meio do array (ordenado)
+            // fazer split
 
-        } else if countText == 1 {
-            storyPage!.upTextBooks.text = uniqueTexts.first
-        } else {
-            print("ERROU")
+            let dotIndexes = text.enumerated().compactMap { tuple in
+                let (i, element) = tuple
+                let index = text.index(text.startIndex, offsetBy: i)
+                if i > 0, i < text.count - 1 {
+                    if element == ".",
+                       text[text.index(after: index)] != ".",
+                       text[text.index(before: index)] != "." {
+                        return i
+                    }
+                } else if i == text.count - 1 {
+                    if element == ".",
+                       text[text.index(before: index)] != "." {
+                        return i
+                    }
+                } else if i == 0 {
+                    if element == ".",
+                       text[text.index(after: index)] != "." {
+                        return i
+                    }
+                }
+                return nil
+            }
+
+            if dotIndexes.count > 1 {
+                let splitIndex = dotIndexes[Int(exactly: (dotIndexes.count/2)-1)!]
+                let halfIndex = text.index(text.startIndex, offsetBy: splitIndex)
+
+                let upText = text[text.startIndex...halfIndex]
+                var downText = text[text.index(after: halfIndex)...text.index(before: text.endIndex)]
+
+                if downText.first == " " { _ = downText.popFirst() }
+
+                storyPage?.upTextBooks.text = "\(upText)"
+                storyPage?.downTextBooks.text = "\(downText)"
+
+            } else {
+                storyPage?.upTextBooks.text = ""
+                storyPage?.downTextBooks.text = text
+            }
+
+//            let textLength = text.count
+//            let halfTextLength = textLength / 2
+//            let startIndex = text.index(text.startIndex, offsetBy: 0)
+//            let endIndex = text.index(text.startIndex, offsetBy: halfTextLength)
+//            let firstHalf = String(text[startIndex..<endIndex])
+//            let secondHalf = String(text[endIndex..<text.endIndex])
+//
+//            storyPage?.upTextBooks.text = firstHalf
+//            storyPage?.downTextBooks.text = secondHalf
         }
     }
 
@@ -97,53 +127,35 @@ class StoryViewController: UIViewController {
         storyPage?.imageStory.image = UIImage(named: viewModel.imageStory ?? "")
     }
 
-    @objc func nextButtonTapped() {
+    @objc func updateTextAndImage() {
 
-        // Gera feedback tátil de seleção
-        let selectionFeedbackGenerator = UISelectionFeedbackGenerator()
-        selectionFeedbackGenerator.selectionChanged()
-
-        // Gera feedback tátil de impacto
-        let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
-        impactFeedbackGenerator.impactOccurred()
-
-        currentIndexTopText += 2
-        currentIndexBottomText += 2
-        showTwoText()
-        setImageSeparator()
-
-        if currentIndexTopText >= lastPageIndex && currentIndexBottomText >= lastPageIndex {
-            // Desativar o botão
+        if currentIndexTopText + 2 >= viewModel.pageTexts!.count {
             storyPage?.rightButtonHistory.isEnabled = false
-        } else {
-            // Incrementar o índice e atualizar as páginas
-            currentIndexTopText += 2
-            currentIndexBottomText += 2
-            showTwoText()
-            setImageSeparator()
         }
 
-    }
-
-    @objc func backButtonTapped() {
-
-        // Gera feedback tátil de seleção
-        let selectionFeedbackGenerator = UISelectionFeedbackGenerator()
+        currentIndexTopText += 1
+        showTwoText()
+        setImageSeparator()
         selectionFeedbackGenerator.selectionChanged()
-
-        // Gera feedback tátil de impacto
-        let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
         impactFeedbackGenerator.impactOccurred()
 
-        if currentIndexTopText > 0 && currentIndexBottomText > 0 {
-            currentIndexTopText -= 2
-            currentIndexBottomText -= 2
+        if storyPage?.leftButtonHistory.isEnabled == false {
+            storyPage?.leftButtonHistory.isEnabled = true
+        }
+    }
+
+    @objc func downTextAndImage() {
+        
+        if currentIndexTopText >= 1 {
+            currentIndexTopText -= 1
             showTwoText()
             setImageSeparator()
+            selectionFeedbackGenerator.selectionChanged()
+            impactFeedbackGenerator.impactOccurred()
+        }
 
-            if !storyPage!.rightButtonHistory.isEnabled {
-                storyPage?.rightButtonHistory.isEnabled = true
-            }
+        if storyPage?.rightButtonHistory.isEnabled == false {
+            storyPage?.rightButtonHistory.isEnabled = true
         }
     }
 
@@ -153,33 +165,14 @@ class StoryViewController: UIViewController {
     }
 
     @objc func decrementLabel() {
+
         if count > 1 {
             count -= 1
             storyPage!.numberOfBooks.text = "\(count)"
         }
+
+        if count == 1 {
+            storyPage?.leftButtonHistory.isEnabled = false
+        }
     }
 }
-
-//guard let pages = viewModel.story?.pages else { return }
-//
-//    let currentPageIndex = Int(currentIndexTopText / 2)
-//
-//    if currentPageIndex < pages.count {
-//        let currentPage = pages[currentPageIndex]
-//        storyPage?.upTextBooks.text = currentPage.text
-//
-//        let nextPageIndex = currentPageIndex + 1
-//        if nextPageIndex < pages.count {
-//            let nextPage = pages[nextPageIndex]
-//            storyPage?.downTextBooks.text = nextPage.text
-//        } else {
-//            storyPage?.downTextBooks.text = ""
-//        }
-//
-//        if let image = viewModel.pageImages?[currentPageIndex] {
-//            storyPage?.imageStory.image = UIImage(named: image)
-//        }
-//    }
-//
-//    let isLastPage = currentPageIndex == pages.count - 1
-//    storyPage?.rightButtonHistory.isEnabled = !isLastPage
