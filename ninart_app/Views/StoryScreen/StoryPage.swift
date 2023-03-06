@@ -45,7 +45,7 @@ class StoryPage: UIScrollView {
         pageText.backgroundColor = .red
         pageText.font.withSize(10)
         pageText.text = "✨ textinho ✨"
-        pageText.textColor = UIColor.AccentText
+//        pageText.textColor = UIColor.AccentText
 
         return pageText
     }()

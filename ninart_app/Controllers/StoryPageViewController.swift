@@ -8,8 +8,8 @@
 import UIKit
 import CoreData
 
- class StoryViewController: UIViewController, UIScrollViewDelegate {
-    let gradientView = GradientView()
+class StoryViewController: UIViewController, UIScrollViewDelegate {
+    let gradientView = UIView()
     let scrollView = StoryPage().sideScroll
     let pageControl = StoryPage().pageControl
     let story = Bundle.main.decode([Story].self, from: "data.json")!
