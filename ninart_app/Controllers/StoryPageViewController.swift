@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import CoreHaptics
 
 class StoryViewController: UIViewController {
 
@@ -17,6 +18,9 @@ class StoryViewController: UIViewController {
     var currentIndexBottomText = 1
     var totalText: Int8 = 0
     var lastPageIndex: Int8 = 0
+    let selectionFeedbackGenerator = UISelectionFeedbackGenerator()
+    let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
+
 
     override func loadView() {
 
@@ -34,13 +38,18 @@ class StoryViewController: UIViewController {
         viewModel.loadData()
         showTwoText()
         setImageHistory()
+
         storyPage?.titleScreen.text = viewModel.title
+        storyPage?.numberOfBooks.text = "\(count)"
         
         storyPage?.rightButtonHistory.addTarget(self, action: #selector(incrementLabel), for: .touchUpInside)
         storyPage?.leftButtonHistory.addTarget(self, action: #selector(decrementLabel), for: .touchUpInside)
 
         storyPage?.rightButtonHistory.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         storyPage?.leftButtonHistory.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+
+        selectionFeedbackGenerator.prepare()
+        impactFeedbackGenerator.prepare()
     }
 
     func showTwoText() {
@@ -75,6 +84,15 @@ class StoryViewController: UIViewController {
     }
 
     @objc func nextButtonTapped() {
+
+        // Gera feedback tátil de seleção
+        let selectionFeedbackGenerator = UISelectionFeedbackGenerator()
+        selectionFeedbackGenerator.selectionChanged()
+
+        // Gera feedback tátil de impacto
+        let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
+        impactFeedbackGenerator.impactOccurred()
+
         currentIndexTopText += 2
         currentIndexBottomText += 2
         showTwoText()
@@ -94,6 +112,15 @@ class StoryViewController: UIViewController {
     }
 
     @objc func backButtonTapped() {
+
+        // Gera feedback tátil de seleção
+        let selectionFeedbackGenerator = UISelectionFeedbackGenerator()
+        selectionFeedbackGenerator.selectionChanged()
+
+        // Gera feedback tátil de impacto
+        let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
+        impactFeedbackGenerator.impactOccurred()
+
         if currentIndexTopText > 0 && currentIndexBottomText > 0 {
             currentIndexTopText -= 2
             currentIndexBottomText -= 2
@@ -119,23 +146,26 @@ class StoryViewController: UIViewController {
     }
 }
 
-//    @objc func nextButtonTapped() {
-//        let uniqueTexts = Set(viewModel.pageTexts ?? [])
-//        let countText = uniqueTexts.count
-//        if currentIndexTopText + 2 < countText && currentIndexBottomText + 2 < countText {
-//            currentIndexTopText += 2
-//            currentIndexBottomText += 2
-//            showTwoText()
+//guard let pages = viewModel.story?.pages else { return }
+//
+//    let currentPageIndex = Int(currentIndexTopText / 2)
+//
+//    if currentPageIndex < pages.count {
+//        let currentPage = pages[currentPageIndex]
+//        storyPage?.upTextBooks.text = currentPage.text
+//
+//        let nextPageIndex = currentPageIndex + 1
+//        if nextPageIndex < pages.count {
+//            let nextPage = pages[nextPageIndex]
+//            storyPage?.downTextBooks.text = nextPage.text
+//        } else {
+//            storyPage?.downTextBooks.text = ""
+//        }
+//
+//        if let image = viewModel.pageImages?[currentPageIndex] {
+//            storyPage?.imageStory.image = UIImage(named: image)
 //        }
 //    }
-
-
-//if let numberOfPages = viewModel.numberOfPages, currentIndexBottomText >= numberOfPages {
-//    // Desativa o botão "rightButtonHistory" se o usuário estiver na última página
-//    storyPage?.rightButtonHistory.isEnabled = false
-//}
 //
-//if totalText != 0 && currentIndexBottomText >= totalText {
-//    // Desativa o botão "rightButtonHistory" se o usuário estiver na última página
-//    storyPage?.rightButtonHistory.isEnabled = false
-//}
+//    let isLastPage = currentPageIndex == pages.count - 1
+//    storyPage?.rightButtonHistory.isEnabled = !isLastPage
