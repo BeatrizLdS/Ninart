@@ -93,11 +93,8 @@
 		D42D04452850E0C8003DA055 /* ninart_appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ninart_appUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42D04492850E0C8003DA055 /* ninart_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ninart_appUITests.swift; sourceTree = "<group>"; };
 		D42D044B2850E0C8003DA055 /* ninart_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ninart_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		D4D9CD822852104100B8B75C /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
-=======
 		FF0BE07A29B52E1B00E7FD5C /* CircleButtonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonProtocol.swift; sourceTree = "<group>"; };
->>>>>>> 126d6c26b246e2bc3a057ed5cd068abafbfe5f99
 		FF5A4DFB299FB00300774298 /* AllBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBooksView.swift; sourceTree = "<group>"; };
 		FF5A4DFD299FB0B700774298 /* AllBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBooksViewController.swift; sourceTree = "<group>"; };
 		FF5A4DFF29A3DD7A00774298 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -280,10 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				7E12F95C29A90DC200D86DFE /* Audio */,
-<<<<<<< HEAD
 				D4D9CD822852104100B8B75C /* AudioManager.swift */,
-=======
->>>>>>> 126d6c26b246e2bc3a057ed5cd068abafbfe5f99
 				7E432681285D4FFF008B572D /* data.json */,
 				FFCDE07C29AFC9DD00B29BB5 /* audioBooks.json */,
 			);
@@ -481,10 +475,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E12F95729A9088700D86DFE /* AudioBookViewModel.swift in Sources */,
-<<<<<<< HEAD
 				D4D9CD832852104100B8B75C /* AudioManager.swift in Sources */,
-=======
->>>>>>> 126d6c26b246e2bc3a057ed5cd068abafbfe5f99
 				FF5A4E2829A8E68B00774298 /* ColorExtension.swift in Sources */,
 				FF5A4E0029A3DD7B00774298 /* TableViewCell.swift in Sources */,
 				FF5A4E1E29A79B0500774298 /* BookCollectionViewCell.swift in Sources */,
