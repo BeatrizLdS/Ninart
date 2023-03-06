@@ -198,9 +198,6 @@
 			children = (
 				D42D04252850E0C7003DA055 /* AppDelegate.swift */,
 				D42D04272850E0C7003DA055 /* SceneDelegate.swift */,
-				FF5A4E0629A7913D00774298 /* Extensions */,
-				7E0DFFC829A7908A00587392 /* Protocol */,
-				D4D9CD812852102500B8B75C /* Supporting Files */,
 				D42D045B2850EC22003DA055 /* Models */,
 				D42D045A2850EC1C003DA055 /* Views */,
 				FF5A4E2129A7AE1900774298 /* ViewModels */,
@@ -485,7 +482,6 @@
 				7E43267E285B8164008B572D /* StoryPageViewController.swift in Sources */,
 				7E0DFFC729A78DDB00587392 /* SetViewProtocol.swift in Sources */,
 				FFCDE08329B0B5D300B29BB5 /* UIImageExtension.swift in Sources */,
-				FF530A9328634CB500868564 /* BooksViewController.swift in Sources */,
 				D42D04302850E0C7003DA055 /* ninart_app.xcdatamodeld in Sources */,
 				7E35252429AF460D00395FDA /* BookDescriptionViewController.swift in Sources */,
 				FF5A4E0829A7915D00774298 /* StringExtension.swift in Sources */,
@@ -670,7 +666,7 @@
 		D42D04502850E0C8003DA055 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon1;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -697,7 +693,7 @@
 		D42D04512850E0C8003DA055 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon1;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
