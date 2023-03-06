@@ -17,8 +17,8 @@ class MenuViewController: UITabBarController, UITabBarControllerDelegate {
 
     internal func setUpTabs() {
         let booksVC = AllBooksViewController()
-        let searchVC = SearchViewController()
-        let favoritesVC = FavoritesViewController()
+        let searchVC = AllBooksViewController()
+        let favoritesVC = AllBooksViewController()
 
         booksVC.navigationItem.largeTitleDisplayMode = .automatic
         searchVC.navigationItem.largeTitleDisplayMode = .automatic
