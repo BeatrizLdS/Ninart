@@ -275,13 +275,21 @@
 		D4D9CD812852102500B8B75C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FF390F2F29B6415E00D87671 /* Books */,
 				7E12F95C29A90DC200D86DFE /* Audio */,
-				FF90665229B20E8D0022196E /* data-en.json */,
 				D4D9CD822852104100B8B75C /* serviceFile.swift */,
-				7E432681285D4FFF008B572D /* data-pt.json */,
 				FFCDE07C29AFC9DD00B29BB5 /* audioBooks.json */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FF390F2F29B6415E00D87671 /* Books */ = {
+			isa = PBXGroup;
+			children = (
+				FF90665229B20E8D0022196E /* data-en.json */,
+				7E432681285D4FFF008B572D /* data-pt.json */,
+			);
+			path = Books;
 			sourceTree = "<group>";
 		};
 		FF5A4DFA299FAFC600774298 /* AllBooksScreen */ = {
@@ -686,7 +694,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 44U668YQTW;
+				DEVELOPMENT_TEAM = NTS86MKTBV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ninart_app/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -713,7 +721,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 44U668YQTW;
+				DEVELOPMENT_TEAM = NTS86MKTBV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ninart_app/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
