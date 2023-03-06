@@ -8,6 +8,9 @@
 import UIKit
 
 class BookDescriptionView: UIView {
+
+    var buttonsDelegate: CircleButtonProtocol?
+
     // MARK: Properties
     let bookCover: UIImageView = {
         let imageView = UIImageView()
@@ -31,97 +34,83 @@ class BookDescriptionView: UIView {
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
-    let readStack: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .vertical
-        stack.alignment = .center
-        stack.distribution = .equalCentering
-        stack.backgroundColor = .clear
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        return stack
-    }()
 
-    let playStack: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .vertical
-        stack.alignment = .center
-        stack.distribution = .equalCentering
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        return stack
-    }()
-
-    let readButton: UIButton = {
-        let button = UIButton()
-        var configuration = UIButton.Configuration.plain()
-        button.contentMode = .scaleAspectFit
-        configuration.baseForegroundColor = UIColor.textColor
-        configuration.image = UIImage(systemName: "book.circle.fill", withConfiguration: UIImage.playButtonSize)
-        button.configuration = configuration
+    let readButton: CircleButtonView = {
+        let button = CircleButtonView()
+        button.imageView.image = UIImage(systemName: "book.fill",
+                                         withConfiguration: UIImage.bookAndSpeakerButtonSize)
+        button.imageView.tintColor = .backgroundColor
+        button.label.text = String(localized: "read")
+        button.accessibilityLabel = String(localized: "read")
+        button.label.textColor = .backgroundColor
+        button.label.font = .preferredFont(forTextStyle: .body)
+        button.label.adjustsFontForContentSizeCategory = true
+        button.setBackgroundColor(.textColor!)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.isUserInteractionEnabled = true
         return button
     }()
-    let readLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Read"
-        label.textColor = .textColor
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
 
-    let playButton: UIButton = {
-        let button = UIButton()
-        var configuration = UIButton.Configuration.plain()
-        button.contentMode = .scaleAspectFit
-        configuration.baseForegroundColor = UIColor.textColor
-        configuration.image = UIImage(systemName: "speaker.wave.2.circle.fill", withConfiguration: UIImage.playButtonSize)
-        button.configuration = configuration
+    var playButton: CircleButtonView = {
+        let button = CircleButtonView()
+        button.imageView.image = UIImage(systemName: "speaker.wave.2.fill",
+                                         withConfiguration: UIImage.bookAndSpeakerButtonSize)
+        button.imageView.tintColor = .backgroundColor
+        button.label.text = String(localized: "play")
+        button.accessibilityLabel = String(localized: "play")
+        button.label.textColor = .backgroundColor
+        button.label.font = .preferredFont(forTextStyle: .body)
+        button.label.adjustsFontForContentSizeCategory = true
+        button.setBackgroundColor(.textColor!)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.isUserInteractionEnabled = true
         return button
-    }()
-    let playLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Play"
-        label.textColor = .textColor
-
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
     }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .backgroundColor
         buildLayoutView()
+        configTapGesture()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    private func configTapGesture() {
+        let readGesture = UITapGestureRecognizer(target: self, action: #selector(self.readButtonWasSelected))
+        readButton.addGestureRecognizer(readGesture)
+        let playGesture = UITapGestureRecognizer(target: self, action: #selector(self.playButtonWasSelected))
+        playButton.addGestureRecognizer(playGesture)
+    }
+    @objc func readButtonWasSelected() {
+        let haptics = UINotificationFeedbackGenerator()
+        haptics.notificationOccurred(.success)
+        buttonsDelegate?.readAction()
+    }
+    @objc func playButtonWasSelected() {
+        let haptics = UINotificationFeedbackGenerator()
+        haptics.notificationOccurred(.success)
+        buttonsDelegate?.playAction()
+    }
 }
 
 extension BookDescriptionView: SettingViews {
     func setupSubviews() {
         addSubview(bookCover)
         addSubview(buttonsHStack)
-        buttonsHStack.addArrangedSubview(readStack)
-        buttonsHStack.addArrangedSubview(playStack)
-
-        readStack.addArrangedSubview(readButton)
-        readStack.addArrangedSubview(readLabel)
-
-        playStack.addArrangedSubview(playButton)
-        playStack.addArrangedSubview(playLabel)
-
+        buttonsHStack.addArrangedSubview(readButton)
+        buttonsHStack.addArrangedSubview(playButton)
     }
 
     func setupConstraints() {
         NSLayoutConstraint.activate([
             bookCover.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
-            bookCover.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24),
-            bookCover.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -24),
+            bookCover.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
+            bookCover.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
             bookCover.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.5),
 
-            buttonsHStack.topAnchor.constraint(lessThanOrEqualTo: bookCover.bottomAnchor, constant: 24),
+            buttonsHStack.topAnchor.constraint(lessThanOrEqualTo: bookCover.bottomAnchor, constant: 30),
             buttonsHStack.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             buttonsHStack.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.6, constant: 48),
             buttonsHStack.bottomAnchor.constraint(lessThanOrEqualTo: self.safeAreaLayoutGuide.bottomAnchor)

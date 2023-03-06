@@ -18,7 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = AudiobookViewController()
+        window?.rootViewController = UINavigationController(rootViewController: BookDescriptionViewController())
+//        MenuViewController()
         window?.makeKeyAndVisible()
     }
 
