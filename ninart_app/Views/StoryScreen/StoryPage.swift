@@ -13,7 +13,6 @@ class StoryPage: UIView {
         let title = UILabel()
 
         title.translatesAutoresizingMaskIntoConstraints = false
-        title.frame = CGRect(x: 0, y: 0, width: 69, height: 27)
         title.backgroundColor = .clear
         title.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         title.textAlignment = .center
@@ -49,8 +48,6 @@ class StoryPage: UIView {
     let history: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .clear
-        scrollView.layer.shadowRadius = 5
-        scrollView.layer.shadowOpacity = 0.2
         scrollView.autoresizingMask = [.flexibleHeight]
         scrollView.isScrollEnabled = true
         scrollView.automaticallyAdjustsScrollIndicatorInsets = true
@@ -61,9 +58,7 @@ class StoryPage: UIView {
     let upTextBooks: UITextView = {
         let text = UITextView()
         text.translatesAutoresizingMaskIntoConstraints = false
-//        text.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         text.backgroundColor = .clear
-
         text.textAlignment = .natural
         text.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         text.textColor = .text
@@ -77,9 +72,6 @@ class StoryPage: UIView {
 
     let imageStory: UIImageView = {
         let image = UIImageView()
-
-        image.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-        image.bounds = image.frame
         image.contentMode = .scaleToFill
         image.clipsToBounds = true
         image.backgroundColor = .clear
@@ -96,7 +88,6 @@ class StoryPage: UIView {
     let downTextBooks: UITextView = {
         let text = UITextView()
         text.translatesAutoresizingMaskIntoConstraints = false
-        text.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         text.backgroundColor = .clear
         text.textAlignment = .natural
         text.font = UIFont.systemFont(ofSize: 20, weight: .medium)
@@ -118,7 +109,6 @@ class StoryPage: UIView {
         button.configuration = config
         button.contentMode = .scaleAspectFit
         button.backgroundColor = .background
-        button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         button.imageView?.layer.transform = CATransform3DMakeScale(2, 2, 2)
         button.accessibilityHint = "Toque no butão"
         button.accessibilityLabel = "Voltar Página"
@@ -129,7 +119,6 @@ class StoryPage: UIView {
 
     let numberOfBooks: UILabel = {
         let label = UILabel()
-        label.frame = CGRect(x: 0, y: 0, width: 46, height: 29)
         label.textColor = .text
         label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
 
@@ -146,7 +135,6 @@ class StoryPage: UIView {
         button.configuration = config
         button.contentMode = .scaleAspectFit
         button.backgroundColor = .background
-        button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         button.imageView?.layer.transform = CATransform3DMakeScale(2, 2, 2)
         button.accessibilityHint = "Toque no butão"
         button.accessibilityLabel = "Próxima Página"
@@ -196,7 +184,8 @@ extension StoryPage: SettingViews {
             verticalStack.leadingAnchor.constraint(equalTo: self.history.leadingAnchor),
             verticalStack.trailingAnchor.constraint(equalTo: self.history.trailingAnchor),
             verticalStack.bottomAnchor.constraint(equalTo: self.history.bottomAnchor),
-            verticalStack.widthAnchor.constraint(equalTo: self.history.widthAnchor),
+            verticalStack.widthAnchor.constraint(equalTo: self.history.widthAnchor, multiplier: 0.9),
+            verticalStack.centerXAnchor.constraint(equalTo: self.centerXAnchor),
 
             history.topAnchor.constraint(equalTo: titleScreen.bottomAnchor),
             history.leadingAnchor.constraint(equalTo: self.leadingAnchor),

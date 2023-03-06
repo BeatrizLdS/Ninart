@@ -52,20 +52,7 @@ class StoryViewController: UIViewController {
         selectionFeedbackGenerator.prepare()
         impactFeedbackGenerator.prepare()
     }
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let value = Float(scrollView.contentOffset.x)/Float(scrollView.frame.size.width)
-//        pageControl.currentPage = Int(floorf(value))
-//    }
-//    // MARK: - SettingHScroll
-//    private func configureScrollView() {
-//        view.addSubview(scrollView)
-//        NSLayoutConstraint.activate([
-//            scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            scrollView.widthAnchor.constraint(equalTo: view.widthAnchor),
-//            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
-//            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100)
-//        ])
-//    }
+
     func showTwoText() {
 
         let uniqueTexts = Set(viewModel.pageTexts ?? [])
