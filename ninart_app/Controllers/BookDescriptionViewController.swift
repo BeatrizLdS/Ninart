@@ -17,17 +17,15 @@ class BookDescriptionViewController: UIViewController {
         navigationItem.title = "Exceptional Doom"
         navigationItem.largeTitleDisplayMode = .never
         navigationItem.backButtonTitle = ""
+        bookDescriptionView.buttonsDelegate = self
     }
+}
 
-    override func viewDidLayoutSubviews() {
-        setupUI()
+extension BookDescriptionViewController: CircleButtonProtocol {
+    func readAction() {
+        print("Aq vai adicionar a navegação para página de leitura")
     }
-    func setupUI() {
-        bookDescriptionView.playButton.addTarget(self, action: #selector(changeViews), for: .touchUpInside)
-    }
-
-    @objc func changeViews(_ sender: AnyObject) {
-        print("play")
+    func playAction() {
         let newViewController = AudiobookViewController()
         self.navigationController?.pushViewController(newViewController, animated: true)
     }
