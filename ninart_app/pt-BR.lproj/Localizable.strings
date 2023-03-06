@@ -11,8 +11,20 @@
 "readToMe" = "Leia para mim";
 "reading" = "Leitura";
 
-//  Keep reading description
+// Tab bar
+"books" = "Livros";
+"search" = "Busca";
+"favorites" = "Favoritos";
+
+//  book description
 "keep reading %@! page %d" = "continuar lendo %@! página %d";
 "you read %d pages of %d" = "você leu %d páginas de %d";
 "you read %d page of %d" = "você leu %d página de %d";
 "page %d" = "Página %d";
+
+// audio book descriptions
+"audio position" = "posição do audio";
+"%@! of %@!" = "%@! de %@!";
+"keep listening %@! from %@!" = "continuar escutando %@! a partir de %@!";
+"did you hear %@! of %@!" = "você ouviu %@! de %@!";
+"%@!:%@!" = "%@! minutos e %@! segundos";

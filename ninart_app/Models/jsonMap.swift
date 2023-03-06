@@ -8,21 +8,36 @@
 import Foundation
 
 // MARK: - StoryElement
+
 struct Story: Codable {
+
     let title: String
     let image: String
     let pages: [Page]
+
 }
 
 // MARK: - Page
+
 struct Page: Codable {
-    let image, text: String
+
+    let image: String
+    let text: String
+
+}
+
+struct AudioBook: Codable {
+    let title: String
+    let image: String
+    let audioName: String
 }
 
 // MARK: decode JSON
-// TESTAR DECODER
+
 extension Bundle {
+
     func decode<T: Decodable>(_ type: T.Type, from file: String) -> T? {
+        
         guard let urlQuery = self.url(forResource: file, withExtension: nil) else {
             fatalError("Failed to locate \(file) in bundle.")
         }

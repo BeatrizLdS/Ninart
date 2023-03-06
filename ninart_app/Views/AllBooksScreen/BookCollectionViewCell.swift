@@ -10,10 +10,11 @@ import UIKit
 class BookCollectionViewCell: UICollectionViewCell {
 
     static let identifier = "BookCollectionViewCell"
+    var selectedProtocol: SelectBook?
 
     private let posterImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleToFill
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
 
@@ -33,10 +34,17 @@ class BookCollectionViewCell: UICollectionViewCell {
         posterImageView.frame = contentView.bounds
     }
 
-    func configure(story: Story) {
-        posterImageView.image = UIImage(named: story.image)
+    func configure<RandomStory>(story: RandomStory) {
         isAccessibilityElement = true
-        accessibilityLabel = story.title
         accessibilityTraits = .button
+        if story is Story {
+            let book = story as! Story
+            posterImageView.image = UIImage(named: book.image)
+            accessibilityLabel = book.title
+        } else {
+            let audioBook = story as! AudioBook
+            posterImageView.image = UIImage(named: audioBook.image)
+            accessibilityLabel = audioBook.title
+        }
     }
 }

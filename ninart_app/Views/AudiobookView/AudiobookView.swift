@@ -13,8 +13,8 @@ class AudiobookView: UIView {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.alignment = .center
-        stack.spacing = 80
-        stack.backgroundColor = .backgroundColor
+        stack.distribution = .fill
+        stack.backgroundColor = .background
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -22,7 +22,7 @@ class AudiobookView: UIView {
     let bookCover: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "aSundayAfternoonOnTheIslandOfLaGrandeJatte")
-        imageView.tintColor = .textColor
+        imageView.tintColor = .text
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 25
@@ -34,7 +34,7 @@ class AudiobookView: UIView {
 
     let audioControls: UIView = {
         let view = UIView()
-        view.backgroundColor = .backgroundColor
+        view.backgroundColor = .background
         view.layer.shadowRadius = 10
         view.layer.shadowOpacity = 0.25
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -60,14 +60,12 @@ class AudiobookView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-
     let pausePlayButton: UIButton = {
         let button = UIButton()
         var configuration = UIButton.Configuration.plain()
-        configuration.baseForegroundColor = UIColor.textColor
+        configuration.baseForegroundColor = UIColor.text
         configuration.image = UIImage(systemName: "play.circle.fill",
                                       withConfiguration: UIImage.playButtonSize)
-//        configuration.contentInsets = .zero
         button.configuration = configuration
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -76,7 +74,7 @@ class AudiobookView: UIView {
         let button = UIButton()
         var configuration = UIButton.Configuration.plain()
         button.contentMode = .scaleAspectFill
-        configuration.baseForegroundColor = UIColor.textColor
+        configuration.baseForegroundColor = UIColor.text
         configuration.image = UIImage(systemName: "goforward.10",
                                       withConfiguration: UIImage.sideButtonSize)
         button.configuration = configuration
@@ -84,10 +82,11 @@ class AudiobookView: UIView {
         return button
     }()
 
-    // TODO: Adicionar uma terceira stack para o slider e as labels
     let playbackStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
+        stack.distribution = .fillEqually
+//        stack.spacing = 6
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -104,18 +103,20 @@ class AudiobookView: UIView {
         let slider = UISlider()
         slider.minimumValue = 0.0
         slider.isContinuous = false
-        slider.backgroundColor = .backgroundColor
-        slider.tintColor = UIColor.textColor
-        slider.thumbTintColor = UIColor(red: 106/255, green: 90/255, blue: 101/255, alpha: 1)
+        slider.backgroundColor = .clear
+        slider.tintColor = UIColor.text
+        //        slider.thumbTintColor = UIColor(red: 106/255, green: 90/255, blue: 101/255, alpha: 1)
+        slider.thumbTintColor = .text
         slider.translatesAutoresizingMaskIntoConstraints = false
         slider.accessibilityTraits = .adjustable
+        slider.accessibilityLabel = String(localized: "audio position")
         return slider
     }()
     let currentTimeLabel: UILabel = {
         let label = UILabel()
         label.text = "00:00"
         label.textAlignment = .center
-        label.textColor = .textColor
+        label.textColor = .text
         label.isAccessibilityElement = false
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -124,7 +125,7 @@ class AudiobookView: UIView {
         let label = UILabel()
         label.text = "00:00"
         label.textAlignment = .center
-        label.textColor = .textColor
+        label.textColor = .text
         label.isAccessibilityElement = false
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -132,7 +133,7 @@ class AudiobookView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = UIColor.backgroundColor
+        backgroundColor = UIColor.background
         buildLayoutView()
 
     }
@@ -144,12 +145,15 @@ class AudiobookView: UIView {
 
 extension AudiobookView: SettingViews {
     func setupSubviews() {
-        addSubview(mainViewVStack)
-        mainViewVStack.addArrangedSubview(bookCover)
-        mainViewVStack.addArrangedSubview(audioControls)
+        addSubview(bookCover)
+        addSubview(audioControls)
 
         audioControls.addSubview(buttonsHStack)
         audioControls.addSubview(playbackStack)
+
+        buttonsHStack.addArrangedSubview(playBackwardButton)
+        buttonsHStack.addArrangedSubview(pausePlayButton)
+        buttonsHStack.addArrangedSubview(playForwardButton)
 
         playbackStack.addArrangedSubview(sliderControl)
         playbackStack.addArrangedSubview(timeStack)
@@ -157,47 +161,28 @@ extension AudiobookView: SettingViews {
         timeStack.addArrangedSubview(currentTimeLabel)
         timeStack.addArrangedSubview(durationLabel)
 
-        buttonsHStack.addArrangedSubview(playBackwardButton)
-        buttonsHStack.addArrangedSubview(pausePlayButton)
-        buttonsHStack.addArrangedSubview(playForwardButton)
     }
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            mainViewVStack.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
-            mainViewVStack.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            mainViewVStack.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            mainViewVStack.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            bookCover.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            bookCover.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8),
+            bookCover.bottomAnchor.constraint(lessThanOrEqualTo: self.audioControls.topAnchor, constant: -24),
+            bookCover.centerXAnchor.constraint(equalTo: centerXAnchor),
 
-            bookCover.heightAnchor.constraint(equalTo: self.mainViewVStack.heightAnchor, multiplier: 0.5),
-            bookCover.widthAnchor.constraint(equalTo: self.mainViewVStack.widthAnchor, multiplier: 0.65),
-
+//            audioControls.topAnchor.constraint(greaterThanOrEqualTo: bookCover.bottomAnchor, constant: 24),
+            audioControls.heightAnchor.constraint(greaterThanOrEqualTo: self.heightAnchor, multiplier: 0.25),
             audioControls.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             audioControls.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            audioControls.bottomAnchor.constraint(equalTo: self.bottomAnchor),
 
-            buttonsHStack.topAnchor.constraint(equalTo: self.audioControls.topAnchor,  constant: 12),
-            buttonsHStack.heightAnchor.constraint(equalTo: self.audioControls.heightAnchor, multiplier: 0.4),
             buttonsHStack.centerXAnchor.constraint(equalTo: self.audioControls.centerXAnchor),
-//            buttonsHStack.widthAnchor.constraint(equalTo: self.audioControls.widthAnchor),
-//            buttonsHStack.widthAnchor.constraint(lessThanOrEqualTo:
-//                                                    self.audioControls.widthAnchor, multiplier: 0.8),
+            buttonsHStack.topAnchor.constraint(equalTo: self.audioControls.topAnchor, constant: 12),
 
-            pausePlayButton.heightAnchor.constraint(equalTo: self.buttonsHStack.heightAnchor),
-            pausePlayButton.widthAnchor.constraint(equalTo: self.pausePlayButton.heightAnchor),
-
-            playBackwardButton.heightAnchor.constraint(equalTo: self.buttonsHStack.heightAnchor),
-            playForwardButton.heightAnchor.constraint(equalTo: self.buttonsHStack.heightAnchor),
-
-            playbackStack.topAnchor.constraint(equalTo: buttonsHStack.bottomAnchor, constant: 36),
-            playbackStack.widthAnchor.constraint(lessThanOrEqualTo: self.audioControls.widthAnchor),
+            playbackStack.topAnchor.constraint(equalTo: self.buttonsHStack.bottomAnchor, constant: 12),
             playbackStack.centerXAnchor.constraint(equalTo: self.audioControls.centerXAnchor),
-            playbackStack.bottomAnchor.constraint(equalTo:
-                                                    self.audioControls.safeAreaLayoutGuide.bottomAnchor),
+            playbackStack.bottomAnchor.constraint(lessThanOrEqualTo: self.audioControls.safeAreaLayoutGuide.bottomAnchor, constant: -12),
 
-            sliderControl.widthAnchor.constraint(equalTo: self.audioControls.widthAnchor, multiplier: 0.9),
-            sliderControl.topAnchor.constraint(equalTo: self.playbackStack.topAnchor),
-
-            timeStack.widthAnchor.constraint(equalTo: self.sliderControl.widthAnchor),
-            timeStack.topAnchor.constraint(equalTo: self.sliderControl.bottomAnchor)
+            sliderControl.widthAnchor.constraint(equalTo: self.audioControls.widthAnchor, multiplier: 0.9)
 
         ])
     }
