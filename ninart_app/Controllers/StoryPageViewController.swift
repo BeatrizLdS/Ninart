@@ -7,128 +7,179 @@
 
 import UIKit
 import CoreData
+import CoreHaptics
 
-class StoryViewController: UIViewController, UIScrollViewDelegate {
-    let gradientView = UIView()
-    let scrollView = StoryPage().sideScroll
-    let pageControl = StoryPage().pageControl
-    let story = Bundle.main.decode([Story].self, from: "data.json")!
-    var storyIndex : Int = 0
-    var hPagesQuantity:Int {
-        return story[storyIndex].pages.count
+class StoryViewController: UIViewController {
+
+    var storyPage: StoryPage?
+    let viewModel: StoryPageViewModel = StoryPageViewModel()
+    var count: Int8 = 1
+    var currentIndexTopText = 0
+    var currentIndexBottomText = 1
+    var totalText: Int8 = 0
+    var lastPageIndex: Int8 = 0
+    let selectionFeedbackGenerator = UISelectionFeedbackGenerator()
+    let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
+
+
+    override func loadView() {
+
+        super.loadView()
+        self.storyPage = StoryPage()
+        self.view = self.storyPage
+
+        totalText = viewModel.numberOfPages
+        lastPageIndex = totalText - 1
     }
+
     override func viewDidLoad() {
+
         super.viewDidLoad()
-        scrollView.delegate = self
-        addGradientConstraints()
-        configureScrollView()
-        createPageDisplay()
-        setPageControl()
+        viewModel.loadData()
+        showTwoText()
+        setImageHistory()
+        setImageSeparator()
 
-        pageControl.addTarget(self, action: #selector(pageControlDidChange), for: .valueChanged)
+        storyPage?.titleScreen.text = viewModel.title
+        storyPage?.numberOfBooks.text = "\(count)"
+        
+        storyPage?.rightButtonHistory.addTarget(self, action: #selector(incrementLabel), for: .touchUpInside)
+        storyPage?.leftButtonHistory.addTarget(self, action: #selector(decrementLabel), for: .touchUpInside)
+
+        storyPage?.rightButtonHistory.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
+        storyPage?.leftButtonHistory.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+
+        selectionFeedbackGenerator.prepare()
+        impactFeedbackGenerator.prepare()
     }
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let value = Float(scrollView.contentOffset.x)/Float(scrollView.frame.size.width)
-        pageControl.currentPage = Int(floorf(value))
-    }
-    // MARK: - SettingHScroll
-    private func configureScrollView() {
-        view.addSubview(scrollView)
-        NSLayoutConstraint.activate([
-            scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            scrollView.widthAnchor.constraint(equalTo: view.widthAnchor),
-            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100)
-        ])
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        let value = Float(scrollView.contentOffset.x)/Float(scrollView.frame.size.width)
+//        pageControl.currentPage = Int(floorf(value))
+//    }
+//    // MARK: - SettingHScroll
+//    private func configureScrollView() {
+//        view.addSubview(scrollView)
+//        NSLayoutConstraint.activate([
+//            scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//            scrollView.widthAnchor.constraint(equalTo: view.widthAnchor),
+//            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+//            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100)
+//        ])
+//    }
+    func showTwoText() {
 
-        let horizontalScroll = CGFloat(hPagesQuantity) * view.frame.size.width
-        scrollView.contentSize = CGSize(width: horizontalScroll, height: scrollView.frame.size.height)
+        let uniqueTexts = Set(viewModel.pageTexts ?? [])
+        let countText = uniqueTexts.count
 
-    }
-    // MARK: - CreateHorizontalPages
-    private func createPageDisplay() {
-        for element in 0..<hPagesQuantity {
-            let page = UIView()
-            let textView = StoryPage().textView
-            let imageDisplay = UIImage(named: story[storyIndex].pages[element].image)
-            let imageView = UIImageView(image: imageDisplay)
-            let titleLabel = StoryPage().titleLabel
-            let subtitleLabel = StoryPage().subtitleLabel
+        if countText >= 2 {
 
-            imageView.translatesAutoresizingMaskIntoConstraints = false
+            let topTextIndex = Int8(currentIndexTopText % countText)
+            let bottomTextIndex = Int8(currentIndexBottomText % countText)
 
-            scrollView.addSubview(page)
-            page.addSubview(imageView)
-            page.addSubview(textView)
-            page.addSubview(titleLabel)
-            textView.addSubview(subtitleLabel)
+            storyPage?.upTextBooks.text = viewModel.pageTexts![Int(topTextIndex)]
+            storyPage?.downTextBooks.text = viewModel.pageTexts![Int(bottomTextIndex)]
 
-            page.frame = CGRect(
-                x: CGFloat(element) * view.frame.size.width,
-                y: 0,
-                width: view.frame.size.width,
-                height: view.frame.size.height
-            )
-            imageView.frame = CGRect(
-                x: 25,
-                y: 70,
-                width: view.frame.width-50,
-                height: view.center.y/2
-            )
-            NSLayoutConstraint.activate([
-                imageView.widthAnchor.constraint(equalTo: view.widthAnchor,multiplier: 3/4),
-                imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-                imageView.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: -20),
-                imageView.centerXAnchor.constraint(equalTo: page.centerXAnchor),
-                titleLabel.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
-                titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
-                titleLabel.widthAnchor.constraint(equalTo: imageView.widthAnchor),
-                textView.centerXAnchor.constraint(equalTo: page.centerXAnchor),
-                textView.widthAnchor.constraint(equalTo: page.widthAnchor, constant: -50),
-                textView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 20),
-                textView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
-                subtitleLabel.topAnchor.constraint(equalTo: textView.topAnchor),
-                subtitleLabel.bottomAnchor.constraint(equalTo: textView.bottomAnchor),
-                subtitleLabel.widthAnchor.constraint(equalTo: textView.widthAnchor),
-                subtitleLabel.centerXAnchor.constraint(equalTo: textView.centerXAnchor)
-            ])
-            titleLabel.text = "\(story[storyIndex].title)"
-            subtitleLabel.text = "\(story[storyIndex].pages[element].text)"
+        } else if countText == 1 {
+            storyPage!.upTextBooks.text = uniqueTexts.first
+        } else {
+            print("ERROU")
         }
     }
 
-    // TODO: Pesquisar sobre Size Class com ViewCode com ScrollView
-    // MARK: - BackScreenConstraints
-    private func addGradientConstraints() {
-        gradientView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(gradientView)
-        NSLayoutConstraint.activate([
-            gradientView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            gradientView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            gradientView.topAnchor.constraint(equalTo: view.topAnchor),
-            gradientView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-    }
-    // MARK: - PageControl
-    private func setPageControl() {
-        view.addSubview(pageControl)
-
-        NSLayoutConstraint.activate([
-            pageControl.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-            pageControl.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-            pageControl.topAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-
-        pageControl.numberOfPages = hPagesQuantity
-
+    func setImageSeparator() {
+        let topImageIndex = Int(currentIndexTopText % (viewModel.pageImages?.count ?? 1))
+        if let image = viewModel.pageImages?[topImageIndex] {
+            storyPage?.imageStory.image = UIImage(named: image)
+        }
     }
 
-    // MARK: Selector(PageControl)
-    @objc private func pageControlDidChange(_ sender: UIPageControl) {
-        let current = sender.currentPage
-
-        scrollView.setContentOffset(CGPoint(x: CGFloat(current)*view.frame.size.width , y: 0), animated: true)
+    func setImageHistory() {
+        storyPage?.imageStory.image = UIImage(named: viewModel.imageStory ?? "")
     }
 
- }
+    @objc func nextButtonTapped() {
+
+        // Gera feedback tátil de seleção
+        let selectionFeedbackGenerator = UISelectionFeedbackGenerator()
+        selectionFeedbackGenerator.selectionChanged()
+
+        // Gera feedback tátil de impacto
+        let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
+        impactFeedbackGenerator.impactOccurred()
+
+        currentIndexTopText += 2
+        currentIndexBottomText += 2
+        showTwoText()
+        setImageSeparator()
+
+        if currentIndexTopText >= lastPageIndex && currentIndexBottomText >= lastPageIndex {
+            // Desativar o botão
+            storyPage?.rightButtonHistory.isEnabled = false
+        } else {
+            // Incrementar o índice e atualizar as páginas
+            currentIndexTopText += 2
+            currentIndexBottomText += 2
+            showTwoText()
+            setImageSeparator()
+        }
+
+    }
+
+    @objc func backButtonTapped() {
+
+        // Gera feedback tátil de seleção
+        let selectionFeedbackGenerator = UISelectionFeedbackGenerator()
+        selectionFeedbackGenerator.selectionChanged()
+
+        // Gera feedback tátil de impacto
+        let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
+        impactFeedbackGenerator.impactOccurred()
+
+        if currentIndexTopText > 0 && currentIndexBottomText > 0 {
+            currentIndexTopText -= 2
+            currentIndexBottomText -= 2
+            showTwoText()
+            setImageSeparator()
+
+            if !storyPage!.rightButtonHistory.isEnabled {
+                storyPage?.rightButtonHistory.isEnabled = true
+            }
+        }
+    }
+
+    @objc func incrementLabel() {
+        count += 1
+        storyPage!.numberOfBooks.text = "\(count)"
+    }
+
+    @objc func decrementLabel() {
+        if count > 1 {
+            count -= 1
+            storyPage!.numberOfBooks.text = "\(count)"
+        }
+    }
+}
+
+//guard let pages = viewModel.story?.pages else { return }
+//
+//    let currentPageIndex = Int(currentIndexTopText / 2)
+//
+//    if currentPageIndex < pages.count {
+//        let currentPage = pages[currentPageIndex]
+//        storyPage?.upTextBooks.text = currentPage.text
+//
+//        let nextPageIndex = currentPageIndex + 1
+//        if nextPageIndex < pages.count {
+//            let nextPage = pages[nextPageIndex]
+//            storyPage?.downTextBooks.text = nextPage.text
+//        } else {
+//            storyPage?.downTextBooks.text = ""
+//        }
+//
+//        if let image = viewModel.pageImages?[currentPageIndex] {
+//            storyPage?.imageStory.image = UIImage(named: image)
+//        }
+//    }
+//
+//    let isLastPage = currentPageIndex == pages.count - 1
+//    storyPage?.rightButtonHistory.isEnabled = !isLastPage

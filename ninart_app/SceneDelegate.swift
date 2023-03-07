@@ -19,6 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.rootViewController = UINavigationController(rootViewController: BookDescriptionViewController())
+//        MenuViewController()
         window?.makeKeyAndVisible()
     }
 
