@@ -11,8 +11,6 @@ class MenuViewController: UITabBarController, UITabBarControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.delegate = self
-        setUpTabs()
     }
 
     internal func setUpTabs() {
