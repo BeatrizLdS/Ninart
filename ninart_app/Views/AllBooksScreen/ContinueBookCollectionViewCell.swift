@@ -58,6 +58,7 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         layer.masksToBounds = true
+        layer.cornerRadius = 10
         buildLayoutView()
     }
 
