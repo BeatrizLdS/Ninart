@@ -94,6 +94,7 @@ extension AllBooksViewController: UITableViewDataSource {
             withIdentifier: CollectionTableViewCell.identifier,
             for: indexPath
         ) as! CollectionTableViewCell
+        cell.selectBookProtocol = self
         let numberOfSections = viewModel?.getNumberOfCategories()
         var sectionType: CellType = .normal
         if numberOfSections == 3 && indexPath.section == 0 {
@@ -102,5 +103,21 @@ extension AllBooksViewController: UITableViewDataSource {
         cell.configure(list: (viewModel?.getCurrentList(section: indexPath.section))!,
                        type: sectionType)
         return cell
+    }
+}
+
+extension AllBooksViewController: SelectBook {
+    func didSelect<Book>(book: Book) {
+        var newViewModel: BookDescriptionViewModel?
+        if let audioBook = book as? AudioBook {
+            let story = viewModel?.searchStoryForTitle(title: audioBook.title)
+            newViewModel = BookDescriptionViewModel(story: story, audioBook: audioBook)
+        } else if let story = book as? Story {
+            let audioBook = viewModel?.searchAudioBookForTitle(title: story.title)
+            newViewModel = BookDescriptionViewModel(story: story, audioBook: audioBook)
+        }
+        let newViewController = BookDescriptionViewController()
+        newViewController.viewModel = newViewModel
+        self.navigationController?.pushViewController(newViewController, animated: true)
     }
 }

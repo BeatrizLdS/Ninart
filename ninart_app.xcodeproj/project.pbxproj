@@ -30,6 +30,7 @@
 		D42D044A2850E0C8003DA055 /* ninart_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42D04492850E0C8003DA055 /* ninart_appUITests.swift */; };
 		D42D044C2850E0C8003DA055 /* ninart_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42D044B2850E0C8003DA055 /* ninart_appUITestsLaunchTests.swift */; };
 		D4D9CD832852104100B8B75C /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9CD822852104100B8B75C /* AudioManager.swift */; };
+		FF04BCBB29B6E2840055BD25 /* BookDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF04BCBA29B6E2840055BD25 /* BookDescriptionViewModel.swift */; };
 		FF0BE07B29B52E1B00E7FD5C /* CircleButtonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0BE07A29B52E1B00E7FD5C /* CircleButtonProtocol.swift */; };
 		FF5A4DFC299FB00300774298 /* AllBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A4DFB299FB00300774298 /* AllBooksView.swift */; };
 		FF5A4DFE299FB0B700774298 /* AllBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A4DFD299FB0B700774298 /* AllBooksViewController.swift */; };
@@ -96,6 +97,7 @@
 		D42D04492850E0C8003DA055 /* ninart_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ninart_appUITests.swift; sourceTree = "<group>"; };
 		D42D044B2850E0C8003DA055 /* ninart_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ninart_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D4D9CD822852104100B8B75C /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		FF04BCBA29B6E2840055BD25 /* BookDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDescriptionViewModel.swift; sourceTree = "<group>"; };
 		FF0BE07A29B52E1B00E7FD5C /* CircleButtonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonProtocol.swift; sourceTree = "<group>"; };
 		FF5A4DFB299FB00300774298 /* AllBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBooksView.swift; sourceTree = "<group>"; };
 		FF5A4DFD299FB0B700774298 /* AllBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBooksViewController.swift; sourceTree = "<group>"; };
@@ -218,7 +220,7 @@
 				D42D04592850EC14003DA055 /* Controllers */,
 				FF5A4E0629A7913D00774298 /* Extensions */,
 				7E0DFFC829A7908A00587392 /* Protocol */,
-				D4D9CD812852102500B8B75C /* Supporting Files */,
+				D4D9CD812852102500B8B75C /* SupportingFiles */,
 				D42D04312850E0C8003DA055 /* Assets.xcassets */,
 				D42D04332850E0C8003DA055 /* LaunchScreen.storyboard */,
 				D42D04362850E0C8003DA055 /* Info.plist */,
@@ -278,7 +280,7 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		D4D9CD812852102500B8B75C /* Supporting Files */ = {
+		D4D9CD812852102500B8B75C /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
 				FF390F2F29B6415E00D87671 /* Books */,
@@ -286,7 +288,7 @@
 				D4D9CD822852104100B8B75C /* AudioManager.swift */,
 				FFCDE07C29AFC9DD00B29BB5 /* audioBooks.json */,
 			);
-			path = "Supporting Files";
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 		FF390F2F29B6415E00D87671 /* Books */ = {
@@ -327,6 +329,7 @@
 				FF5A4E2229A7AE3C00774298 /* BooksViewModel.swift */,
 				14219BD729AE207F0057FD9A /* StoryPageViewModel.swift */,
 				7E12F95629A9088700D86DFE /* AudioBookViewModel.swift */,
+				FF04BCBA29B6E2840055BD25 /* BookDescriptionViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				7E43267E285B8164008B572D /* StoryPageViewController.swift in Sources */,
 				7E0DFFC729A78DDB00587392 /* SetViewProtocol.swift in Sources */,
 				FFCDE08329B0B5D300B29BB5 /* UIImageExtension.swift in Sources */,
+				FF04BCBB29B6E2840055BD25 /* BookDescriptionViewModel.swift in Sources */,
 				14219BD429ACDDD20057FD9A /* ViewExtension.swift in Sources */,
 				D42D04302850E0C7003DA055 /* ninart_app.xcdatamodeld in Sources */,
 				FF90665529B277CC0022196E /* CircleButtonView.swift in Sources */,

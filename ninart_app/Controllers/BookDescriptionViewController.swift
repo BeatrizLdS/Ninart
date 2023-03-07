@@ -9,6 +9,7 @@ import UIKit
 
 class BookDescriptionViewController: UIViewController {
     let bookDescriptionView = BookDescriptionView()
+    var viewModel: BookDescriptionViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()

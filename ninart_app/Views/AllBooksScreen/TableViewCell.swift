@@ -13,6 +13,7 @@ class CollectionTableViewCell: UITableViewCell {
     static var continueCells: Bool = true
     var listOfStorys = Array <Any, Any>()
     var cellType: CellType = .started
+    var selectBookProtocol: SelectBook?
 
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -55,6 +56,10 @@ class CollectionTableViewCell: UITableViewCell {
         listOfStorys = list
         cellType = type
     }
+
+    func selecteBook() {
+        
+    }
 }
 
 extension CollectionTableViewCell: SettingViews {
@@ -68,7 +73,7 @@ extension CollectionTableViewCell: SettingViews {
     func setupConstraints() {}
 }
 
-extension CollectionTableViewCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension CollectionTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -78,6 +83,21 @@ extension CollectionTableViewCell: UICollectionViewDelegate, UICollectionViewDel
             case .normal:
                 return CGSize(width: 130, height: 180)
             }
+    }
+}
+
+extension CollectionTableViewCell: UICollectionViewDelegate {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
+        let haptics = UINotificationFeedbackGenerator()
+        haptics.notificationOccurred(.success)
+        if let book = listOfStorys.get(index: indexPath.row) as? AudioBook {
+            selectBookProtocol?.didSelect(book: book)
+        } else if let book = listOfStorys.get(index: indexPath.row) as? Story {
+            selectBookProtocol?.didSelect(book: book)
+        }
     }
 }
 
@@ -96,10 +116,13 @@ extension CollectionTableViewCell: UICollectionViewDataSource {
                 for: indexPath) as! ContinueBookCollectionViewCell
             let story = listOfStorys.get(index: indexPath.row)
             if story is AudioBook {
-                cell.configureAudioBook(audioBook: listOfStorys.get(index: indexPath.row) as! AudioBook)
+                if let audioBook = listOfStorys.get(index: indexPath.row) as? AudioBook {
+                    cell.configureAudioBook(audioBook: audioBook)
+                }
             } else {
-                cell.configureBook(
-                    book: listOfStorys.get(index: indexPath.row) as! Story)
+                if let story = listOfStorys.get(index: indexPath.row) as? Story {
+                    cell.configureBook(book: story)
+                }
             }
             return cell
         case .normal:

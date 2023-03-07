@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol SelectBook {
-    func didSelect()
+    func didSelect<Book>(book: Book)
 }
