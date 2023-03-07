@@ -2,24 +2,26 @@
     {
         "title":"Alice no País das Maravilhas",
         "image":"AliceWonderland",
-        "imageDescription":"Cabelos loiros cacheados, vestido azul e avental branco, sorridente, curiosa, segurando um relógio de bolso.",
+        "imageDescription":"Uma garota de cabelos loiros enrolados e de olhos azuis, com um vestido azul e avental branco, sorridente. Atrás dela, se esconde um tímido coelho branco.",
         "audioName":"AliceNoPaisDasMaravilhas"
     },
     {
         "title":"A Bela adormecida",
         "image":"SleepingBeauty",
-        "imageDescription":"Vestido rosa longo, cabelos loiros, dormindo em cama dourada.",
+        "imageDescription":"Uma garota de cabelos roxos e presos em dois coques, com um vestido rosa, dormindo sobre um travesseiro verde.",
         "audioName":"ABelaAdormecida"
     },
     {
         "title":"O patinho feio",
         "image":"Duckling",
-        "imageDescription":"Patinho pequeno e desajeitado, olhar triste, rejeitado pelos outros patos.",
+        "imageDescription":"Um patinho amarelo chorando, sentado sobre uma poça de lágrimas.",
         "audioName":"OPatinhoFeio"
     },
     {
         "title":"Pinóquio",
         "image":"Pinocchio",
+        "imageDescription":"Um garoto de madeira com um grande nariz, de cabelos castenhos-claros, sentado sobre um tronco, preocupado.",
         "audioName":"Pinoquio"
     }
 ]
+

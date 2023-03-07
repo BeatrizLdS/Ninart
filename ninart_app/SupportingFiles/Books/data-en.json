@@ -2,7 +2,8 @@
     {
         "title":"Alice in the Wonderland",
         "image":"AliceWonderland",
-        "imageDescription":"Curly blond hair, blue dress and white apron, smiling, curious, holding a pocket watch.",
+        "imageDescription":"A girl with curly blond hair and blue eyes, dressed in a blue dress and white apron, smiling. A white rabbit, wearing red pants, hides behind her shyly.",
+        "audioName":"AliceInWonderland",
         "pages":[
             {
                 "image":"",
@@ -29,7 +30,7 @@
     {
         "title":"Sleeping Beauty",
         "image":"SleepingBeauty",
-        "imageDescription":"Long pink dress, blonde hair, sleeping in golden bed.",
+        "imageDescription":"A girl with purple hair in two bun hairstyles, wearing a pink dress, sleeping on a green pillow.",
         "pages":[
             {
                 "image":"",
@@ -56,7 +57,7 @@
     {
         "title":"The Ugly Duckling",
         "image":"Duckling",
-        "imageDescription":"Small and clumsy duckling, sad look, rejected by the other ducks.",
+        "imageDescription":"A yellow duckling crying, sitting in a puddle of tears.",
         "pages":[
             {
                 "image":"",
@@ -83,7 +84,7 @@
     {
         "title":"Pinocchio",
         "image":"Pinocchio",
-        "imageDescription":"Wooden puppet smiling, nose growing, surrounded by insects.",
+        "imageDescription":"A wooden boy with a big nose and brunette hair, sitting on a log, worried.",
         "pages":[
             {
                 "image":"",
