@@ -33,6 +33,7 @@
 		FF04BCBB29B6E2840055BD25 /* BookDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF04BCBA29B6E2840055BD25 /* BookDescriptionViewModel.swift */; };
 		FF04BCBD29B74A500055BD25 /* incrementAndDeprementProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF04BCBC29B74A500055BD25 /* incrementAndDeprementProtocol.swift */; };
 		FF04BCBF29B74B490055BD25 /* StackExtensionStackWithDecrementAndIncrement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF04BCBE29B74B490055BD25 /* StackExtensionStackWithDecrementAndIncrement.swift */; };
+		FF04BCC129B755D00055BD25 /* audioBooks-pt.json in Resources */ = {isa = PBXBuildFile; fileRef = FF04BCC029B755D00055BD25 /* audioBooks-pt.json */; };
 		FF0BE07B29B52E1B00E7FD5C /* CircleButtonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0BE07A29B52E1B00E7FD5C /* CircleButtonProtocol.swift */; };
 		FF5A4DFC299FB00300774298 /* AllBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A4DFB299FB00300774298 /* AllBooksView.swift */; };
 		FF5A4DFE299FB0B700774298 /* AllBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A4DFD299FB0B700774298 /* AllBooksViewController.swift */; };
@@ -47,7 +48,7 @@
 		FF90665329B20E8D0022196E /* data-en.json in Resources */ = {isa = PBXBuildFile; fileRef = FF90665229B20E8D0022196E /* data-en.json */; };
 		FF90665529B277CC0022196E /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF90665429B277CC0022196E /* CircleButtonView.swift */; };
 		FFCDE07729AE1FCE00B29BB5 /* SelectBookProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCDE07629AE1FCE00B29BB5 /* SelectBookProtocol.swift */; };
-		FFCDE07D29AFC9DD00B29BB5 /* audioBooks.json in Resources */ = {isa = PBXBuildFile; fileRef = FFCDE07C29AFC9DD00B29BB5 /* audioBooks.json */; };
+		FFCDE07D29AFC9DD00B29BB5 /* audioBooks-en.json in Resources */ = {isa = PBXBuildFile; fileRef = FFCDE07C29AFC9DD00B29BB5 /* audioBooks-en.json */; };
 		FFCDE08129AFF14800B29BB5 /* ArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCDE08029AFF14800B29BB5 /* ArrayModel.swift */; };
 		FFCDE08329B0B5D300B29BB5 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCDE08229B0B5D300B29BB5 /* UIImageExtension.swift */; };
 		FFCDE08529B0B85C00B29BB5 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCDE08429B0B85C00B29BB5 /* StatusView.swift */; };
@@ -102,6 +103,7 @@
 		FF04BCBA29B6E2840055BD25 /* BookDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDescriptionViewModel.swift; sourceTree = "<group>"; };
 		FF04BCBC29B74A500055BD25 /* incrementAndDeprementProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = incrementAndDeprementProtocol.swift; sourceTree = "<group>"; };
 		FF04BCBE29B74B490055BD25 /* StackExtensionStackWithDecrementAndIncrement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackExtensionStackWithDecrementAndIncrement.swift; sourceTree = "<group>"; };
+		FF04BCC029B755D00055BD25 /* audioBooks-pt.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "audioBooks-pt.json"; sourceTree = "<group>"; };
 		FF0BE07A29B52E1B00E7FD5C /* CircleButtonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonProtocol.swift; sourceTree = "<group>"; };
 		FF5A4DFB299FB00300774298 /* AllBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBooksView.swift; sourceTree = "<group>"; };
 		FF5A4DFD299FB0B700774298 /* AllBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBooksViewController.swift; sourceTree = "<group>"; };
@@ -118,7 +120,7 @@
 		FF90665229B20E8D0022196E /* data-en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "data-en.json"; sourceTree = "<group>"; };
 		FF90665429B277CC0022196E /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
 		FFCDE07629AE1FCE00B29BB5 /* SelectBookProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBookProtocol.swift; sourceTree = "<group>"; };
-		FFCDE07C29AFC9DD00B29BB5 /* audioBooks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = audioBooks.json; sourceTree = "<group>"; };
+		FFCDE07C29AFC9DD00B29BB5 /* audioBooks-en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "audioBooks-en.json"; sourceTree = "<group>"; };
 		FFCDE08029AFF14800B29BB5 /* ArrayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayModel.swift; sourceTree = "<group>"; };
 		FFCDE08229B0B5D300B29BB5 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		FFCDE08429B0B85C00B29BB5 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
@@ -292,7 +294,8 @@
 				FF390F2F29B6415E00D87671 /* Books */,
 				7E12F95C29A90DC200D86DFE /* Audio */,
 				D4D9CD822852104100B8B75C /* AudioManager.swift */,
-				FFCDE07C29AFC9DD00B29BB5 /* audioBooks.json */,
+				FFCDE07C29AFC9DD00B29BB5 /* audioBooks-en.json */,
+				FF04BCC029B755D00055BD25 /* audioBooks-pt.json */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -449,7 +452,8 @@
 				D42D04322850E0C8003DA055 /* Assets.xcassets in Resources */,
 				FF5A4E1729A7962000774298 /* Localizable.strings in Resources */,
 				7E432682285D4FFF008B572D /* data-pt.json in Resources */,
-				FFCDE07D29AFC9DD00B29BB5 /* audioBooks.json in Resources */,
+				FF04BCC129B755D00055BD25 /* audioBooks-pt.json in Resources */,
+				FFCDE07D29AFC9DD00B29BB5 /* audioBooks-en.json in Resources */,
 				7E12F95E29A90FDE00D86DFE /* bensound-lofinerdbassbuzzer.mp3 in Resources */,
 				FF90665329B20E8D0022196E /* data-en.json in Resources */,
 				7E12F95A29A90DBC00D86DFE /* bensound-slider.mp3 in Resources */,
