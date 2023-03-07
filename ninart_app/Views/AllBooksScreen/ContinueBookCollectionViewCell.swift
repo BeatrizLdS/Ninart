@@ -118,11 +118,6 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
         )
         progressBar.accessibilityValue = ""
     }
-
-    @objc func buttonAction() {
-        let haptics = UINotificationFeedbackGenerator()
-        haptics.notificationOccurred(.success)
-    }
 }
 
 extension ContinueBookCollectionViewCell: SettingViews {
