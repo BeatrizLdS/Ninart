@@ -23,7 +23,7 @@ class AudiobookView: UIView {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "aSundayAfternoonOnTheIslandOfLaGrandeJatte")
         imageView.tintColor = .text
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 25
         imageView.translatesAutoresizingMaskIntoConstraints = false
