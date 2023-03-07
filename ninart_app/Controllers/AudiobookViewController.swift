@@ -50,7 +50,7 @@ class AudiobookViewController: UIViewController {
     }
     func setupAudio() {
         viewModel.soundEnabling()
-        AudioManager.shared.prepareToPlay(audioName: audioName, audioType: audioType)
+        AudioManager.shared.prepareToPlay(audioName: viewModel.getAudioBookAudioName(), audioType: audioType)
         viewModel.updateButtonIcon(audiobookView.pausePlayButton)
         setupDuration()
         viewModel.updateSlider(slider: audiobookView.sliderControl, label: audiobookView.currentTimeLabel)
