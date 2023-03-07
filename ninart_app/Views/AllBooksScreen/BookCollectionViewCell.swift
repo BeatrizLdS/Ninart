@@ -22,6 +22,9 @@ class BookCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(posterImageView)
         layer.masksToBounds = true
         layer.cornerRadius = 10
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.lightGray.cgColor
+        backgroundColor = .black
     }
 
     required init?(coder: NSCoder) {

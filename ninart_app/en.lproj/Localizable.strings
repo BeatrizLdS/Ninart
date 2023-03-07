@@ -7,9 +7,9 @@
 */
 
 // MARK: Home Page
-"continueReading" = "Continue reading";
-"readToMe" = "Read to me";
-"reading" = "Reading";
+"continueReading" = "Continue";
+"readToMe" = "Listen story";
+"reading" = "Read story";
 
 // Tab bar
 "books" = "Books";
