@@ -18,6 +18,8 @@ class CircleButtonView: UIView {
     let label: UILabel = {
         let label = UILabel()
         label.text = "butão"
+        label.contentMode = .top
+        label.textAlignment = .natural
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -25,6 +27,7 @@ class CircleButtonView: UIView {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.alignment = .center
+        stack.spacing = 0
 //        stack.distribution = .fill
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
@@ -54,6 +57,7 @@ class CircleButtonView: UIView {
         }
     }
     override func layoutSubviews() {
+        button.layoutIfNeeded()
         let biggerSize = getBiggerSize()
         self.layer.cornerRadius = 0.5 * biggerSize
     }
@@ -67,7 +71,7 @@ extension CircleButtonView: SettingViews {
     }
     func setupConstraints() {
         let buttonConstraints = [
-            button.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 8),
+            button.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             button.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ]
         let imageConstraints = [
