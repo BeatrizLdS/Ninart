@@ -144,16 +144,12 @@ class AudioBookViewModel {
         guard let player = AudioManager.shared.player else { return }
         if let formattedTimeString = formatter.string(from: TimeInterval(player.currentTime)),
            let formattedFullString = formatter.string(from: TimeInterval(player.duration)) {
-            slider.accessibilityValue = "track position \(formattedTimeString) of \(formattedFullString)"
-
-            //     let formattedFullString = formatter.string(from: TimeInterval(player.duration)) {
-            //     slider.accessibilityValue = String.localizedStringWithFormat(
-            //         NSLocalizedString("%@! of %@!",
-            //                           comment: ""),
-            //         formattedTimeString,
-            //         formattedFullString
-            //     )
-            // }
+            slider.accessibilityValue = String.localizedStringWithFormat(
+                NSLocalizedString("%@! of %@!",
+                                  comment: ""),
+                formattedTimeString,
+                formattedFullString
+            )
         }
     }
 }
