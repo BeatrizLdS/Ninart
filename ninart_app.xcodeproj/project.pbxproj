@@ -19,7 +19,7 @@
 		7E35252429AF460D00395FDA /* BookDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E35252329AF460D00395FDA /* BookDescriptionViewController.swift */; };
 		7E432677285B6F83008B572D /* StoryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E432676285B6F83008B572D /* StoryPage.swift */; };
 		7E43267E285B8164008B572D /* StoryPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E43267D285B8164008B572D /* StoryPageViewController.swift */; };
-		7E432682285D4FFF008B572D /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E432681285D4FFF008B572D /* data.json */; };
+		7E432682285D4FFF008B572D /* data-pt.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E432681285D4FFF008B572D /* data-pt.json */; };
 		7E432684285D5242008B572D /* jsonMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E432683285D5242008B572D /* jsonMap.swift */; };
 		D42D04262850E0C7003DA055 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42D04252850E0C7003DA055 /* AppDelegate.swift */; };
 		D42D04282850E0C7003DA055 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42D04272850E0C7003DA055 /* SceneDelegate.swift */; };
@@ -40,6 +40,8 @@
 		FF5A4E2029A7A6FC00774298 /* ContinueBookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A4E1F29A7A6FC00774298 /* ContinueBookCollectionViewCell.swift */; };
 		FF5A4E2329A7AE3C00774298 /* BooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A4E2229A7AE3C00774298 /* BooksViewModel.swift */; };
 		FF5A4E2829A8E68B00774298 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A4E2729A8E68B00774298 /* ColorExtension.swift */; };
+		FF6B8C3829B617FC00A85A0A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6B8C3729B617FC00A85A0A /* SearchViewController.swift */; };
+		FF90665329B20E8D0022196E /* data-en.json in Resources */ = {isa = PBXBuildFile; fileRef = FF90665229B20E8D0022196E /* data-en.json */; };
 		FF90665529B277CC0022196E /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF90665429B277CC0022196E /* CircleButtonView.swift */; };
 		FFCDE07729AE1FCE00B29BB5 /* SelectBookProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCDE07629AE1FCE00B29BB5 /* SelectBookProtocol.swift */; };
 		FFCDE07D29AFC9DD00B29BB5 /* audioBooks.json in Resources */ = {isa = PBXBuildFile; fileRef = FFCDE07C29AFC9DD00B29BB5 /* audioBooks.json */; };
@@ -78,7 +80,7 @@
 		7E35252329AF460D00395FDA /* BookDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDescriptionViewController.swift; sourceTree = "<group>"; };
 		7E432676285B6F83008B572D /* StoryPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPage.swift; sourceTree = "<group>"; };
 		7E43267D285B8164008B572D /* StoryPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPageViewController.swift; sourceTree = "<group>"; };
-		7E432681285D4FFF008B572D /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		7E432681285D4FFF008B572D /* data-pt.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "data-pt.json"; sourceTree = "<group>"; };
 		7E432683285D5242008B572D /* jsonMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsonMap.swift; sourceTree = "<group>"; };
 		D42D04222850E0C7003DA055 /* ninart_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ninart_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42D04252850E0C7003DA055 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,8 @@
 		FF5A4E1F29A7A6FC00774298 /* ContinueBookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueBookCollectionViewCell.swift; sourceTree = "<group>"; };
 		FF5A4E2229A7AE3C00774298 /* BooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewModel.swift; sourceTree = "<group>"; };
 		FF5A4E2729A8E68B00774298 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		FF6B8C3729B617FC00A85A0A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		FF90665229B20E8D0022196E /* data-en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "data-en.json"; sourceTree = "<group>"; };
 		FF90665429B277CC0022196E /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
 		FFCDE07629AE1FCE00B29BB5 /* SelectBookProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBookProtocol.swift; sourceTree = "<group>"; };
 		FFCDE07C29AFC9DD00B29BB5 /* audioBooks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = audioBooks.json; sourceTree = "<group>"; };
@@ -249,6 +253,7 @@
 				7E35252329AF460D00395FDA /* BookDescriptionViewController.swift */,
 				7E43267D285B8164008B572D /* StoryPageViewController.swift */,
 				7E0DFFC229A7893E00587392 /* AudiobookViewController.swift */,
+				FF6B8C3729B617FC00A85A0A /* SearchViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -276,12 +281,21 @@
 		D4D9CD812852102500B8B75C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FF390F2F29B6415E00D87671 /* Books */,
 				7E12F95C29A90DC200D86DFE /* Audio */,
 				D4D9CD822852104100B8B75C /* AudioManager.swift */,
-				7E432681285D4FFF008B572D /* data.json */,
 				FFCDE07C29AFC9DD00B29BB5 /* audioBooks.json */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FF390F2F29B6415E00D87671 /* Books */ = {
+			isa = PBXGroup;
+			children = (
+				FF90665229B20E8D0022196E /* data-en.json */,
+				7E432681285D4FFF008B572D /* data-pt.json */,
+			);
+			path = Books;
 			sourceTree = "<group>";
 		};
 		FF5A4DFA299FAFC600774298 /* AllBooksScreen */ = {
@@ -425,9 +439,10 @@
 			files = (
 				D42D04322850E0C8003DA055 /* Assets.xcassets in Resources */,
 				FF5A4E1729A7962000774298 /* Localizable.strings in Resources */,
-				7E432682285D4FFF008B572D /* data.json in Resources */,
+				7E432682285D4FFF008B572D /* data-pt.json in Resources */,
 				FFCDE07D29AFC9DD00B29BB5 /* audioBooks.json in Resources */,
 				7E12F95E29A90FDE00D86DFE /* bensound-lofinerdbassbuzzer.mp3 in Resources */,
+				FF90665329B20E8D0022196E /* data-en.json in Resources */,
 				7E12F95A29A90DBC00D86DFE /* bensound-slider.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,6 +519,7 @@
 				14219BD829AE207F0057FD9A /* StoryPageViewModel.swift in Sources */,
 				FF5A4DFC299FB00300774298 /* AllBooksView.swift in Sources */,
 				7E35252129AF45CA00395FDA /* BookDescriptionView.swift in Sources */,
+				FF6B8C3829B617FC00A85A0A /* SearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,7 +702,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 44U668YQTW;
+				DEVELOPMENT_TEAM = NTS86MKTBV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ninart_app/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -713,7 +729,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 44U668YQTW;
+				DEVELOPMENT_TEAM = NTS86MKTBV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ninart_app/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

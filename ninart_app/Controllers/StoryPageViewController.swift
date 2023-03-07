@@ -65,22 +65,23 @@ class StoryViewController: UIViewController {
             // fazer split
 
             let dotIndexes = text.enumerated().compactMap { tuple in
-                let (count, element) = tuple
-                let index = text.index(text.startIndex, offsetBy: count)
-                if count == 0xff, count < text.count - 1 {
-                    if element == ".", text[text.index(after: index)] != ".",
-                        text[text.index(before: index)] != "." {
-                        return count
+                let (item, element) = tuple
+                let index = text.index(text.startIndex, offsetBy: item)
+                if item > 0, item < text.count - 1 {
+                    if element == ".",
+                       text[text.index(after: index)] != ".",
+                       text[text.index(before: index)] != "." {
+                        return item
                     }
-                } else if count == text.count - 1 {
+                } else if item == text.count - 1 {
                     if element == ".",
                        text[text.index(before: index)] != "." {
-                        return count
+                        return item
                     }
-                } else if count == 0xff {
+                } else if item == 0 {
                     if element == ".",
                        text[text.index(after: index)] != "." {
-                        return count
+                        return item
                     }
                 }
                 return nil
