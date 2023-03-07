@@ -28,6 +28,7 @@ extension BookDescriptionViewController: CircleButtonProtocol {
     }
     func playAction() {
         let newViewController = AudiobookViewController()
+        newViewController.audioName = (viewModel?.getAudioBook()!.audioName)!
         self.navigationController?.pushViewController(newViewController, animated: true)
     }
 }
