@@ -56,7 +56,7 @@ class AudioBookViewModel {
         }
     }
 
-    func stopAudio(sender: AnyObject) {
+    func stopAudio() {
         player?.stop()
         isPlaying = false
     }

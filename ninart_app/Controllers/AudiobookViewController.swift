@@ -31,10 +31,15 @@ class AudiobookViewController: UIViewController {
         setupUI()
         setupAccessibility()
     }
-//    override func accessibilityIncrement() {
-//        audiobookView.sliderControl.accessibilityValue
-//        print("increment")
-//    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        viewModel.stopAudio()
+    }
+
+    //    override func accessibilityIncrement() {
+    //        audiobookView.sliderControl.accessibilityValue
+    //        print("increment")
+// }
 
     func setupUI() {
         audiobookView.pausePlayButton.addTarget(self, action: #selector(pausePlayAudio), for: .touchUpInside)
@@ -50,7 +55,7 @@ class AudiobookViewController: UIViewController {
     }
     func setupAudio() {
         viewModel.soundEnabling()
-        AudioManager.shared.prepareToPlay(audioName: audioName, audioType: audioType)
+        AudioManager.shared.prepareToPlay(audioName: viewModel.getAudioBookAudioName(), audioType: audioType)
         viewModel.updateButtonIcon(audiobookView.pausePlayButton)
         setupDuration()
         viewModel.updateSlider(slider: audiobookView.sliderControl, label: audiobookView.currentTimeLabel)
