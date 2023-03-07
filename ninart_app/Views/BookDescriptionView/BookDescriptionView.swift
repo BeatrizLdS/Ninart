@@ -70,6 +70,7 @@ class BookDescriptionView: UIView {
         super.init(frame: frame)
         self.backgroundColor = .backgroundColor
         buildLayoutView()
+        configTapGesture()
         self.layoutIfNeeded()
     }
 
