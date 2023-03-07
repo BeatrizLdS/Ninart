@@ -15,10 +15,12 @@ class BookDescriptionViewController: UIViewController {
         super.viewDidLoad()
         view = bookDescriptionView
 
-        navigationItem.title = "Exceptional Doom"
+        navigationItem.title = viewModel?.getStory()?.title ?? viewModel?.getAudioBook()?.title
         navigationItem.largeTitleDisplayMode = .never
         navigationItem.backButtonTitle = ""
         bookDescriptionView.buttonsDelegate = self
+        bookDescriptionView.bookCover.image = UIImage(
+            named: viewModel?.getStory()?.image ?? "aSundayAfternoonOnTheIslandOfLaGrandeJatte")
     }
 }
 
