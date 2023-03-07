@@ -30,8 +30,8 @@ class StoryPageViewModel {
     }
 
     func loadData() {
-        if let data = Bundle.main.url(forResource: "data", withExtension: "json") {
-            dataModel = Bundle.main.decode([Story].self, from: "data.json")
+        if let data = Bundle.main.url(forResource: "data-pt", withExtension: "json") {
+            dataModel = Bundle.main.decode([Story].self, from: "data-pt.json")
             selectedStoryIndex = 0
         }
     }
