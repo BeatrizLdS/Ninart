@@ -31,7 +31,6 @@ extension BookDescriptionViewController: CircleButtonProtocol {
         let newViewController = StoryViewController()
         newViewController.viewModel = newViewModel
         self.navigationController?.pushViewController(newViewController, animated: true)
-//        print("Aq vai adicionar a navegação para página de leitura")
     }
     func playAction() {
         let newViewController = AudiobookViewController()

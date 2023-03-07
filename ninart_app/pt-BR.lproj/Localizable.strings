@@ -32,3 +32,6 @@
 // MARK: Book description
 "play" = "Ouvir";
 "read" = "Ler";
+
+"previous page" = "página anterior";
+"next page" = "próxima página";

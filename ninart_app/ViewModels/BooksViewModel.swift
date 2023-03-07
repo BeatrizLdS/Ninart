@@ -25,9 +25,9 @@ class BooksViewModel {
     private func loadBooks() {
         let languageStr = Locale.current.languageCode
         let listOfBook = Bundle.main.decode([Story].self, from: "data-\(languageStr!).json")!
-        let startedBooks = Bundle.main.decode([Story].self, from: "data-\(languageStr!).json")!
+//        let startedBooks = Bundle.main.decode([Story].self, from: "data-\(languageStr!).json")!
         booksList = listOfBook
-        continueBooksList = startedBooks
+//        continueBooksList = startedBooks
     }
 
     func getNumberOfBooks() -> Int? {
