@@ -28,10 +28,10 @@ class AudiobookViewController: UIViewController {
         setupUI()
         setupAccessibility()
     }
-    override func accessibilityIncrement() {
-        audiobookView.sliderControl.accessibilityValue
-        print("increment")
-    }
+//    override func accessibilityIncrement() {
+//        audiobookView.sliderControl.accessibilityValue
+//        print("increment")
+//    }
 
     func setupUI() {
         audiobookView.pausePlayButton.addTarget(self, action: #selector(pausePlayAudio), for: .touchUpInside)

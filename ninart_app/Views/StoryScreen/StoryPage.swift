@@ -154,7 +154,7 @@ class StoryPage: UIView {
         return button
     }()
 
-    //MARK: Override
+    // MARK: Override
 
     override init(frame: CGRect) {
         super.init(frame: frame)

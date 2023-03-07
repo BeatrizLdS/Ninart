@@ -14,7 +14,7 @@ class BookDescriptionView: UIView {
     // MARK: Properties
     let bookCover: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "aSundayAfternoonOnTheIslandOfLaGrandeJatte")
+        imageView.image = UIImage(named: "Pinocchio")
         imageView.tintColor = .textColor
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true

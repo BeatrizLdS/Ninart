@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Sleepingbeauty.png",
+      "filename" : "SleepingBeauty 3.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "SleepingBeauty 2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "SleepingBeauty 1.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

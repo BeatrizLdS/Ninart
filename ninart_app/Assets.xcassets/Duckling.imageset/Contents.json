@@ -1,16 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "sadducklingdrawinacutestyle 2.jpg",
+      "filename" : "Duckling.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "sadducklingdrawinacutestyle 3.jpg",
+      "filename" : "Duckling 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Duckling 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

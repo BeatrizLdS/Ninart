@@ -20,7 +20,6 @@ class StoryViewController: UIViewController {
     let selectionFeedbackGenerator = UISelectionFeedbackGenerator()
     let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
 
-
     override func loadView() {
         title = viewModel.title
         super.loadView()
@@ -45,7 +44,8 @@ class StoryViewController: UIViewController {
         storyPage?.rightButtonHistory.addTarget(self, action: #selector(incrementLabel), for: .touchUpInside)
         storyPage?.leftButtonHistory.addTarget(self, action: #selector(decrementLabel), for: .touchUpInside)
 
-        storyPage?.rightButtonHistory.addTarget(self, action: #selector(updateTextAndImage), for: .touchUpInside)
+        storyPage?.rightButtonHistory.addTarget(self, action: #selector(updateTextAndImage),
+                                                for: .touchUpInside)
         storyPage?.leftButtonHistory.addTarget(self, action: #selector(downTextAndImage), for: .touchUpInside)
 
         selectionFeedbackGenerator.prepare()
