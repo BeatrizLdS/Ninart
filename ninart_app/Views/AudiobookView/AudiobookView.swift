@@ -27,8 +27,7 @@ class AudiobookView: UIView {
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 25
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.accessibilityLabel = "Image of a lake"
-        imageView.isAccessibilityElement = true
+        imageView.isAccessibilityElement = false
         return imageView
     }()
 
