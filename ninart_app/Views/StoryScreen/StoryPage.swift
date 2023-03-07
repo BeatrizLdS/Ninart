@@ -63,9 +63,9 @@ class StoryPage: UIView {
         text.translatesAutoresizingMaskIntoConstraints = false
 //        text.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         text.backgroundColor = .clear
-
         text.textAlignment = .natural
-        text.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        text.font = .preferredFont(forTextStyle: .title3)
+//        text.font = UIFont.systemFont(ofSize: 20, weight: .regular)
         text.textColor = .text
         text.isEditable = false
         text.isScrollEnabled = false
@@ -80,6 +80,7 @@ class StoryPage: UIView {
 
         image.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         image.bounds = image.frame
+        image.layer.cornerRadius = 10
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
         image.backgroundColor = .clear
@@ -99,7 +100,8 @@ class StoryPage: UIView {
         text.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         text.backgroundColor = .clear
         text.textAlignment = .natural
-        text.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        text.font = .preferredFont(forTextStyle: .title3)
+//        text.font = UIFont.systemFont(ofSize: 20, weight: .regular)
         text.textColor = .text
         text.isEditable = false
         text.isScrollEnabled = false
@@ -131,7 +133,8 @@ class StoryPage: UIView {
         let label = UILabel()
         label.frame = CGRect(x: 0, y: 0, width: 46, height: 29)
         label.textColor = .text
-        label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        label.font = .preferredFont(forTextStyle: .body)
+//        label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
 
         return label
 
@@ -198,9 +201,9 @@ extension StoryPage: SettingViews {
             verticalStack.bottomAnchor.constraint(equalTo: self.history.bottomAnchor),
             verticalStack.widthAnchor.constraint(equalTo: self.history.widthAnchor),
 
-            history.topAnchor.constraint(equalTo: titleScreen.bottomAnchor),
-            history.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            history.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            history.topAnchor.constraint(equalTo: titleScreen.bottomAnchor, constant: 15),
+            history.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
+            history.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15),
 
             imageStory.heightAnchor.constraint(equalTo: imageStory.widthAnchor, multiplier: 0.7),
 

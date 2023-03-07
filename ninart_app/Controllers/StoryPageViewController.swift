@@ -36,7 +36,8 @@ class StoryViewController: UIViewController {
         super.viewDidLoad()
 //        viewModel.loadData()
         showTwoText()
-        setImageHistory()
+//        setImageHistory()
+        setImageSeparator()
 
 //        storyPage?.titleScreen.text = viewModel.title
         storyPage?.numberOfBooks.text = "\(count)"
