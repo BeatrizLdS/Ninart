@@ -162,6 +162,7 @@ extension AudiobookView: SettingViews {
 
     }
     func setupConstraints() {
+        self.layoutIfNeeded()
         NSLayoutConstraint.activate([
             bookCover.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             bookCover.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8),
