@@ -111,9 +111,7 @@ extension BookDescriptionView: SettingViews {
 
             buttonsHStack.topAnchor.constraint(lessThanOrEqualTo: bookCover.bottomAnchor, constant: 30),
             buttonsHStack.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            buttonsHStack.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
-            buttonsHStack.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
-//            buttonsHStack.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.6, constant: 80),
+            buttonsHStack.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.7, constant: 60),
             buttonsHStack.bottomAnchor.constraint(lessThanOrEqualTo: self.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
