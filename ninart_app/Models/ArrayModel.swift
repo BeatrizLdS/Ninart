@@ -25,14 +25,10 @@ struct Array<FirstElement, SecondElement> {
     mutating func addList<Element>(_ list: [Element]) {
         if firtsElementList.isEmpty {
             let officialList = list as! [FirstElement]
-            print(officialList)
             firtsElementList = officialList
-            print(firtsElementList)
         } else {
             let officialList = list as! [SecondElement]
-            print(officialList)
             secondElementList = officialList
-            print(secondElementList)
         }
     }
 }
