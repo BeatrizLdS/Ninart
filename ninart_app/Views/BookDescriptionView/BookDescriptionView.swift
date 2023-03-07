@@ -114,5 +114,6 @@ extension BookDescriptionView: SettingViews {
             buttonsHStack.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.6, constant: 48),
             buttonsHStack.bottomAnchor.constraint(lessThanOrEqualTo: self.safeAreaLayoutGuide.bottomAnchor)
         ])
+        self.layoutIfNeeded()
     }
 }

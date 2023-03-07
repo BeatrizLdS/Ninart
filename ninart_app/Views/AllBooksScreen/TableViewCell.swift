@@ -56,10 +56,6 @@ class CollectionTableViewCell: UITableViewCell {
         listOfStorys = list
         cellType = type
     }
-
-    func selecteBook() {
-        
-    }
 }
 
 extension CollectionTableViewCell: SettingViews {

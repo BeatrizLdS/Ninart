@@ -146,6 +146,8 @@ class StoryViewController: UIViewController {
         setImageSeparator()
         selectionFeedbackGenerator.selectionChanged()
         impactFeedbackGenerator.impactOccurred()
+        AudioManager.shared.prepareToPlay(audioName: "pageturn", audioType: "mp3")
+        AudioManager.shared.player?.play()
 
         if storyPage?.leftButtonHistory.isEnabled == false {
             storyPage?.leftButtonHistory.isEnabled = true
@@ -159,6 +161,8 @@ class StoryViewController: UIViewController {
             setImageSeparator()
             selectionFeedbackGenerator.selectionChanged()
             impactFeedbackGenerator.impactOccurred()
+            AudioManager.shared.prepareToPlay(audioName: "pageturn", audioType: "mp3")
+            AudioManager.shared.player?.play()
         }
 
         if storyPage?.rightButtonHistory.isEnabled == false {

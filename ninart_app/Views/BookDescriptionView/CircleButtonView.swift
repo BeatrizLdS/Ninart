@@ -71,8 +71,7 @@ extension CircleButtonView: SettingViews {
             button.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ]
         let imageConstraints = [
-            imageView.heightAnchor.constraint(equalTo: self.button.heightAnchor, multiplier: 0.6),
-//            imageView.centerXAnchor.constraint(equalTo: self.button.centerXAnchor)
+            imageView.heightAnchor.constraint(equalTo: self.button.heightAnchor, multiplier: 0.6)
         ]
         let constraints = [
             self.heightAnchor.constraint(equalTo: button.heightAnchor, constant: 20),

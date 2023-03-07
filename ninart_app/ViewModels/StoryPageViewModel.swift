@@ -48,7 +48,7 @@ class StoryPageViewModel {
     var pageTexts: [String]?
 }
 
-//class StoryPageViewModel {
+// class StoryPageViewModel {
 //
 //    var dataModel: Story?
 //
@@ -89,4 +89,4 @@ class StoryPageViewModel {
 //        guard let pages = dataModel?.pages else { return nil }
 //        return pages.map({ ($0.image, $0.text) })
 //    }
-//}
+// }
