@@ -23,4 +23,8 @@ class BookDescriptionViewModel {
     func getStory() -> Story? {
         return story
     }
+
+    func getImageDescription() -> String {
+        return story!.imageDescription
+    }
 }

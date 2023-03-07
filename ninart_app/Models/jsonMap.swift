@@ -13,6 +13,7 @@ struct Story: Codable {
 
     let title: String
     let image: String
+    let imageDescription: String
     let pages: [Page]
 
 }

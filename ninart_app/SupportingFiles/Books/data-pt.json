@@ -2,6 +2,7 @@
     {
         "title":"Alice no País das Maravilhas",
         "image":"AliceWonderland",
+        "imageDescription":"Cabelos loiros cacheados, vestido azul e avental branco, sorridente, curiosa, segurando um relógio de bolso.",
         "pages":[
             {
                 "image":"",
@@ -28,6 +29,7 @@
     {
         "title":"A Bela adormecida",
         "image":"SleepingBeauty",
+        "imageDescription":"Vestido rosa longo, cabelos loiros, dormindo em cama dourada.",
         "pages":[
             {
                 "image":"",
@@ -58,6 +60,7 @@
     {
         "title":"O patinho feio",
         "image":"Duckling",
+        "imageDescription":"Patinho pequeno e desajeitado, olhar triste, rejeitado pelos outros patos.",
         "pages":[
             {
                 "image":"",
@@ -84,6 +87,7 @@
     {
         "title":"Pínoquio",
         "image":"Pinocchio",
+        "imageDescription":"Boneco de madeira sorrindo, nariz crescente, cercado por insetos.",
         "pages":[
             {
                 "image":"",

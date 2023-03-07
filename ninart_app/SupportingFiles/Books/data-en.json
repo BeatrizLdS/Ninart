@@ -2,6 +2,7 @@
     {
         "title":"Alice in the Wonderland",
         "image":"AliceWonderland",
+        "imageDescription":"Curly blond hair, blue dress and white apron, smiling, curious, holding a pocket watch.",
         "pages":[
             {
                 "image":"",
@@ -28,6 +29,7 @@
     {
         "title":"Sleeping Beauty",
         "image":"SleepingBeauty",
+        "imageDescription":"Long pink dress, blonde hair, sleeping in golden bed.",
         "pages":[
             {
                 "image":"",
@@ -54,6 +56,7 @@
     {
         "title":"The Ugly Duckling",
         "image":"Duckling",
+        "imageDescription":"Small and clumsy duckling, sad look, rejected by the other ducks.",
         "pages":[
             {
                 "image":"",
@@ -80,6 +83,7 @@
     {
         "title":"Pinocchio",
         "image":"Pinocchio",
+        "imageDescription":"Wooden puppet smiling, nose growing, surrounded by insects.",
         "pages":[
             {
                 "image":"",

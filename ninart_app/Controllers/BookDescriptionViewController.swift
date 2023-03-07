@@ -21,6 +21,7 @@ class BookDescriptionViewController: UIViewController {
         bookDescriptionView.buttonsDelegate = self
         bookDescriptionView.bookCover.image = UIImage(
             named: viewModel?.getStory()?.image ?? "aSundayAfternoonOnTheIslandOfLaGrandeJatte")
+        bookDescriptionView.bookCover.accessibilityLabel = viewModel?.getImageDescription()
     }
 }
 
