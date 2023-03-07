@@ -142,18 +142,16 @@ class AudioBookViewModel {
         formatter.unitsStyle = .spellOut
 
         guard let player = AudioManager.shared.player else { return }
+
+        // configurações de acessibilidade do slider (Não altere!)
         if let formattedTimeString = formatter.string(from: TimeInterval(player.currentTime)),
            let formattedFullString = formatter.string(from: TimeInterval(player.duration)) {
-            slider.accessibilityValue = "track position \(formattedTimeString) of \(formattedFullString)"
-
-            //     let formattedFullString = formatter.string(from: TimeInterval(player.duration)) {
-            //     slider.accessibilityValue = String.localizedStringWithFormat(
-            //         NSLocalizedString("%@! of %@!",
-            //                           comment: ""),
-            //         formattedTimeString,
-            //         formattedFullString
-            //     )
-            // }
+            slider.accessibilityValue = String.localizedStringWithFormat(
+                NSLocalizedString("%@! of %@!",
+                                  comment: ""),
+                formattedTimeString,
+                formattedFullString
+            )
         }
     }
 }
