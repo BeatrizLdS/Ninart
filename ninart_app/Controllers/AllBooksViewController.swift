@@ -27,6 +27,7 @@ class AllBooksViewController: UIViewController {
         view = allBooksView
         allBooksView.booksTableView.delegate = self
         allBooksView.booksTableView.dataSource = self
+        navigationItem.backButtonTitle = ""
         configureNavBar()
     }
 

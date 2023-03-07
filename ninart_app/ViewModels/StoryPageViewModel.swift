@@ -29,10 +29,11 @@ class StoryPageViewModel {
         }
     }
 
-    func loadData() {
-        if let data = Bundle.main.url(forResource: "data-pt", withExtension: "json") {
-            dataModel = Bundle.main.decode([Story].self, from: "data-pt.json")
-            selectedStoryIndex = 0
+    func loadData(storyTitle: String) {
+        let languageStr = Locale.current.languageCode
+        if let data = Bundle.main.url(forResource: "data-\(languageStr!)", withExtension: "json") {
+            dataModel = Bundle.main.decode([Story].self, from: "data-\(languageStr!).json")
+            selectedStoryIndex = (dataModel?.firstIndex(where: {$0.title == storyTitle})!)!
         }
     }
 
@@ -46,7 +47,6 @@ class StoryPageViewModel {
     var pageImages: [String]?
     var pageTexts: [String]?
 }
-
 
 //class StoryPageViewModel {
 //
