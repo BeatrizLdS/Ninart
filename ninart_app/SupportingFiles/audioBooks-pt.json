@@ -2,21 +2,21 @@
     {
         "title":"Alice no País das Maravilhas",
         "image":"AliceWonderland",
-        "audioName":"bensound-lofinerdbassbuzzer"
+        "audioName":"AliceNoPaisDasMaravilhas"
     },
     {
         "title":"A Bela adormecida",
         "image":"SleepingBeauty",
-        "audioName":"bensound-lofinerdbassbuzzer"
+        "audioName":"ABelaAdormecida"
     },
     {
         "title":"O patinho feio",
         "image":"Duckling",
-        "audioName":"bensound-lofinerdbassbuzzer"
+        "audioName":"OPatinhoFeio"
     },
     {
         "title":"Pinóquio",
         "image":"Pinocchio",
-        "audioName":"bensound-lofinerdbassbuzzer"
+        "audioName":"Pinoquio"
     }
 ]

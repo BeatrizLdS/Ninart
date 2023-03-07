@@ -2,21 +2,21 @@
     {
         "title":"Alice in the Wonderland",
         "image":"AliceWonderland",
-        "audioName":"bensound-lofinerdbassbuzzer"
+        "audioName":"AliceInWonderland"
     },
     {
         "title":"Sleeping Beauty",
         "image":"SleepingBeauty",
-        "audioName":"bensound-lofinerdbassbuzzer"
+        "audioName":"TheSleepingBeauty"
     },
     {
         "title":"The Ugly Duckling",
         "image":"Duckling",
-        "audioName":"bensound-lofinerdbassbuzzer"
+        "audioName":"TheUglyDuckling"
     },
     {
         "title":"Pinocchio",
         "image":"Pinocchio",
-        "audioName":"bensound-lofinerdbassbuzzer"
+        "audioName":"Pinocchio"
     }
 ]
