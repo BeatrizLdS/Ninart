@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		14219BD429ACDDD20057FD9A /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14219BD329ACDDD20057FD9A /* ViewExtension.swift */; };
 		14219BD829AE207F0057FD9A /* StoryPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14219BD729AE207F0057FD9A /* StoryPageViewModel.swift */; };
+		14C4850629B7656500C58B7B /* TheUglyDuckling.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 14C4850529B7656500C58B7B /* TheUglyDuckling.mp3 */; };
+		14C4850829B7659D00C58B7B /* Pinocchio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 14C4850729B7659D00C58B7B /* Pinocchio.mp3 */; };
+		14C4850A29B765C700C58B7B /* AliceInWonderland.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 14C4850929B765C700C58B7B /* AliceInWonderland.mp3 */; };
+		14C4850C29B765EE00C58B7B /* TheSleepingBeauty.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 14C4850B29B765EE00C58B7B /* TheSleepingBeauty.mp3 */; };
+		14C4850E29B7669400C58B7B /* OPatinhoFeio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 14C4850D29B7669400C58B7B /* OPatinhoFeio.mp3 */; };
+		14C4851029B7669E00C58B7B /* AliceNoPaisDasMaravilhas.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 14C4850F29B7669E00C58B7B /* AliceNoPaisDasMaravilhas.mp3 */; };
+		14C4851229B766A800C58B7B /* Pinoquio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 14C4851129B766A800C58B7B /* Pinoquio.mp3 */; };
+		14C4851429B766B500C58B7B /* ABelaAdormecida.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 14C4851329B766B500C58B7B /* ABelaAdormecida.mp3 */; };
 		7E0DFFC329A7893E00587392 /* AudiobookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0DFFC229A7893E00587392 /* AudiobookViewController.swift */; };
 		7E0DFFC529A78AAA00587392 /* AudiobookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0DFFC429A78AAA00587392 /* AudiobookView.swift */; };
 		7E0DFFC729A78DDB00587392 /* SetViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0DFFC629A78DDB00587392 /* SetViewProtocol.swift */; };
@@ -74,6 +82,14 @@
 /* Begin PBXFileReference section */
 		14219BD329ACDDD20057FD9A /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		14219BD729AE207F0057FD9A /* StoryPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPageViewModel.swift; sourceTree = "<group>"; };
+		14C4850529B7656500C58B7B /* TheUglyDuckling.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TheUglyDuckling.mp3; sourceTree = "<group>"; };
+		14C4850729B7659D00C58B7B /* Pinocchio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Pinocchio.mp3; sourceTree = "<group>"; };
+		14C4850929B765C700C58B7B /* AliceInWonderland.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AliceInWonderland.mp3; sourceTree = "<group>"; };
+		14C4850B29B765EE00C58B7B /* TheSleepingBeauty.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TheSleepingBeauty.mp3; sourceTree = "<group>"; };
+		14C4850D29B7669400C58B7B /* OPatinhoFeio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OPatinhoFeio.mp3; sourceTree = "<group>"; };
+		14C4850F29B7669E00C58B7B /* AliceNoPaisDasMaravilhas.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AliceNoPaisDasMaravilhas.mp3; sourceTree = "<group>"; };
+		14C4851129B766A800C58B7B /* Pinoquio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Pinoquio.mp3; sourceTree = "<group>"; };
+		14C4851329B766B500C58B7B /* ABelaAdormecida.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ABelaAdormecida.mp3; sourceTree = "<group>"; };
 		7E0DFFC229A7893E00587392 /* AudiobookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiobookViewController.swift; sourceTree = "<group>"; };
 		7E0DFFC429A78AAA00587392 /* AudiobookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiobookView.swift; sourceTree = "<group>"; };
 		7E0DFFC629A78DDB00587392 /* SetViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetViewProtocol.swift; sourceTree = "<group>"; };
@@ -151,6 +167,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14C484F129B7599600C58B7B /* Portuguese */ = {
+			isa = PBXGroup;
+			children = (
+				14C4851129B766A800C58B7B /* Pinoquio.mp3 */,
+				14C4851329B766B500C58B7B /* ABelaAdormecida.mp3 */,
+				14C4850F29B7669E00C58B7B /* AliceNoPaisDasMaravilhas.mp3 */,
+				14C4850D29B7669400C58B7B /* OPatinhoFeio.mp3 */,
+			);
+			path = Portuguese;
+			sourceTree = "<group>";
+		};
+		14C484FA29B75AB300C58B7B /* English */ = {
+			isa = PBXGroup;
+			children = (
+				14C4850529B7656500C58B7B /* TheUglyDuckling.mp3 */,
+				14C4850B29B765EE00C58B7B /* TheSleepingBeauty.mp3 */,
+				14C4850729B7659D00C58B7B /* Pinocchio.mp3 */,
+				14C4850929B765C700C58B7B /* AliceInWonderland.mp3 */,
+			);
+			path = English;
+			sourceTree = "<group>";
+		};
 		7E0DFFC129A7879D00587392 /* AudiobookView */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +211,8 @@
 		7E12F95C29A90DC200D86DFE /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				14C484FA29B75AB300C58B7B /* English */,
+				14C484F129B7599600C58B7B /* Portuguese */,
 				7E12F95D29A90FDE00D86DFE /* bensound-lofinerdbassbuzzer.mp3 */,
 				7E12F95829A90DBC00D86DFE /* bensound-slider.mp3 */,
 			);
@@ -451,12 +491,20 @@
 			files = (
 				D42D04322850E0C8003DA055 /* Assets.xcassets in Resources */,
 				FF5A4E1729A7962000774298 /* Localizable.strings in Resources */,
+				14C4851029B7669E00C58B7B /* AliceNoPaisDasMaravilhas.mp3 in Resources */,
+				14C4850629B7656500C58B7B /* TheUglyDuckling.mp3 in Resources */,
+				14C4850A29B765C700C58B7B /* AliceInWonderland.mp3 in Resources */,
+				14C4850C29B765EE00C58B7B /* TheSleepingBeauty.mp3 in Resources */,
+				14C4851229B766A800C58B7B /* Pinoquio.mp3 in Resources */,
+				14C4850829B7659D00C58B7B /* Pinocchio.mp3 in Resources */,
 				7E432682285D4FFF008B572D /* data-pt.json in Resources */,
 				FF04BCC129B755D00055BD25 /* audioBooks-pt.json in Resources */,
 				FFCDE07D29AFC9DD00B29BB5 /* audioBooks-en.json in Resources */,
+				14C4851429B766B500C58B7B /* ABelaAdormecida.mp3 in Resources */,
 				7E12F95E29A90FDE00D86DFE /* bensound-lofinerdbassbuzzer.mp3 in Resources */,
 				FF90665329B20E8D0022196E /* data-en.json in Resources */,
 				7E12F95A29A90DBC00D86DFE /* bensound-slider.mp3 in Resources */,
+				14C4850E29B7669400C58B7B /* OPatinhoFeio.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,7 +762,7 @@
 		D42D04502850E0C8003DA055 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon1;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -741,7 +789,7 @@
 		D42D04512850E0C8003DA055 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon1;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
