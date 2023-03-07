@@ -1,0 +1,22 @@
+[
+    {
+        "title":"Alice no País das Maravilhas",
+        "image":"AliceWonderland",
+        "audioName":"AliceNoPaisDasMaravilhas"
+    },
+    {
+        "title":"A Bela adormecida",
+        "image":"SleepingBeauty",
+        "audioName":"ABelaAdormecida"
+    },
+    {
+        "title":"O patinho feio",
+        "image":"Duckling",
+        "audioName":"OPatinhoFeio"
+    },
+    {
+        "title":"Pinóquio",
+        "image":"Pinocchio",
+        "audioName":"Pinoquio"
+    }
+]

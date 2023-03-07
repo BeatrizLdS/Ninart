@@ -35,17 +35,6 @@ class StoryPage: UIView {
         return stack
     }()
 
-    let horizontalStack: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .horizontal
-        stack.alignment = .center
-        stack.distribution = .equalSpacing
-        stack.spacing = 20
-        stack.backgroundColor = .backgroundColor
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        return stack
-    }()
-
     let history: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .clear
@@ -61,11 +50,9 @@ class StoryPage: UIView {
     let upTextBooks: UITextView = {
         let text = UITextView()
         text.translatesAutoresizingMaskIntoConstraints = false
-//        text.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         text.backgroundColor = .clear
-
         text.textAlignment = .natural
-        text.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        text.font = .preferredFont(forTextStyle: .title3)
         text.textColor = .text
         text.isEditable = false
         text.isScrollEnabled = false
@@ -80,6 +67,7 @@ class StoryPage: UIView {
 
         image.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         image.bounds = image.frame
+        image.layer.cornerRadius = 10
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
         image.backgroundColor = .clear
@@ -99,7 +87,7 @@ class StoryPage: UIView {
         text.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         text.backgroundColor = .clear
         text.textAlignment = .natural
-        text.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        text.font = .preferredFont(forTextStyle: .title3)
         text.textColor = .text
         text.isEditable = false
         text.isScrollEnabled = false
@@ -120,8 +108,7 @@ class StoryPage: UIView {
         button.backgroundColor = .background
         button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         button.imageView?.layer.transform = CATransform3DMakeScale(2, 2, 2)
-        button.accessibilityHint = "Toque no butão"
-        button.accessibilityLabel = "Voltar Página"
+        button.isAccessibilityElement = false
         button.translatesAutoresizingMaskIntoConstraints = false
 
         return button
@@ -131,7 +118,8 @@ class StoryPage: UIView {
         let label = UILabel()
         label.frame = CGRect(x: 0, y: 0, width: 46, height: 29)
         label.textColor = .text
-        label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        label.font = .preferredFont(forTextStyle: .body)
+        label.isAccessibilityElement = false
 
         return label
 
@@ -148,12 +136,23 @@ class StoryPage: UIView {
         button.backgroundColor = .background
         button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         button.imageView?.layer.transform = CATransform3DMakeScale(2, 2, 2)
-        button.accessibilityHint = "Toque no butão"
-        button.accessibilityLabel = "Próxima Página"
+        button.isAccessibilityElement = false
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
+    lazy var horizontalStack: StackWithDecrementAndIncrement = {
+        let stack = StackWithDecrementAndIncrement()
+        stack.axis = .horizontal
+        stack.alignment = .center
+        stack.distribution = .equalSpacing
+        stack.spacing = 20
+        stack.isAccessibilityElement = true
+        stack.accessibilityTraits = .adjustable
+        stack.backgroundColor = .backgroundColor
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
     // MARK: Override
 
     override init(frame: CGRect) {
@@ -165,7 +164,6 @@ class StoryPage: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 }
 
 extension StoryPage: SettingViews {
@@ -198,9 +196,9 @@ extension StoryPage: SettingViews {
             verticalStack.bottomAnchor.constraint(equalTo: self.history.bottomAnchor),
             verticalStack.widthAnchor.constraint(equalTo: self.history.widthAnchor),
 
-            history.topAnchor.constraint(equalTo: titleScreen.bottomAnchor),
-            history.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            history.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            history.topAnchor.constraint(equalTo: titleScreen.bottomAnchor, constant: 15),
+            history.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
+            history.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15),
 
             imageStory.heightAnchor.constraint(equalTo: imageStory.widthAnchor, multiplier: 0.7),
 

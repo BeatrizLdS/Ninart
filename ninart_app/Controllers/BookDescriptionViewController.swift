@@ -15,28 +15,27 @@ class BookDescriptionViewController: UIViewController {
         super.viewDidLoad()
         view = bookDescriptionView
 
-        navigationItem.title = "Exceptional Doom"
+        navigationItem.title = viewModel?.getStory()?.title ?? viewModel?.getAudioBook()?.title
         navigationItem.largeTitleDisplayMode = .never
         navigationItem.backButtonTitle = ""
         bookDescriptionView.buttonsDelegate = self
+        bookDescriptionView.bookCover.image = UIImage(
+            named: viewModel?.getStory()?.image ?? "aSundayAfternoonOnTheIslandOfLaGrandeJatte")
     }
 }
 
 extension BookDescriptionViewController: CircleButtonProtocol {
     func readAction() {
-//        let newViewController = StoryViewController()
-//        self.navigationController?.pushViewController(newViewController, animated: true)
-//        let newViewModel = StoryPageViewModel()
-//        newViewModel.loadData(storyTitle: (viewModel?.getStory()!.title)!)
-//
-//        let newViewController = StoryViewController()
-//        newViewController.viewModel = newViewModel
-//        self.navigationController?.pushViewController(newViewController, animated: true)
-//        print("Aq vai adicionar a navegação para página de leitura")
+        let newViewModel = StoryPageViewModel()
+        newViewModel.loadData(storyTitle: (viewModel?.getStory()!.title)!)
+        let newViewController = StoryViewController()
+        newViewController.viewModel = newViewModel
+        self.navigationController?.pushViewController(newViewController, animated: true)
     }
     func playAction() {
-//        let newViewController = AudiobookViewController()
-//        newViewController.audioName = (viewModel?.getAudioBook()!.audioName)!
-//        self.navigationController?.pushViewController(newViewController, animated: true)
+        let newViewController = AudiobookViewController()
+        let newViewModel = AudioBookViewModel(audioBook: viewModel?.getAudioBook())
+        newViewController.viewModel = newViewModel
+        self.navigationController?.pushViewController(newViewController, animated: true)
     }
 }

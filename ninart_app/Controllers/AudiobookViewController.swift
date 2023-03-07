@@ -10,7 +10,7 @@ import AVFAudio
 
 class AudiobookViewController: UIViewController {
     let audiobookView = AudiobookView()
-    let viewModel: AudioBookViewModel = AudioBookViewModel()
+    var viewModel: AudioBookViewModel = AudioBookViewModel()
 
     var audioName = "bensound-slider"
     var audioType = "mp3"
@@ -18,11 +18,14 @@ class AudiobookViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view = audiobookView
-        navigationItem.title = "Exceptional Doom"
+        navigationItem.title = viewModel.getAudioBookTitle()
         navigationItem.largeTitleDisplayMode = .never
 
         setupAudio()
         AudioManager.shared.player?.delegate = self
+        audioName = viewModel.getAudioBookAudioName()
+        audiobookView.bookCover.image = UIImage(named: viewModel.getAudioBookImageName())
+
     }
     override func viewDidLayoutSubviews() {
         setupUI()

@@ -32,3 +32,6 @@
 // MARK: Book description
 "play" = "Play";
 "read" = "Read";
+
+"previous page" = "previous page";
+"next page" = "next page";

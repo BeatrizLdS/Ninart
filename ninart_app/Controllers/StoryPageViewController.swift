@@ -33,20 +33,28 @@ class StoryViewController: UIViewController {
     override func viewDidLoad() {
 
         super.viewDidLoad()
-//        viewModel.loadData()
         showTwoText()
-        setImageHistory()
+        setImageSeparator()
 
-//        storyPage?.titleScreen.text = viewModel.title
         storyPage?.numberOfBooks.text = "\(count)"
+        storyPage?.horizontalStack.accessibilityValue = String.localizedStringWithFormat(
+                    NSLocalizedString("page %d", comment: ""),
+                    count)
+        storyPage?.horizontalStack.incrementAndDecrementProtocol = self
         storyPage?.leftButtonHistory.isEnabled = false
 
-        storyPage?.rightButtonHistory.addTarget(self, action: #selector(incrementLabel), for: .touchUpInside)
-        storyPage?.leftButtonHistory.addTarget(self, action: #selector(decrementLabel), for: .touchUpInside)
-
-        storyPage?.rightButtonHistory.addTarget(self, action: #selector(updateTextAndImage),
+        storyPage?.rightButtonHistory.addTarget(self,
+                                                action: #selector(incrementLabel),
                                                 for: .touchUpInside)
-        storyPage?.leftButtonHistory.addTarget(self, action: #selector(downTextAndImage), for: .touchUpInside)
+        storyPage?.leftButtonHistory.addTarget(self,
+                                               action: #selector(decrementLabel),
+                                               for: .touchUpInside)
+        storyPage?.rightButtonHistory.addTarget(self,
+                                                action: #selector(updateTextAndImage),
+                                                for: .touchUpInside)
+        storyPage?.leftButtonHistory.addTarget(self,
+                                               action: #selector(downTextAndImage),
+                                               for: .touchUpInside)
 
         selectionFeedbackGenerator.prepare()
         impactFeedbackGenerator.prepare()
@@ -161,17 +169,39 @@ class StoryViewController: UIViewController {
     @objc func incrementLabel() {
         count += 1
         storyPage!.numberOfBooks.text = "\(count)"
+        storyPage?.horizontalStack.accessibilityValue = String.localizedStringWithFormat(
+                    NSLocalizedString("page %d", comment: ""),
+                    count)
     }
 
     @objc func decrementLabel() {
-
         if count > 1 {
             count -= 1
             storyPage!.numberOfBooks.text = "\(count)"
+            storyPage?.horizontalStack.accessibilityValue = String.localizedStringWithFormat(
+                        NSLocalizedString("page %d", comment: ""),
+                        count)
         }
 
         if count == 1 {
             storyPage?.leftButtonHistory.isEnabled = false
         }
     }
+}
+
+extension StoryViewController: IncrementAndDecrementProtocol {
+    func increment() {
+        if count != viewModel.numberOfPages {
+            updateTextAndImage()
+            incrementLabel()
+        }
+    }
+
+    func decrement() {
+        if count != 1 {
+            downTextAndImage()
+            decrementLabel()
+        }
+    }
+
 }

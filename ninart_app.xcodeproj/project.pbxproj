@@ -39,6 +39,9 @@
 		D42D044C2850E0C8003DA055 /* ninart_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42D044B2850E0C8003DA055 /* ninart_appUITestsLaunchTests.swift */; };
 		D4D9CD832852104100B8B75C /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9CD822852104100B8B75C /* AudioManager.swift */; };
 		FF04BCBB29B6E2840055BD25 /* BookDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF04BCBA29B6E2840055BD25 /* BookDescriptionViewModel.swift */; };
+		FF04BCBD29B74A500055BD25 /* incrementAndDeprementProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF04BCBC29B74A500055BD25 /* incrementAndDeprementProtocol.swift */; };
+		FF04BCBF29B74B490055BD25 /* StackExtensionStackWithDecrementAndIncrement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF04BCBE29B74B490055BD25 /* StackExtensionStackWithDecrementAndIncrement.swift */; };
+		FF04BCC129B755D00055BD25 /* audioBooks-pt.json in Resources */ = {isa = PBXBuildFile; fileRef = FF04BCC029B755D00055BD25 /* audioBooks-pt.json */; };
 		FF0BE07B29B52E1B00E7FD5C /* CircleButtonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0BE07A29B52E1B00E7FD5C /* CircleButtonProtocol.swift */; };
 		FF5A4DFC299FB00300774298 /* AllBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A4DFB299FB00300774298 /* AllBooksView.swift */; };
 		FF5A4DFE299FB0B700774298 /* AllBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A4DFD299FB0B700774298 /* AllBooksViewController.swift */; };
@@ -53,7 +56,7 @@
 		FF90665329B20E8D0022196E /* data-en.json in Resources */ = {isa = PBXBuildFile; fileRef = FF90665229B20E8D0022196E /* data-en.json */; };
 		FF90665529B277CC0022196E /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF90665429B277CC0022196E /* CircleButtonView.swift */; };
 		FFCDE07729AE1FCE00B29BB5 /* SelectBookProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCDE07629AE1FCE00B29BB5 /* SelectBookProtocol.swift */; };
-		FFCDE07D29AFC9DD00B29BB5 /* audioBooks.json in Resources */ = {isa = PBXBuildFile; fileRef = FFCDE07C29AFC9DD00B29BB5 /* audioBooks.json */; };
+		FFCDE07D29AFC9DD00B29BB5 /* audioBooks-en.json in Resources */ = {isa = PBXBuildFile; fileRef = FFCDE07C29AFC9DD00B29BB5 /* audioBooks-en.json */; };
 		FFCDE08129AFF14800B29BB5 /* ArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCDE08029AFF14800B29BB5 /* ArrayModel.swift */; };
 		FFCDE08329B0B5D300B29BB5 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCDE08229B0B5D300B29BB5 /* UIImageExtension.swift */; };
 		FFCDE08529B0B85C00B29BB5 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCDE08429B0B85C00B29BB5 /* StatusView.swift */; };
@@ -114,6 +117,9 @@
 		D42D044B2850E0C8003DA055 /* ninart_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ninart_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D4D9CD822852104100B8B75C /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		FF04BCBA29B6E2840055BD25 /* BookDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDescriptionViewModel.swift; sourceTree = "<group>"; };
+		FF04BCBC29B74A500055BD25 /* incrementAndDeprementProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = incrementAndDeprementProtocol.swift; sourceTree = "<group>"; };
+		FF04BCBE29B74B490055BD25 /* StackExtensionStackWithDecrementAndIncrement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackExtensionStackWithDecrementAndIncrement.swift; sourceTree = "<group>"; };
+		FF04BCC029B755D00055BD25 /* audioBooks-pt.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "audioBooks-pt.json"; sourceTree = "<group>"; };
 		FF0BE07A29B52E1B00E7FD5C /* CircleButtonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonProtocol.swift; sourceTree = "<group>"; };
 		FF5A4DFB299FB00300774298 /* AllBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBooksView.swift; sourceTree = "<group>"; };
 		FF5A4DFD299FB0B700774298 /* AllBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBooksViewController.swift; sourceTree = "<group>"; };
@@ -130,7 +136,7 @@
 		FF90665229B20E8D0022196E /* data-en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "data-en.json"; sourceTree = "<group>"; };
 		FF90665429B277CC0022196E /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
 		FFCDE07629AE1FCE00B29BB5 /* SelectBookProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBookProtocol.swift; sourceTree = "<group>"; };
-		FFCDE07C29AFC9DD00B29BB5 /* audioBooks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = audioBooks.json; sourceTree = "<group>"; };
+		FFCDE07C29AFC9DD00B29BB5 /* audioBooks-en.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "audioBooks-en.json"; sourceTree = "<group>"; };
 		FFCDE08029AFF14800B29BB5 /* ArrayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayModel.swift; sourceTree = "<group>"; };
 		FFCDE08229B0B5D300B29BB5 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		FFCDE08429B0B85C00B29BB5 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
@@ -197,6 +203,7 @@
 				7E0DFFC629A78DDB00587392 /* SetViewProtocol.swift */,
 				FFCDE07629AE1FCE00B29BB5 /* SelectBookProtocol.swift */,
 				FF0BE07A29B52E1B00E7FD5C /* CircleButtonProtocol.swift */,
+				FF04BCBC29B74A500055BD25 /* incrementAndDeprementProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -224,6 +231,7 @@
 		7E432675285B6EB1008B572D /* StoryScreen */ = {
 			isa = PBXGroup;
 			children = (
+				FF04BCBE29B74B490055BD25 /* StackExtensionStackWithDecrementAndIncrement.swift */,
 				7E432676285B6F83008B572D /* StoryPage.swift */,
 			);
 			path = StoryScreen;
@@ -326,7 +334,8 @@
 				FF390F2F29B6415E00D87671 /* Books */,
 				7E12F95C29A90DC200D86DFE /* Audio */,
 				D4D9CD822852104100B8B75C /* AudioManager.swift */,
-				FFCDE07C29AFC9DD00B29BB5 /* audioBooks.json */,
+				FFCDE07C29AFC9DD00B29BB5 /* audioBooks-en.json */,
+				FF04BCC029B755D00055BD25 /* audioBooks-pt.json */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -489,7 +498,8 @@
 				14C4851229B766A800C58B7B /* Pinoquio.mp3 in Resources */,
 				14C4850829B7659D00C58B7B /* Pinocchio.mp3 in Resources */,
 				7E432682285D4FFF008B572D /* data-pt.json in Resources */,
-				FFCDE07D29AFC9DD00B29BB5 /* audioBooks.json in Resources */,
+				FF04BCC129B755D00055BD25 /* audioBooks-pt.json in Resources */,
+				FFCDE07D29AFC9DD00B29BB5 /* audioBooks-en.json in Resources */,
 				14C4851429B766B500C58B7B /* ABelaAdormecida.mp3 in Resources */,
 				7E12F95E29A90FDE00D86DFE /* bensound-lofinerdbassbuzzer.mp3 in Resources */,
 				FF90665329B20E8D0022196E /* data-en.json in Resources */,
@@ -554,12 +564,14 @@
 				7E432684285D5242008B572D /* jsonMap.swift in Sources */,
 				FF5A4DFE299FB0B700774298 /* AllBooksViewController.swift in Sources */,
 				D42D04262850E0C7003DA055 /* AppDelegate.swift in Sources */,
+				FF04BCBF29B74B490055BD25 /* StackExtensionStackWithDecrementAndIncrement.swift in Sources */,
 				FF5A4E2329A7AE3C00774298 /* BooksViewModel.swift in Sources */,
 				D42D04282850E0C7003DA055 /* SceneDelegate.swift in Sources */,
 				7E432677285B6F83008B572D /* StoryPage.swift in Sources */,
 				7E43267E285B8164008B572D /* StoryPageViewController.swift in Sources */,
 				7E0DFFC729A78DDB00587392 /* SetViewProtocol.swift in Sources */,
 				FFCDE08329B0B5D300B29BB5 /* UIImageExtension.swift in Sources */,
+				FF04BCBD29B74A500055BD25 /* incrementAndDeprementProtocol.swift in Sources */,
 				FF04BCBB29B6E2840055BD25 /* BookDescriptionViewModel.swift in Sources */,
 				14219BD429ACDDD20057FD9A /* ViewExtension.swift in Sources */,
 				D42D04302850E0C7003DA055 /* ninart_app.xcdatamodeld in Sources */,

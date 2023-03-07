@@ -10,6 +10,7 @@ import AVFoundation
 
 // MARK: - Properties
 class AudioBookViewModel {
+    private var audioBook: AudioBook?
     private var audioManager = AudioManager.shared
     private var player: AVAudioPlayer? {
         return audioManager.player
@@ -18,7 +19,28 @@ class AudioBookViewModel {
     var isPlaying: Bool = false
     var timer: Timer?
 
+    init(audioBook: AudioBook? = nil) {
+        self.audioBook = audioBook
+    }
+
 // MARK: - Public Methods
+
+    func setAudioBook(_ audioBook: AudioBook) {
+        self.audioBook = audioBook
+    }
+
+    func getAudioBookTitle() -> String {
+        return audioBook!.title
+    }
+
+    func getAudioBookImageName() -> String {
+        return audioBook!.image
+    }
+
+    func getAudioBookAudioName() -> String {
+        return audioBook!.audioName
+    }
+
     func playAudio() {
         player?.play()
         isPlaying = true

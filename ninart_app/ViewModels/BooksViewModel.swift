@@ -15,19 +15,23 @@ class BooksViewModel {
 
     init() {
         loadBooks()
-        let listOfAudioBooks = Bundle.main.decode([AudioBook].self, from: "audioBooks.json")!
-        audioBooksList = listOfAudioBooks
-
-//        let startedAudioBooks = Bundle.main.decode([AudioBook].self, from: "audioBooks.json")!
-//        continueAudioBooksList = startedAudioBooks
+        loadAudioBooks()
     }
 
     private func loadBooks() {
         let languageStr = Locale.current.languageCode
         let listOfBook = Bundle.main.decode([Story].self, from: "data-\(languageStr!).json")!
-        let startedBooks = Bundle.main.decode([Story].self, from: "data-\(languageStr!).json")!
+//        let startedBooks = Bundle.main.decode([Story].self, from: "data-\(languageStr!).json")!
         booksList = listOfBook
-        continueBooksList = startedBooks
+//        continueBooksList = startedBooks
+    }
+
+    private func loadAudioBooks() {
+        let languageStr = Locale.current.languageCode
+        let listOfAudioBooks = Bundle.main.decode([AudioBook].self, from: "audioBooks-\(languageStr!).json")!
+//        let startedAudioBooks = Bundle.main.decode([AudioBook].self, from: "audioBooks-\(languageStr!).json")!
+        audioBooksList = listOfAudioBooks
+//        continueAudioBooksList = startedAudioBooks
     }
 
     func getNumberOfBooks() -> Int? {

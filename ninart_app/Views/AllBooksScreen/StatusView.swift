@@ -13,7 +13,7 @@ class StatusView: UIView {
         let label = UILabel()
         label.layer.cornerRadius = 10
         label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        label.font = .preferredFont(forTextStyle: .caption2)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         label.adjustsFontForContentSizeCategory = true
