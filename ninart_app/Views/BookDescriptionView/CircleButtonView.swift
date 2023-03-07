@@ -25,7 +25,7 @@ class CircleButtonView: UIView {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.alignment = .center
-        stack.distribution = .equalSpacing
+//        stack.distribution = .fill
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -48,9 +48,9 @@ class CircleButtonView: UIView {
         let height = button.bounds.height
         let width = button.bounds.width
         if height > width {
-            return height
+            return height + 20
         } else {
-            return width
+            return width + 20
         }
     }
     override func layoutSubviews() {
@@ -67,16 +67,19 @@ extension CircleButtonView: SettingViews {
     }
     func setupConstraints() {
         let buttonConstraints = [
-            button.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -2),
+            button.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 8),
             button.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ]
+        let imageConstraints = [
+            imageView.heightAnchor.constraint(equalTo: self.button.heightAnchor, multiplier: 0.6),
+//            imageView.centerXAnchor.constraint(equalTo: self.button.centerXAnchor)
+        ]
         let constraints = [
-            self.heightAnchor.constraint(equalTo: button.heightAnchor,
-                                                    constant: 12),
-            self.widthAnchor.constraint(equalTo: button.heightAnchor,
-                                        constant: 12)
+            self.heightAnchor.constraint(equalTo: button.heightAnchor, constant: 20),
+            self.widthAnchor.constraint(equalTo: button.heightAnchor, constant: 20)
         ]
         NSLayoutConstraint.activate(buttonConstraints)
         NSLayoutConstraint.activate(constraints)
+        NSLayoutConstraint.activate(imageConstraints)
     }
 }
