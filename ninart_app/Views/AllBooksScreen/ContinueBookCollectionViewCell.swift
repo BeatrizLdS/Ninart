@@ -10,7 +10,6 @@ import UIKit
 class ContinueBookCollectionViewCell: UICollectionViewCell {
 
     static let identifier = "ContinueCollectionViewCell"
-    var selectedProtocol: SelectBook?
 
     let posterImageView: UIImageView = {
         let imageView = UIImageView()
@@ -31,6 +30,7 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
         button.tintColor = .white
         button.isAccessibilityElement = true
         button.accessibilityTraits = .button
+        button.isUserInteractionEnabled =  false
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -59,9 +59,6 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         layer.masksToBounds = true
         layer.cornerRadius = 10
-        bookButton.addTarget(self,
-                             action: #selector(buttonAction),
-                             for: .primaryActionTriggered)
         buildLayoutView()
     }
 
@@ -120,10 +117,6 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
             timeHeard
         )
         progressBar.accessibilityValue = ""
-    }
-
-    @objc func buttonAction() {
-        selectedProtocol?.didSelect()
     }
 }
 

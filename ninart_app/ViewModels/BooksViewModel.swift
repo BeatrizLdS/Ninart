@@ -84,4 +84,12 @@ class BooksViewModel {
         }
         return array
     }
+
+    func searchStoryForTitle(title: String) -> Story? {
+        return booksList.first(where: {$0.title == title})
+    }
+
+    func searchAudioBookForTitle(title: String) -> AudioBook? {
+        return audioBooksList.first(where: {$0.title == title})
+    }
 }

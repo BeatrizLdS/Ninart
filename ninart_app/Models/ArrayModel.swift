@@ -24,11 +24,13 @@ struct Array<FirstElement, SecondElement> {
     }
     mutating func addList<Element>(_ list: [Element]) {
         if firtsElementList.isEmpty {
-            let officialList = list as! [FirstElement]
-            firtsElementList = officialList
+            if let officialList = list as? [FirstElement] {
+                firtsElementList = officialList
+            }
         } else {
-            let officialList = list as! [SecondElement]
-            secondElementList = officialList
+            if let officialList = list as? [SecondElement] {
+                secondElementList = officialList
+            }
         }
     }
 }

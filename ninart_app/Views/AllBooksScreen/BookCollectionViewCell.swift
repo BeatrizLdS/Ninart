@@ -10,7 +10,6 @@ import UIKit
 class BookCollectionViewCell: UICollectionViewCell {
 
     static let identifier = "BookCollectionViewCell"
-    var selectedProtocol: SelectBook?
 
     private let posterImageView: UIImageView = {
         let imageView = UIImageView()

@@ -12,7 +12,7 @@ import CoreHaptics
 class StoryViewController: UIViewController {
 
     var storyPage: StoryPage?
-    let viewModel: StoryPageViewModel = StoryPageViewModel()
+    var viewModel: StoryPageViewModel = StoryPageViewModel()
     var count: Int8 = 1
     var currentIndexTopText = 0
     var totalText: Int8 = 0
@@ -22,7 +22,7 @@ class StoryViewController: UIViewController {
 
 
     override func loadView() {
-
+        title = viewModel.title
         super.loadView()
         self.storyPage = StoryPage()
         self.view = self.storyPage
@@ -34,11 +34,11 @@ class StoryViewController: UIViewController {
     override func viewDidLoad() {
 
         super.viewDidLoad()
-        viewModel.loadData()
+//        viewModel.loadData()
         showTwoText()
         setImageHistory()
 
-        storyPage?.titleScreen.text = viewModel.title
+//        storyPage?.titleScreen.text = viewModel.title
         storyPage?.numberOfBooks.text = "\(count)"
         storyPage?.leftButtonHistory.isEnabled = false
 
@@ -145,7 +145,6 @@ class StoryViewController: UIViewController {
     }
 
     @objc func downTextAndImage() {
-        
         if currentIndexTopText >= 1 {
             currentIndexTopText -= 1
             showTwoText()

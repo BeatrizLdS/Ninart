@@ -17,7 +17,7 @@ class StoryPage: UIView {
         title.backgroundColor = .clear
         title.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         title.textAlignment = .center
-        title.textColor = .black
+        title.textColor = .textColor
         title.isAccessibilityElement = true
         title.adjustsFontForContentSizeCategory = true
 
