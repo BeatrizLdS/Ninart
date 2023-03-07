@@ -80,7 +80,7 @@ class StoryPage: UIView {
 
         image.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         image.bounds = image.frame
-        image.contentMode = .scaleToFill
+        image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
         image.backgroundColor = .clear
         image.accessibilityLabel = "imagem do livro"
@@ -201,6 +201,8 @@ extension StoryPage: SettingViews {
             history.topAnchor.constraint(equalTo: titleScreen.bottomAnchor),
             history.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             history.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+
+            imageStory.heightAnchor.constraint(equalTo: imageStory.widthAnchor, multiplier: 0.7),
 
             horizontalStack.topAnchor.constraint(equalTo: self.history.bottomAnchor, constant: 10),
             horizontalStack.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
