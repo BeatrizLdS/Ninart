@@ -78,7 +78,7 @@ class StoryPage: UIView {
     let imageStory: UIImageView = {
         let image = UIImageView()
 
-        image.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+//        image.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         image.bounds = image.frame
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
