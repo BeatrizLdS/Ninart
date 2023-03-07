@@ -7,9 +7,9 @@
 */
 
 // MARK: Home Page
-"continueReading" = "Continuar lendo";
-"readToMe" = "Leia para mim";
-"reading" = "Leitura";
+"continueReading" = "Continuar";
+"readToMe" = "Escutar história";
+"reading" = "Ler história";
 
 // Tab bar
 "books" = "Livros";
