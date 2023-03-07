@@ -283,7 +283,6 @@
 			children = (
 				FF390F2F29B6415E00D87671 /* Books */,
 				7E12F95C29A90DC200D86DFE /* Audio */,
-				D4D9CD822852104100B8B75C /* serviceFile.swift */,
 				D4D9CD822852104100B8B75C /* AudioManager.swift */,
 				FFCDE07C29AFC9DD00B29BB5 /* audioBooks.json */,
 			);
