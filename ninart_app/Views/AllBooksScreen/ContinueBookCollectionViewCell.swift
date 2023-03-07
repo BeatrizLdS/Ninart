@@ -59,6 +59,8 @@ class ContinueBookCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         layer.masksToBounds = true
         layer.cornerRadius = 10
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.lightGray.cgColor
         buildLayoutView()
     }
 
