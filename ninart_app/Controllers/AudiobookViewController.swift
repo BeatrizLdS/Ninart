@@ -36,11 +36,6 @@ class AudiobookViewController: UIViewController {
         viewModel.stopAudio()
     }
 
-    //    override func accessibilityIncrement() {
-    //        audiobookView.sliderControl.accessibilityValue
-    //        print("increment")
-// }
-
     func setupUI() {
         audiobookView.pausePlayButton.addTarget(self, action: #selector(pausePlayAudio), for: .touchUpInside)
         audiobookView.sliderControl.addTarget(self, action: #selector(sliderValueChanged), for: .valueChanged)

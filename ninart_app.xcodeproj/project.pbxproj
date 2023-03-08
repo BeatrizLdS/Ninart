@@ -21,6 +21,7 @@
 		7E0DFFC329A7893E00587392 /* AudiobookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0DFFC229A7893E00587392 /* AudiobookViewController.swift */; };
 		7E0DFFC529A78AAA00587392 /* AudiobookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0DFFC429A78AAA00587392 /* AudiobookView.swift */; };
 		7E0DFFC729A78DDB00587392 /* SetViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0DFFC629A78DDB00587392 /* SetViewProtocol.swift */; };
+		7E12C88A29B800A3000F7680 /* pageturn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E12C88929B800A3000F7680 /* pageturn.mp3 */; };
 		7E12F95729A9088700D86DFE /* AudioBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E12F95629A9088700D86DFE /* AudioBookViewModel.swift */; };
 		7E12F95A29A90DBC00D86DFE /* bensound-slider.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E12F95829A90DBC00D86DFE /* bensound-slider.mp3 */; };
 		7E12F95E29A90FDE00D86DFE /* bensound-lofinerdbassbuzzer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E12F95D29A90FDE00D86DFE /* bensound-lofinerdbassbuzzer.mp3 */; };
@@ -94,6 +95,7 @@
 		7E0DFFC229A7893E00587392 /* AudiobookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiobookViewController.swift; sourceTree = "<group>"; };
 		7E0DFFC429A78AAA00587392 /* AudiobookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiobookView.swift; sourceTree = "<group>"; };
 		7E0DFFC629A78DDB00587392 /* SetViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetViewProtocol.swift; sourceTree = "<group>"; };
+		7E12C88929B800A3000F7680 /* pageturn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pageturn.mp3; sourceTree = "<group>"; };
 		7E12F95629A9088700D86DFE /* AudioBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBookViewModel.swift; sourceTree = "<group>"; };
 		7E12F95829A90DBC00D86DFE /* bensound-slider.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bensound-slider.mp3"; sourceTree = "<group>"; };
 		7E12F95D29A90FDE00D86DFE /* bensound-lofinerdbassbuzzer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bensound-lofinerdbassbuzzer.mp3"; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				14C484FA29B75AB300C58B7B /* English */,
 				14C484F129B7599600C58B7B /* Portuguese */,
 				7E12F95D29A90FDE00D86DFE /* bensound-lofinerdbassbuzzer.mp3 */,
+				7E12C88929B800A3000F7680 /* pageturn.mp3 */,
 				7E12F95829A90DBC00D86DFE /* bensound-slider.mp3 */,
 			);
 			path = Audio;
@@ -495,6 +498,7 @@
 				14C4851029B7669E00C58B7B /* AliceNoPaisDasMaravilhas.mp3 in Resources */,
 				14C4850629B7656500C58B7B /* TheUglyDuckling.mp3 in Resources */,
 				14C4850A29B765C700C58B7B /* AliceInWonderland.mp3 in Resources */,
+				7E12C88A29B800A3000F7680 /* pageturn.mp3 in Resources */,
 				14C4850C29B765EE00C58B7B /* TheSleepingBeauty.mp3 in Resources */,
 				14C4851229B766A800C58B7B /* Pinoquio.mp3 in Resources */,
 				14C4851529B7BF1100C58B7B /* LaunchScreen.storyboard in Resources */,
@@ -768,7 +772,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NTS86MKTBV;
+				DEVELOPMENT_TEAM = 44U668YQTW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ninart_app/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -795,7 +799,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NTS86MKTBV;
+				DEVELOPMENT_TEAM = 44U668YQTW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ninart_app/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

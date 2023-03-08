@@ -168,9 +168,7 @@ extension AudiobookView: SettingViews {
             bookCover.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8),
             bookCover.bottomAnchor.constraint(lessThanOrEqualTo: self.audioControls.topAnchor, constant: -24),
             bookCover.centerXAnchor.constraint(equalTo: centerXAnchor),
-//            bookCover.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.5),
 
-//            audioControls.topAnchor.constraint(equalTo: bookCover.bottomAnchor, constant: 24),
             audioControls.heightAnchor.constraint(greaterThanOrEqualTo: self.heightAnchor, multiplier: 0.25),
             audioControls.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             audioControls.trailingAnchor.constraint(equalTo: self.trailingAnchor),
@@ -181,11 +179,14 @@ extension AudiobookView: SettingViews {
 
             playbackStack.topAnchor.constraint(equalTo: self.buttonsHStack.bottomAnchor, constant: 12),
             playbackStack.centerXAnchor.constraint(equalTo: self.audioControls.centerXAnchor),
-            playbackStack.bottomAnchor.constraint(lessThanOrEqualTo: self.audioControls.safeAreaLayoutGuide.bottomAnchor,
-                                                  constant: -12),
+            playbackStack.bottomAnchor.constraint(
+                lessThanOrEqualTo: self.audioControls.safeAreaLayoutGuide.bottomAnchor,
+                constant: -12),
 
             sliderControl.widthAnchor.constraint(equalTo: self.audioControls.widthAnchor, multiplier: 0.9)
 
         ])
+
+        self.layoutIfNeeded()
     }
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <accessibilityOverrides dynamicTypePreference="11"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -18,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moon" translatesAutoresizingMaskIntoConstraints="NO" id="1SQ-F2-QxH">
-                                <rect key="frame" x="87" y="391" width="240" height="128"/>
+                                <rect key="frame" x="83" y="343" width="248" height="224"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" name="TextColor"/>
                             </imageView>
@@ -28,9 +29,9 @@
                         <color key="tintColor" name="BackgroundColor"/>
                         <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                         <constraints>
-                            <constraint firstItem="1SQ-F2-QxH" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.142857" id="93F-1U-XFI"/>
+                            <constraint firstItem="1SQ-F2-QxH" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.25" id="93F-1U-XFI"/>
                             <constraint firstItem="1SQ-F2-QxH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Acy-3x-7nL"/>
-                            <constraint firstItem="1SQ-F2-QxH" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.57971" id="aBL-mM-gSp"/>
+                            <constraint firstItem="1SQ-F2-QxH" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.6" id="aBL-mM-gSp"/>
                             <constraint firstItem="1SQ-F2-QxH" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="iiB-7T-ja9"/>
                         </constraints>
                     </view>
