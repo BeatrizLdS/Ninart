@@ -2,6 +2,7 @@
     {
         "title":"Alice no País das Maravilhas",
         "image":"AliceWonderland",
+        "imageDescription": "Uma garota de cabelos loiros enrolados e de olhos azuis, com um vestido azul e avental branco, sorridente. Atrás dela, se esconde um tímido coelho branco.",
         "pages":[
             {
                 "image":"",
@@ -28,6 +29,7 @@
     {
         "title":"A Bela adormecida",
         "image":"SleepingBeauty",
+        "imageDescription": "Uma garota de cabelos roxos e presos em dois coques, com vestido rosa, dormindo sobre um travessseiro verde.",
         "pages":[
             {
                 "image":"",
@@ -58,6 +60,7 @@
     {
         "title":"O patinho feio",
         "image":"Duckling",
+        "imageDescription": "Um patinho amarelo chorando, sentado sobre uma poça de lágrimas",
         "pages":[
             {
                 "image":"",
@@ -84,6 +87,7 @@
     {
         "title":"Pinóquio",
         "image":"Pinocchio",
+        "imageDescription": "Um garoto de madeira com um grande nariz, de cabelos castanhos-claros, sentado sobre um tronco, preocupado.",
         "pages":[
             {
                 "image":"",

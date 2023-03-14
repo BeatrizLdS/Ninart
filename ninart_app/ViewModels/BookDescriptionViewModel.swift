@@ -23,4 +23,13 @@ class BookDescriptionViewModel {
     func getStory() -> Story? {
         return story
     }
+
+    func getImageDescription() -> String {
+        if let description = story?.imageDescription {
+            return description
+        } else {
+            let description = audioBook?.imageDescription
+            return description!
+        }
+    }
 }

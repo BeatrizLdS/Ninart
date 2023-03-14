@@ -13,6 +13,7 @@ struct Story: Codable {
 
     let title: String
     let image: String
+    let imageDescription: String
     let pages: [Page]
 
 }
@@ -29,6 +30,7 @@ struct Page: Codable {
 struct AudioBook: Codable {
     let title: String
     let image: String
+    let imageDescription: String
     let audioName: String
 }
 
