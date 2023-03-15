@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import UIKit
 
 public protocol SelectBook {
-    func didSelect<Book>(book: Book)
+    func didSelect<Book>(book: Book, selectedView: UIView)
 }
