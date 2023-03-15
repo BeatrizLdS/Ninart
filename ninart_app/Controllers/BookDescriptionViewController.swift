@@ -19,8 +19,8 @@ class BookDescriptionViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .never
         navigationItem.backButtonTitle = ""
         bookDescriptionView.buttonsDelegate = self
-        bookDescriptionView.bookCover.image = UIImage(
-            named: viewModel?.getStory()?.image ?? "aSundayAfternoonOnTheIslandOfLaGrandeJatte")
+        bookDescriptionView.configureImage(imageName: viewModel?.getStory()?.image,
+                                           imageDescription: viewModel?.getImageDescription())
     }
 }
 

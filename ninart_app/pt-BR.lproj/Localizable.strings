@@ -6,6 +6,8 @@
   
 */
 
+"image" = "imagem";
+
 // MARK: Home Page
 "continueReading" = "Continuar";
 "readToMe" = "Escutar história";

@@ -20,7 +20,6 @@ class BookDescriptionView: UIView {
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 25
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.isAccessibilityElement = true
         return imageView
     }()
     let buttonsHStack: UIStackView = {
@@ -75,6 +74,14 @@ class BookDescriptionView: UIView {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    func configureImage(imageName: String?, imageDescription: String?) {
+        bookCover.image = UIImage(
+            named: imageName ?? "aSundayAfternoonOnTheIslandOfLaGrandeJatte")
+        bookCover.accessibilityTraits = .none
+        bookCover.isAccessibilityElement = true
+        bookCover.accessibilityLabel = String(localized: "image")
+        bookCover.accessibilityValue = imageDescription ?? ""
     }
     private func configTapGesture() {
         let readGesture = UITapGestureRecognizer(target: self, action: #selector(self.readButtonWasSelected))
