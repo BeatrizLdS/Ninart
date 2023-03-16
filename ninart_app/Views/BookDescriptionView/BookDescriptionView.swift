@@ -92,12 +92,12 @@ class BookDescriptionView: UIView {
     @objc func readButtonWasSelected() {
         let haptics = UINotificationFeedbackGenerator()
         haptics.notificationOccurred(.success)
-        buttonsDelegate?.readAction()
+        buttonsDelegate?.readAction(selectedView: readButton)
     }
     @objc func playButtonWasSelected() {
         let haptics = UINotificationFeedbackGenerator()
         haptics.notificationOccurred(.success)
-        buttonsDelegate?.playAction()
+        buttonsDelegate?.playAction(selectedView: playButton)
     }
 }
 

@@ -34,7 +34,6 @@ class AllBooksViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        // MARK: Adicionar o foco aqui
         if let focusView = lastSelectedView {
             UIAccessibility.post(notification: .screenChanged,
                                  argument: focusView)
