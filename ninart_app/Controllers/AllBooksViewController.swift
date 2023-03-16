@@ -11,6 +11,7 @@ class AllBooksViewController: UIViewController {
 
     let allBooksView = AllBooksView()
     var viewModel: BooksViewModel?
+    var lastSelectedView: UIView?
 
     let sectionsTitles : [String] = [String(localized: "continueReading"),
                                      String(localized: "readToMe"),
@@ -29,6 +30,15 @@ class AllBooksViewController: UIViewController {
         allBooksView.booksTableView.dataSource = self
         navigationItem.backButtonTitle = ""
         configureNavBar()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let focusView = lastSelectedView {
+            UIAccessibility.post(notification: .screenChanged,
+                                 argument: focusView)
+            lastSelectedView = nil
+        }
     }
 
     private func configureNavBar() {
@@ -108,7 +118,8 @@ extension AllBooksViewController: UITableViewDataSource {
 }
 
 extension AllBooksViewController: SelectBook {
-    func didSelect<Book>(book: Book) {
+    func didSelect<Book>(book: Book, selectedView: UIView) {
+        lastSelectedView = selectedView
         var newViewModel: BookDescriptionViewModel?
         if let audioBook = book as? AudioBook {
             let story = viewModel?.searchStoryForTitle(title: audioBook.title)

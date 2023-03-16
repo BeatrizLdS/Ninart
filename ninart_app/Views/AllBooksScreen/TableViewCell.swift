@@ -87,12 +87,13 @@ extension CollectionTableViewCell: UICollectionViewDelegate {
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath
     ) {
+        let selectedView = collectionView.cellForItem(at: indexPath)
         let haptics = UINotificationFeedbackGenerator()
         haptics.notificationOccurred(.success)
         if let book = listOfStorys.get(index: indexPath.row) as? AudioBook {
-            selectBookProtocol?.didSelect(book: book)
+            selectBookProtocol?.didSelect(book: book, selectedView: selectedView!)
         } else if let book = listOfStorys.get(index: indexPath.row) as? Story {
-            selectBookProtocol?.didSelect(book: book)
+            selectBookProtocol?.didSelect(book: book, selectedView: selectedView!)
         }
     }
 }
