@@ -111,16 +111,6 @@ class StoryViewController: UIViewController {
                 storyPage?.upTextBooks.text = ""
                 storyPage?.downTextBooks.text = text
             }
-
-//            let textLength = text.count
-//            let halfTextLength = textLength / 2
-//            let startIndex = text.index(text.startIndex, offsetBy: 0)
-//            let endIndex = text.index(text.startIndex, offsetBy: halfTextLength)
-//            let firstHalf = String(text[startIndex..<endIndex])
-//            let secondHalf = String(text[endIndex..<text.endIndex])
-//
-//            storyPage?.upTextBooks.text = firstHalf
-//            storyPage?.downTextBooks.text = secondHalf
         }
     }
 

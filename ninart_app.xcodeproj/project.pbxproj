@@ -23,8 +23,6 @@
 		7E0DFFC729A78DDB00587392 /* SetViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0DFFC629A78DDB00587392 /* SetViewProtocol.swift */; };
 		7E12C88A29B800A3000F7680 /* pageturn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E12C88929B800A3000F7680 /* pageturn.mp3 */; };
 		7E12F95729A9088700D86DFE /* AudioBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E12F95629A9088700D86DFE /* AudioBookViewModel.swift */; };
-		7E12F95A29A90DBC00D86DFE /* bensound-slider.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E12F95829A90DBC00D86DFE /* bensound-slider.mp3 */; };
-		7E12F95E29A90FDE00D86DFE /* bensound-lofinerdbassbuzzer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E12F95D29A90FDE00D86DFE /* bensound-lofinerdbassbuzzer.mp3 */; };
 		7E35252129AF45CA00395FDA /* BookDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E35252029AF45CA00395FDA /* BookDescriptionView.swift */; };
 		7E35252429AF460D00395FDA /* BookDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E35252329AF460D00395FDA /* BookDescriptionViewController.swift */; };
 		7E432677285B6F83008B572D /* StoryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E432676285B6F83008B572D /* StoryPage.swift */; };
@@ -97,8 +95,6 @@
 		7E0DFFC629A78DDB00587392 /* SetViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetViewProtocol.swift; sourceTree = "<group>"; };
 		7E12C88929B800A3000F7680 /* pageturn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pageturn.mp3; sourceTree = "<group>"; };
 		7E12F95629A9088700D86DFE /* AudioBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBookViewModel.swift; sourceTree = "<group>"; };
-		7E12F95829A90DBC00D86DFE /* bensound-slider.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bensound-slider.mp3"; sourceTree = "<group>"; };
-		7E12F95D29A90FDE00D86DFE /* bensound-lofinerdbassbuzzer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bensound-lofinerdbassbuzzer.mp3"; sourceTree = "<group>"; };
 		7E35252029AF45CA00395FDA /* BookDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDescriptionView.swift; sourceTree = "<group>"; };
 		7E35252329AF460D00395FDA /* BookDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDescriptionViewController.swift; sourceTree = "<group>"; };
 		7E432676285B6F83008B572D /* StoryPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPage.swift; sourceTree = "<group>"; };
@@ -216,9 +212,7 @@
 			children = (
 				14C484FA29B75AB300C58B7B /* English */,
 				14C484F129B7599600C58B7B /* Portuguese */,
-				7E12F95D29A90FDE00D86DFE /* bensound-lofinerdbassbuzzer.mp3 */,
 				7E12C88929B800A3000F7680 /* pageturn.mp3 */,
-				7E12F95829A90DBC00D86DFE /* bensound-slider.mp3 */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -507,9 +501,7 @@
 				FF04BCC129B755D00055BD25 /* audioBooks-pt.json in Resources */,
 				FFCDE07D29AFC9DD00B29BB5 /* audioBooks-en.json in Resources */,
 				14C4851429B766B500C58B7B /* ABelaAdormecida.mp3 in Resources */,
-				7E12F95E29A90FDE00D86DFE /* bensound-lofinerdbassbuzzer.mp3 in Resources */,
 				FF90665329B20E8D0022196E /* data-en.json in Resources */,
-				7E12F95A29A90DBC00D86DFE /* bensound-slider.mp3 in Resources */,
 				14C4850E29B7669400C58B7B /* OPatinhoFeio.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
