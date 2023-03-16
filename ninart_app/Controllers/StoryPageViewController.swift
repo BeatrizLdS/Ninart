@@ -58,6 +58,17 @@ class StoryViewController: UIViewController {
 
         selectionFeedbackGenerator.prepare()
         impactFeedbackGenerator.prepare()
+
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swipeDecrement))
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipeIncrement))
+        self.storyPage?.addGestureRecognizer(swipeRight)
+        self.storyPage?.addGestureRecognizer(swipeLeft)
+        swipeLeft.direction = .left
+        swipeRight.direction = .right
+        swipeRight.numberOfTouchesRequired = 1
+        swipeLeft.numberOfTouchesRequired = 1
+
+
     }
 
     func showTwoText() {
@@ -185,6 +196,20 @@ class StoryViewController: UIViewController {
 
         if count == 1 {
             storyPage?.leftButtonHistory.isEnabled = false
+        }
+    }
+
+    @objc func swipeIncrement(_ gesture: UISwipeGestureRecognizer) { 
+            if count != viewModel.numberOfPages {
+                updateTextAndImage()
+                incrementLabel()
+        }
+    }
+
+    @objc func swipeDecrement(_ gesture: UISwipeGestureRecognizer) {
+            if count != 1 {
+                downTextAndImage()
+                decrementLabel()
         }
     }
 }

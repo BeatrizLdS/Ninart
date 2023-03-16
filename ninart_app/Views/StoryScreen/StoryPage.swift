@@ -31,6 +31,7 @@ class StoryPage: UIView {
         stack.distribution = .fill
         stack.spacing = 20
         stack.backgroundColor = .backgroundColor
+        stack.isUserInteractionEnabled = false
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -57,6 +58,7 @@ class StoryPage: UIView {
         text.isEditable = false
         text.isScrollEnabled = false
         text.isAccessibilityElement = true
+        text.isUserInteractionEnabled = false
         text.adjustsFontForContentSizeCategory = true
 
         return text
@@ -92,6 +94,7 @@ class StoryPage: UIView {
         text.isEditable = false
         text.isScrollEnabled = false
         text.isAccessibilityElement = true
+        text.isUserInteractionEnabled = false
         text.adjustsFontForContentSizeCategory = true
 
         return text
